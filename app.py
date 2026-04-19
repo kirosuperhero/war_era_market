@@ -726,7 +726,7 @@ with tab4:
         else:
             st.warning("لا توجد عناصر مشابهة كافية للتحليل (أقل من 2)")
 
-# TAB 5: صائد الأرباح الشامل
+# TAB 5: صائد الأرباح الشامل - النسخة المصححة
 with tab5:
     st.subheader("🏆 صائد الأرباح الشامل")
     st.markdown("أفضل فرص الربح مع **المواصفات الحقيقية** عشان تقدر تدور عليها في اللعبة")
@@ -735,26 +735,25 @@ with tab5:
     with col1:
         comparison_time = st.selectbox(
             "مقارنة بأسعار آخر:",
-            ["آخر 6 ساعات", "آخر 12 ساعة", "آخر 24 ساعة", "آخر 3 أيام", "الكل"],
+            ["آخر ساعة", "آخر 6 ساعات", "آخر 12 ساعة", "آخر 24 ساعة", "آخر 3 أيام", "الكل"],
             index=2
         )
     with col2:
         min_profit_usd = st.number_input("الحد الأدنى للربح المتوقع ($)", 1, 500, 20)
     
-    time_map_profit = {"آخر 6 ساعات": 6, "آخر 12 ساعة": 12, "آخر 24 ساعة": 24, "آخر 3 أيام": 72, "الكل": 0}
+    time_map_profit = {"آخر ساعة": 1, "آخر 6 ساعات": 6, "آخر 12 ساعة": 12, "آخر 24 ساعة": 24, "آخر 3 أيام": 72, "الكل": 0}
     hours_limit_profit = time_map_profit[comparison_time]
     
     all_results = []
     
-    with st.spinner(f"جاري التحليل..."):
+    with st.spinner(f"جاري التحليل (آخر {comparison_time})..."):
         progress_bar = st.progress(0)
         
         for idx, (cat_name, cat_config) in enumerate(ITEM_CATEGORIES.items()):
             temp_code = cat_config["code"]
-            temp_items = fetch_all_items(temp_code, max_pages=3)
+            temp_items = fetch_all_items(temp_code, max_pages=5)  # زودت الصفحات عشان نجيب عناصر أكثر
             
             if temp_items:
-                filtered = []
                 now = datetime.now().astimezone()
                 
                 for item in temp_items:
@@ -762,86 +761,114 @@ with tab5:
                         created_at = datetime.fromisoformat(item['createdAt'].replace('Z', '+00:00'))
                         hours_diff = (now - created_at).total_seconds() / 3600
                         
-                        if hours_limit_profit == 0 or hours_diff <= hours_limit_profit:
-                            quality = calculate_quality_score(item['skills'], cat_config)
-                            main_val = get_main_value(item['skills'], cat_config)
-                            sec_val = get_secondary_value(item['skills'], cat_config)
-                            main_name = get_main_name(cat_config)
-                            sec_name = get_secondary_name(cat_config)
-                            
-                            filtered.append({
-                                'price': item['price'],
-                                'quality': quality,
-                                'main_value': main_val,
-                                'secondary_value': sec_val,
-                                'main_name': main_name,
-                                'secondary_name': sec_name,
-                                'user': item['user'][:8],
-                                'time_ago': time_ago(item['createdAt']),
-                                'hours_ago': hours_diff
-                            })
+                        # فلتر الوقت من البداية
+                        if hours_limit_profit > 0 and hours_diff > hours_limit_profit:
+                            continue  # تخطى العناصر القديمة
+                        
+                        quality = calculate_quality_score(item['skills'], cat_config)
+                        main_val = get_main_value(item['skills'], cat_config)
+                        sec_val = get_secondary_value(item['skills'], cat_config)
+                        main_name = get_main_name(cat_config)
+                        sec_name = get_secondary_name(cat_config)
+                        
+                        # تجميع مؤقت للتحليل
+                        all_results.append({
+                            'category': cat_name,
+                            'price': item['price'],
+                            'quality': quality,
+                            'main_value': main_val,
+                            'secondary_value': sec_val,
+                            'main_name': main_name,
+                            'secondary_name': sec_name,
+                            'user': item['user'][:8],
+                            'time_ago': time_ago(item['createdAt']),
+                            'hours_ago': round(hours_diff, 1),
+                            'createdAt': item['createdAt']
+                        })
                     except:
                         continue
-                
-                if len(filtered) >= 3:
-                    df_cat = pd.DataFrame(filtered)
-                    df_cat['quality_group'] = (df_cat['quality'] // 10) * 10
-                    
-                    for quality_group in df_cat['quality_group'].unique():
-                        group = df_cat[df_cat['quality_group'] == quality_group]
-                        if len(group) >= 3:
-                            group_avg = group['price'].mean()
-                            
-                            for _, row in group.iterrows():
-                                expected_profit = group_avg - row['price']
-                                
-                                if expected_profit >= min_profit_usd:
-                                    all_results.append({
-                                        'category': cat_name,
-                                        'price': row['price'],
-                                        'avg_price': group_avg,
-                                        'expected_profit': expected_profit,
-                                        'profit_margin': (expected_profit / row['price']) * 100,
-                                        'quality': row['quality'],
-                                        'main_value': row['main_value'],
-                                        'secondary_value': row['secondary_value'],
-                                        'main_name': row['main_name'],
-                                        'secondary_name': row['secondary_name'],
-                                        'user': row['user'],
-                                        'time_ago': row['time_ago'],
-                                        'hours_ago': round(row['hours_ago'], 1),
-                                        'similar_count': len(group)
-                                    })
             
             progress_bar.progress((idx + 1) / len(ITEM_CATEGORIES))
         
         progress_bar.empty()
     
     if all_results:
-        df_results = pd.DataFrame(all_results)
-        df_results = df_results.sort_values('expected_profit', ascending=False).head(15)
+        # تحويل النتائج لـ DataFrame
+        df_temp = pd.DataFrame(all_results)
         
-        st.success(f"🎯 {len(df_results)} فرصة ربح")
+        # حساب المتوسط لكل فئة وجودة
+        df_temp['quality_group'] = (df_temp['quality'] // 10) * 10
+        df_temp['value_group'] = df_temp['main_value'].apply(lambda x: round(x / 10) * 10)
         
-        for i, row in df_results.iterrows():
-            st.markdown(f"""
-            <div style="border-right: 4px solid #00ff00; border-radius: 10px; padding: 15px; margin: 10px 0; background: #1e1e2e;">
-                <b>📦 {row['category']}</b><br>
-                <hr style="margin: 5px 0;">
-                <b>🔍 للبحث في اللعبة:</b><br>
-                • <b>{row['main_name']}:</b> {row['main_value']}<br>
-                • <b>{row['secondary_name']}:</b> {row['secondary_value']}<br>
-                • <b>الجودة:</b> {row['quality']:.0f}%<br>
-                <hr style="margin: 5px 0;">
-                💰 <b>سعر الشراء بعد الضريبة:</b> <b style="color: #ffaa44;">${add_tax(row['price']):.2f}</b><br>
-                📈 متوسط السوق: ${add_tax(row['avg_price']):.2f}<br>
-                💎 <b style="color: #00ff00;">الربح المتوقع: +${row['expected_profit']:.2f}</b> (نسبة {row['profit_margin']:.0f}%)<br>
-                👤 البائع: <code>{row['user']}</code> | 🕐 {row['time_ago']}
-            </div>
-            """, unsafe_allow_html=True)
+        # حساب الربح المتوقع
+        profit_results = []
+        
+        for (cat, quality_group), group in df_temp.groupby(['category', 'quality_group']):
+            if len(group) >= 3:
+                group_avg = group['price'].mean()
+                
+                for _, row in group.iterrows():
+                    expected_profit = group_avg - row['price']
+                    
+                    if expected_profit >= min_profit_usd:
+                        profit_results.append({
+                            'category': cat,
+                            'price': row['price'],
+                            'avg_price': group_avg,
+                            'expected_profit': expected_profit,
+                            'profit_margin': (expected_profit / row['price']) * 100,
+                            'quality': row['quality'],
+                            'main_value': row['main_value'],
+                            'secondary_value': row['secondary_value'],
+                            'main_name': row['main_name'],
+                            'secondary_name': row['secondary_name'],
+                            'user': row['user'],
+                            'time_ago': row['time_ago'],
+                            'hours_ago': row['hours_ago'],
+                            'similar_count': len(group)
+                        })
+        
+        if profit_results:
+            df_results = pd.DataFrame(profit_results)
+            df_results = df_results.sort_values('expected_profit', ascending=False).head(20)
+            
+            st.success(f"🎯 {len(df_results)} فرصة ربح (آخر {comparison_time})")
+            
+            for i, row in df_results.iterrows():
+                # تحديد لون حسب الحداثة
+                if row['hours_ago'] <= 1:
+                    freshness_icon = "🔥🔥"
+                    freshness_text = "جديد جداً (أقل من ساعة)"
+                elif row['hours_ago'] <= 6:
+                    freshness_icon = "🔥"
+                    freshness_text = "جديد (أقل من 6 ساعات)"
+                elif row['hours_ago'] <= 24:
+                    freshness_icon = "🟡"
+                    freshness_text = "حديث (أقل من يوم)"
+                else:
+                    freshness_icon = "🟢"
+                    freshness_text = "قديم"
+                
+                st.markdown(f"""
+                <div style="border-right: 4px solid #00ff00; border-radius: 10px; padding: 15px; margin: 10px 0; background: #1e1e2e;">
+                    <b>📦 {row['category']}</b> {freshness_icon} <span style="color: #ffaa44;">{freshness_text}</span><br>
+                    <hr style="margin: 5px 0;">
+                    <b>🔍 للبحث في اللعبة:</b><br>
+                    • <b>{row['main_name']}:</b> {row['main_value']}<br>
+                    • <b>{row['secondary_name']}:</b> {row['secondary_value']}<br>
+                    • <b>الجودة:</b> {row['quality']:.0f}%<br>
+                    <hr style="margin: 5px 0;">
+                    💰 <b>سعر الشراء بعد الضريبة:</b> <b style="color: #ffaa44;">${add_tax(row['price']):.2f}</b><br>
+                    📈 متوسط السوق: ${add_tax(row['avg_price']):.2f}<br>
+                    💎 <b style="color: #00ff00;">الربح المتوقع: +${row['expected_profit']:.2f}</b> (نسبة {row['profit_margin']:.0f}%)<br>
+                    👤 البائع: <code>{row['user']}</code> | 🕐 {row['time_ago']} | <b>منذ {row['hours_ago']} ساعة</b>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.info(f"❌ لا توجد فرص ربح بـ ${min_profit_usd}+ في آخر {comparison_time}")
     else:
-        st.info(f"❌ لا توجد فرص ربح بـ ${min_profit_usd}+ في آخر {comparison_time}")
-
+        st.info(f"❌ لا توجد بيانات كافية في آخر {comparison_time}")
+        
 # ========== التوصية النهائية ==========
 st.divider()
 st.subheader("🎯 التوصية النهائية")
