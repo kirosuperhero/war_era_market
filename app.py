@@ -24,14 +24,16 @@ st.markdown("""
     .stTabs [aria-selected="true"] { background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%) !important; }
     .stButton button { background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%) !important; color: white !important; }
     .deal-card { border-right: 4px solid #00ff00; border-radius: 10px; padding: 15px; margin: 10px 0; background: #1e1e2e; }
+    .best-flip { border-right: 4px solid #ff4b4b; border-radius: 10px; padding: 15px; margin: 10px 0; background: #1e1e2e; }
 </style>
 """, unsafe_allow_html=True)
 
 # ========== ملفات البيانات ==========
-SENT_ALERTS_FILE  = "data/sent_alerts.json"
-SALES_CACHE_FILE  = "data/sales_cache.json"
+SENT_ALERTS_FILE   = "data/sent_alerts.json"
+SALES_CACHE_FILE   = "data/sales_cache.json"
 PRICE_HISTORY_FILE = "data/price_history.json"
 ALERTS_HISTORY_FILE = "data/alerts_history.json"
+LAST_SYNC_FILE     = "data/last_sync.json"
 
 # ========== دوال تحميل / حفظ البيانات ==========
 def _load_json(path, default):
@@ -54,12 +56,12 @@ def _save_json(path, data):
     except:
         return False
 
-def load_sent_alerts():    return _load_json(SENT_ALERTS_FILE, [])
-def save_sent_alerts(d):   return _save_json(SENT_ALERTS_FILE, d)
-def load_sales_cache():    return _load_json(SALES_CACHE_FILE, {})
-def save_sales_cache(d):   return _save_json(SALES_CACHE_FILE, d)
-def load_price_history():  return _load_json(PRICE_HISTORY_FILE, {})
-def save_price_history(d): return _save_json(PRICE_HISTORY_FILE, d)
+def load_sent_alerts():     return _load_json(SENT_ALERTS_FILE, [])
+def save_sent_alerts(d):    return _save_json(SENT_ALERTS_FILE, d)
+def load_sales_cache():     return _load_json(SALES_CACHE_FILE, {})
+def save_sales_cache(d):    return _save_json(SALES_CACHE_FILE, d)
+def load_price_history():   return _load_json(PRICE_HISTORY_FILE, {})
+def save_price_history(d):  return _save_json(PRICE_HISTORY_FILE, d)
 def load_alerts_history():
     data = _load_json(ALERTS_HISTORY_FILE, {"alerts_sent": []})
     if 'alerts_sent' not in data:
@@ -78,60 +80,6 @@ def convert_numpy_to_python(obj):
         return float(obj)
     return obj
 
-# ========== متوسط سعر البيع الفعلي ==========
-def get_average_sale_price(item_code, main_value, days_back=3):
-    cache = load_sales_cache()
-    if item_code not in cache:
-        return None
-    now = datetime.now().astimezone()
-    valid_prices = []
-    for sale in cache[item_code]:
-        try:
-            sale_time = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
-            if (now - sale_time).total_seconds() / 3600 <= days_back * 24:
-                if abs(sale['main_value'] - main_value) <= 10 and sale['price'] > 0:
-                    valid_prices.append(sale['price'])
-        except:
-            continue
-    return sum(valid_prices) / len(valid_prices) if valid_prices else None
-
-# ========== سرعة البيع (Sell Velocity) ==========
-def get_sell_velocity(item_code):
-    """
-    احسب متوسط الوقت بين عمليات البيع لنوع معين.
-    يرجع النتيجة بالساعات أو None لو البيانات قليلة.
-    """
-    cache = load_sales_cache()
-    if item_code not in cache or len(cache[item_code]) < 2:
-        return None
-    try:
-        times = []
-        for sale in cache[item_code]:
-            t = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
-            times.append(t)
-        times_sorted = sorted(times)
-        gaps = [(times_sorted[i+1] - times_sorted[i]).total_seconds() / 3600
-                for i in range(len(times_sorted) - 1)]
-        avg_gap = sum(gaps) / len(gaps)
-        return round(avg_gap, 1)
-    except:
-        return None
-
-# ========== نسبة السعر المئوية (Price Percentile) ==========
-def get_price_percentile(price, all_prices):
-    """
-    ارجع رتبة السعر: X% من العناصر الأخرى أغلى من هذا السعر.
-    كلما كانت النسبة أعلى كلما كانت الصفقة أفضل.
-    """
-    if len(all_prices) <= 1:
-        return None
-    cheaper_than = sum(1 for p in all_prices if p > price)
-    return round((cheaper_than / len(all_prices)) * 100, 0)
-
-# ========== الضريبة ==========
-def add_tax(price):
-    return price * 1.01
-
 # ========== الأسرار والتوكنز ==========
 def get_secret(key, default):
     try:
@@ -139,10 +87,11 @@ def get_secret(key, default):
     except:
         return default
 
-YOUR_JWT = get_secret("YOUR_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjY5Y2VlY2Y1MTk3Zjg0NWZjOWZlZGU1YyJ9LCJpYXQiOjE3NzUxNjg3NTcsImV4cCI6MTc3Nzc2MDc1N30.nIKi8ohQAYsAVXQL9_rlRUr93TDg-G-DVOCQOrRdOtY")
+YOUR_JWT           = get_secret("YOUR_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjY5Y2VlY2Y1MTk3Zjg0NWZjOWZlZGU1YyJ9LCJpYXQiOjE3NzUxNjg3NTcsImV4cCI6MTc3Nzc2MDc1N30.nIKi8ohQAYsAVXQL9_rlRUr93TDg-G-DVOCQOrRdOtY")
 TELEGRAM_BOT_TOKEN = get_secret("TELEGRAM_BOT_TOKEN", "8261610629:AAFs-el5LK236x1xkDuUM8k-6NOi81X4FU8")
 TELEGRAM_CHAT_ID   = get_secret("TELEGRAM_CHAT_ID",   "1690550033")
 
+# ========== تيليجرام ==========
 def send_telegram_alert(title, message, price=None, profit=None):
     text = f"🔔 *{title}*\n{message}"
     if price:
@@ -151,12 +100,8 @@ def send_telegram_alert(title, message, price=None, profit=None):
         text += f"\n💎 الربح المتوقع: +${profit:.2f}"
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     try:
-        response = requests.post(url, json={
-            "chat_id": TELEGRAM_CHAT_ID,
-            "text": text,
-            "parse_mode": "Markdown"
-        }, timeout=5)
-        return response.status_code == 200
+        r = requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "Markdown"}, timeout=5)
+        return r.status_code == 200
     except Exception as e:
         print(f"Telegram error: {e}")
         return False
@@ -173,66 +118,30 @@ ITEM_CATEGORIES = {
         "min_attack": 141, "max_attack": 170,
         "min_critical": 26, "max_critical": 35
     },
-    "👑 خوذة Legendary": {
-        "code": "helmet5", "type": "equipment",
-        "skill": "criticalDamages", "min_value": 91, "max_value": 110
-    },
-    "✨ خوذة Mythic": {
-        "code": "helmet6", "type": "equipment",
-        "skill": "criticalDamages", "min_value": 121, "max_value": 150
-    },
-    "🦺 صدر Legendary": {
-        "code": "chest5", "type": "equipment",
-        "skill": "armor", "min_value": 36, "max_value": 50
-    },
-    "💪 صدر Mythic": {
-        "code": "chest6", "type": "equipment",
-        "skill": "armor", "min_value": 56, "max_value": 70
-    },
-    "🧤 قفاز Legendary": {
-        "code": "gloves5", "type": "equipment",
-        "skill": "precision", "min_value": 31, "max_value": 40
-    },
-    "⚡ قفاز Mythic": {
-        "code": "gloves6", "type": "equipment",
-        "skill": "precision", "min_value": 51, "max_value": 60
-    },
-    "👖 بنطلون Legendary": {
-        "code": "pants5", "type": "equipment",
-        "skill": "armor", "min_value": 36, "max_value": 50
-    },
-    "👖 بنطلون Mythic": {
-        "code": "pants6", "type": "equipment",
-        "skill": "armor", "min_value": 56, "max_value": 70
-    },
-    "👢 حذاء Legendary": {
-        "code": "boots5", "type": "equipment",
-        "skill": "dodge", "min_value": 31, "max_value": 40
-    },
-    "👢 حذاء Mythic": {
-        "code": "boots6", "type": "equipment",
-        "skill": "dodge", "min_value": 51, "max_value": 60
-    },
+    "👑 خوذة Legendary":  {"code": "helmet5", "type": "equipment", "skill": "criticalDamages", "min_value": 91,  "max_value": 110},
+    "✨ خوذة Mythic":     {"code": "helmet6", "type": "equipment", "skill": "criticalDamages", "min_value": 121, "max_value": 150},
+    "🦺 صدر Legendary":   {"code": "chest5",  "type": "equipment", "skill": "armor",          "min_value": 36,  "max_value": 50},
+    "💪 صدر Mythic":      {"code": "chest6",  "type": "equipment", "skill": "armor",          "min_value": 56,  "max_value": 70},
+    "🧤 قفاز Legendary":  {"code": "gloves5", "type": "equipment", "skill": "precision",      "min_value": 31,  "max_value": 40},
+    "⚡ قفاز Mythic":     {"code": "gloves6", "type": "equipment", "skill": "precision",      "min_value": 51,  "max_value": 60},
+    "👖 بنطلون Legendary":{"code": "pants5",  "type": "equipment", "skill": "armor",          "min_value": 36,  "max_value": 50},
+    "👖 بنطلون Mythic":   {"code": "pants6",  "type": "equipment", "skill": "armor",          "min_value": 56,  "max_value": 70},
+    "👢 حذاء Legendary":  {"code": "boots5",  "type": "equipment", "skill": "dodge",          "min_value": 31,  "max_value": 40},
+    "👢 حذاء Mythic":     {"code": "boots6",  "type": "equipment", "skill": "dodge",          "min_value": 51,  "max_value": 60},
 }
 
-# ========== دوال حساب الجودة ==========
+# ========== دوال المساعدة ==========
 def calculate_quality_score(skills, category_config):
     item_type = category_config["type"]
     if item_type in ["jet", "tank"]:
         attack   = skills.get('attack', 0)
         critical = skills.get('criticalChance', 0)
-        min_attack   = category_config.get("min_attack", 0)
-        max_attack   = category_config.get("max_attack", 1)
-        min_critical = category_config.get("min_critical", 0)
-        max_critical = category_config.get("max_critical", 1)
-        a_score = max(0, min(1, (attack   - min_attack)   / (max_attack   - min_attack)   if attack   >= min_attack   else 0))
-        c_score = max(0, min(1, (critical - min_critical) / (max_critical - min_critical) if critical >= min_critical else 0))
+        a_score = max(0, min(1, (attack   - category_config["min_attack"])   / (category_config["max_attack"]   - category_config["min_attack"])   if attack   >= category_config["min_attack"]   else 0))
+        c_score = max(0, min(1, (critical - category_config["min_critical"]) / (category_config["max_critical"] - category_config["min_critical"]) if critical >= category_config["min_critical"] else 0))
         return round(((a_score + c_score) / 2) * 100, 1)
     elif item_type == "equipment":
-        val       = skills.get(category_config["skill"], 0)
-        min_value = category_config.get("min_value", 0)
-        max_value = category_config.get("max_value", 1)
-        score = (val - min_value) / (max_value - min_value) if val >= min_value else 0
+        val = skills.get(category_config["skill"], 0)
+        score = (val - category_config["min_value"]) / (category_config["max_value"] - category_config["min_value"]) if val >= category_config["min_value"] else 0
         return round(max(0, min(1, score)) * 100, 1)
     return 0
 
@@ -255,43 +164,235 @@ def get_main_name(category_config):
     return names.get(category_config.get("skill", ""), "القيمة")
 
 def get_secondary_name(category_config):
-    if category_config["type"] in ["jet", "tank"]:
-        return "الكريتيكال"
-    return ""
+    return "الكريتيكال" if category_config["type"] in ["jet", "tank"] else ""
 
 def get_range_text(category_config):
     if category_config["type"] in ["jet", "tank"]:
-        return (f"({category_config['min_attack']}-{category_config['max_attack']} هجوم"
-                f" | {category_config['min_critical']}-{category_config['max_critical']}% كريتيكال)")
+        return f"({category_config['min_attack']}-{category_config['max_attack']} هجوم | {category_config['min_critical']}-{category_config['max_critical']}% كريتيكال)"
     elif category_config["type"] == "equipment":
         return f"({category_config['min_value']}-{category_config['max_value']})"
     return ""
+
+def add_tax(price):
+    return price * 1.01
 
 def time_ago(created_at_str):
     try:
         created_at = datetime.fromisoformat(created_at_str.replace('Z', '+00:00'))
         diff = datetime.now().astimezone() - created_at
         minutes = int(diff.total_seconds() / 60)
-        if minutes < 1:
-            return f"{int(diff.total_seconds())} ثانية"
-        elif minutes < 60:
-            return f"{minutes} دقيقة"
-        else:
-            return f"{minutes // 60} ساعة"
+        if minutes < 1:   return f"{int(diff.total_seconds())} ثانية"
+        elif minutes < 60: return f"{minutes} دقيقة"
+        else:              return f"{minutes // 60} ساعة"
     except:
         return "غير معروف"
 
 def categorize_item(item, category_config):
-    item_code = category_config['code']
+    code = category_config['code']
     if category_config['type'] in ["jet", "tank"]:
         a = round(item['main_value'] / 5) * 5
         c = round(item['secondary_value'] / 2) * 2
-        return f"{item_code}_A{a}_C{c}"
+        return f"{code}_A{a}_C{c}"
     else:
         v = round(item['main_value'] / 5) * 5
-        return f"{item_code}_V{v}"
+        return f"{code}_V{v}"
 
-# ========== جلب البيانات ==========
+# ========== متوسط سعر البيع الفعلي ==========
+def get_average_sale_price(item_code, main_value, days_back=3):
+    cache = load_sales_cache()
+    if item_code not in cache:
+        return None
+    now = datetime.now().astimezone()
+    valid_prices = []
+    for sale in cache[item_code]:
+        try:
+            sale_time = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
+            if (now - sale_time).total_seconds() / 3600 <= days_back * 24:
+                if abs(sale.get('main_value', 0) - main_value) <= 10 and sale.get('price', 0) > 0:
+                    valid_prices.append(sale['price'])
+        except:
+            continue
+    return sum(valid_prices) / len(valid_prices) if valid_prices else None
+
+# ========== سرعة البيع لعنصر محدد (Change 2) ==========
+def get_item_sell_velocity(item_code, main_value, secondary_value, category_config):
+    """
+    احسب متوسط الوقت بين مبيعات عناصر بنفس المواصفات.
+    يجمّع بنفس منطق categorize_item:
+      - Jets/Tanks: attack (rounded/5) + criticalChance (rounded/2)
+      - Equipment: main_value (rounded/5)
+    يرجع (avg_hours, count) أو (None, count).
+    """
+    cache = load_sales_cache()
+    if item_code not in cache or len(cache[item_code]) < 2:
+        return None, 0
+
+    # حساب المجموعة المستهدفة
+    if category_config['type'] in ["jet", "tank"]:
+        target_a = round(main_value      / 5) * 5
+        target_c = round(secondary_value / 2) * 2
+    else:
+        target_v = round(main_value / 5) * 5
+
+    matching = []
+    for sale in cache[item_code]:
+        try:
+            s_main = sale.get('main_value', 0)
+            if category_config['type'] in ["jet", "tank"]:
+                s_a = round(s_main / 5) * 5
+                s_c = round(sale.get('secondary_value', 0) / 2) * 2
+                if s_a == target_a and s_c == target_c:
+                    matching.append(sale)
+            else:
+                s_v = round(s_main / 5) * 5
+                if s_v == target_v:
+                    matching.append(sale)
+        except:
+            continue
+
+    count = len(matching)
+    if count < 2:
+        return None, count
+
+    try:
+        times  = sorted([datetime.fromisoformat(s['time'].replace('Z', '+00:00')) for s in matching])
+        gaps   = [(times[i+1] - times[i]).total_seconds() / 3600 for i in range(len(times) - 1)]
+        avg_hr = sum(gaps) / len(gaps)
+        return avg_hr, count
+    except:
+        return None, count
+
+def format_velocity(avg_hours):
+    """تحويل الساعات إلى نص مقروء: X ساعة Y دقيقة"""
+    if avg_hours is None:
+        return None
+    total_minutes = int(avg_hours * 60)
+    h = total_minutes // 60
+    m = total_minutes % 60
+    if h == 0:
+        return f"~{m} دقيقة"
+    elif m == 0:
+        return f"~{h} ساعة"
+    else:
+        return f"~{h} ساعة {m} دقيقة"
+
+# ========== سرعة البيع العامة للهيدر ==========
+def get_category_sell_velocity(item_code):
+    cache = load_sales_cache()
+    if item_code not in cache or len(cache[item_code]) < 2:
+        return None
+    try:
+        times = sorted([datetime.fromisoformat(s['time'].replace('Z', '+00:00')) for s in cache[item_code]])
+        gaps  = [(times[i+1] - times[i]).total_seconds() / 3600 for i in range(len(times) - 1)]
+        return round(sum(gaps) / len(gaps), 1)
+    except:
+        return None
+
+# ========== نسبة السعر المئوية ==========
+def get_price_percentile(price, all_prices):
+    if len(all_prices) <= 1:
+        return None
+    cheaper_than = sum(1 for p in all_prices if p > price)
+    return round((cheaper_than / len(all_prices)) * 100, 0)
+
+# ========== جلب المبيعات لنوع معين ==========
+def fetch_transactions(item_code, limit=100):
+    API_URL = "https://api4.warera.io/trpc/transaction.getPaginatedTransactions?batch=1"
+    headers = {
+        "Content-Type": "application/json",
+        "Cookie": f"jwt={YOUR_JWT}",
+        "User-Agent": "Mozilla/5.0"
+    }
+    payload = {"0": {"itemCode": item_code, "limit": limit, "direction": "forward"}}
+    try:
+        r = requests.post(API_URL, headers=headers, json=payload, timeout=10)
+        if r.status_code == 200:
+            data = r.json()
+            return data[0].get('result', {}).get('data', {}).get('items', [])
+    except:
+        pass
+    return []
+
+# ========== Change 1: مزامنة المبيعات في الخلفية ==========
+SYNC_INTERVAL_HOURS = 1
+
+def _get_last_sync_time():
+    data = _load_json(LAST_SYNC_FILE, {"last_sync": None})
+    return data.get("last_sync")
+
+def _save_last_sync_time():
+    _save_json(LAST_SYNC_FILE, {"last_sync": datetime.now().isoformat()})
+
+def run_sales_sync(status_placeholder=None):
+    """
+    يجلب آخر 100 مبيعة لكل نوع من الأصناف الـ 12 ويضيفها للـ cache.
+    يضيف فقط السجلات الجديدة (append, لا overwrite).
+    """
+    cache = load_sales_cache()
+    total_added = 0
+
+    for cat_name, cat_config in ITEM_CATEGORIES.items():
+        code = cat_config["code"]
+        if status_placeholder:
+            status_placeholder.caption(f"🔄 جاري مزامنة: {cat_name}...")
+
+        transactions = fetch_transactions(code, limit=100)
+        if not transactions:
+            continue
+
+        if code not in cache:
+            cache[code] = []
+
+        # بناء مجموعة المعرّفات الموجودة لتجنب التكرار
+        existing_ids = {(s.get('time'), s.get('price')) for s in cache[code]}
+
+        for tx in transactions:
+            item_info = tx.get('item', {})
+            skills    = item_info.get('skills', {})
+            tx_time   = tx.get('createdAt')
+            tx_price  = tx.get('money')
+
+            if (tx_time, tx_price) in existing_ids:
+                continue
+
+            if code in ['jet', 'tank']:
+                main_value      = skills.get('attack', 0)
+                secondary_value = skills.get('criticalChance', 0)
+            else:
+                skill_key       = cat_config.get('skill', '')
+                main_value      = skills.get(skill_key, 0)
+                secondary_value = 0
+
+            cache[code].append({
+                'price':          tx_price,
+                'time':           tx_time,
+                'main_value':     main_value,
+                'secondary_value': secondary_value
+            })
+            existing_ids.add((tx_time, tx_price))
+            total_added += 1
+
+        # احتفظ بآخر 500 سجل لكل نوع
+        cache[code] = sorted(cache[code], key=lambda x: x.get('time', ''), reverse=True)[:500]
+
+    save_sales_cache(cache)
+    _save_last_sync_time()
+    return total_added
+
+def maybe_auto_sync():
+    """يشغّل المزامنة التلقائية إذا مرّت أكثر من SYNC_INTERVAL_HOURS."""
+    last_sync_str = _get_last_sync_time()
+    if last_sync_str:
+        try:
+            last_sync = datetime.fromisoformat(last_sync_str)
+            elapsed   = (datetime.now() - last_sync).total_seconds() / 3600
+            if elapsed < SYNC_INTERVAL_HOURS:
+                return False, elapsed
+        except:
+            pass
+    return True, 0
+
+# ========== جلب عروض السوق ==========
 @st.cache_data(ttl=60)
 def fetch_single_item(item_code, limit=50, cursor=None):
     API_URL = "https://api4.warera.io/trpc/itemOffer.getItemOffers,transaction.getPaginatedTransactions?batch=1"
@@ -307,9 +408,9 @@ def fetch_single_item(item_code, limit=50, cursor=None):
     if cursor:
         payload["0"]["cursor"] = cursor
     try:
-        response = requests.post(API_URL, headers=headers, json=payload, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
+        r = requests.post(API_URL, headers=headers, json=payload, timeout=10)
+        if r.status_code == 200:
+            data       = r.json()
             items_data = data[0].get('result', {}).get('data', {})
             return items_data.get('items', []), items_data.get('nextCursor')
     except:
@@ -318,8 +419,7 @@ def fetch_single_item(item_code, limit=50, cursor=None):
 
 @st.cache_data(ttl=60)
 def fetch_all_items(item_code, max_pages=5):
-    all_items = []
-    cursor = None
+    all_items, cursor = [], None
     for _ in range(max_pages):
         items, cursor = fetch_single_item(item_code, limit=50, cursor=cursor)
         if not items:
@@ -343,6 +443,17 @@ def fetch_all_items(item_code, max_pages=5):
         time.sleep(0.2)
     return all_items
 
+# ========== Change 1: تشغيل المزامنة التلقائية ==========
+should_sync, elapsed_h = maybe_auto_sync()
+if should_sync:
+    if 'sync_running' not in st.session_state:
+        st.session_state.sync_running = True
+        with st.spinner("⚙️ جاري المزامنة التلقائية لبيانات المبيعات..."):
+            added = run_sales_sync()
+        st.session_state.sync_running = False
+        if added > 0:
+            st.toast(f"✅ تمت المزامنة التلقائية — {added} سجل جديد", icon="🔄")
+
 # ========== الشريط الجانبي ==========
 with st.sidebar:
     st.header("⚙️ إعدادات التحليل")
@@ -353,9 +464,9 @@ with st.sidebar:
         st_autorefresh(interval=60000, limit=100, key="auto_refresh")
 
     item_category = st.selectbox("📦 اختر نوع المعدات:", list(ITEM_CATEGORIES.keys()))
-    max_pages  = st.slider("عدد صفحات الجلب", 1, 10, 5, help="كل صفحة = 50 عنصر")
-    min_quality = st.slider("الحد الأدنى للجودة (%)", 0, 100, 0)
-    max_price  = st.number_input("الحد الأقصى للسعر", 0, 10000, 5000, step=100)
+    max_pages     = st.slider("عدد صفحات الجلب", 1, 10, 5, help="كل صفحة = 50 عنصر")
+    min_quality   = st.slider("الحد الأدنى للجودة (%)", 0, 100, 0)
+    max_price     = st.number_input("الحد الأقصى للسعر", 0, 10000, 5000, step=100)
 
     st.divider()
     st.header("⏰ فلتر الوقت")
@@ -381,9 +492,29 @@ with st.sidebar:
         st.rerun()
 
     st.divider()
+
+    # حالة المزامنة التلقائية
+    last_sync_str = _get_last_sync_time()
+    if last_sync_str:
+        try:
+            last_sync = datetime.fromisoformat(last_sync_str)
+            elapsed   = (datetime.now() - last_sync).total_seconds() / 3600
+            next_in   = max(0, SYNC_INTERVAL_HOURS - elapsed)
+            st.caption(f"🔄 **المزامنة التلقائية**\nآخر مزامنة: منذ {elapsed*60:.0f} دقيقة\nالتالية خلال: {next_in*60:.0f} دقيقة")
+        except:
+            st.caption("🔄 المزامنة التلقائية: فعّالة")
+    else:
+        st.caption("🔄 المزامنة التلقائية: ستبدأ قريباً")
+
+    if st.button("🔄 مزامنة يدوية الآن", use_container_width=True):
+        with st.spinner("جاري المزامنة..."):
+            added = run_sales_sync()
+        st.success(f"✅ تمت — {added} سجل جديد")
+
+    st.divider()
     st.caption(f"📏 **رينج القيم:** {get_range_text(ITEM_CATEGORIES[item_category])}")
 
-# ========== جلب البيانات ==========
+# ========== جلب بيانات السوق ==========
 category_config = ITEM_CATEGORIES[item_category]
 item_code       = category_config["code"]
 
@@ -400,24 +531,24 @@ secondary_name = get_secondary_name(category_config)
 
 all_items = []
 for item in raw_items:
-    quality          = calculate_quality_score(item['skills'], category_config)
-    main_value       = get_main_value(item['skills'], category_config)
-    secondary_value  = get_secondary_value(item['skills'], category_config)
-    value_for_money  = (quality / item['price']) * 1000 if item['price'] > 0 else 0
+    quality         = calculate_quality_score(item['skills'], category_config)
+    main_value      = get_main_value(item['skills'], category_config)
+    secondary_value = get_secondary_value(item['skills'], category_config)
+    value_for_money = (quality / item['price']) * 1000 if item['price'] > 0 else 0
     all_items.append({
-        'id':             item['id'],
-        'price':          item['price'],
-        'user':           item['user'],
-        'main_value':     main_value,
+        'id':              item['id'],
+        'price':           item['price'],
+        'user':            item['user'],
+        'main_value':      main_value,
         'secondary_value': secondary_value,
-        'main_name':      main_name,
-        'secondary_name': secondary_name,
-        'quality_score':  quality,
+        'main_name':       main_name,
+        'secondary_name':  secondary_name,
+        'quality_score':   quality,
         'value_for_money': value_for_money,
-        'createdAt':      item['createdAt'],
-        'time_ago':       item['time_ago'],
-        'attack':         item['attack'],
-        'critical':       item['critical']
+        'createdAt':       item['createdAt'],
+        'time_ago':        item['time_ago'],
+        'attack':          item['attack'],
+        'critical':        item['critical']
     })
 
 df = pd.DataFrame(all_items)
@@ -438,12 +569,14 @@ df_filtered['actual_avg_price'] = df_filtered.apply(
 df_filtered['actual_profit'] = df_filtered.apply(
     lambda row: row['actual_avg_price'] - row['price'] if row['actual_avg_price'] else 0, axis=1
 )
+df_filtered['actual_profit_pct'] = df_filtered.apply(
+    lambda row: (row['actual_profit'] / row['price'] * 100) if row['price'] > 0 and row['actual_profit'] > 0 else 0, axis=1
+)
 df_filtered['enhanced_value'] = df_filtered.apply(
     lambda row: row['value_for_money'] * (1 + max(0, row['actual_profit'] / row['price']))
     if row['actual_profit'] > 0 else row['value_for_money'], axis=1
 )
 
-# نسبة السعر المئوية (Price Percentile) لكل عنصر في القائمة الحالية
 all_prices_list = df_filtered['price'].tolist()
 df_filtered['price_percentile'] = df_filtered['price'].apply(
     lambda p: get_price_percentile(p, all_prices_list)
@@ -461,12 +594,12 @@ elif sort_by == "السعر (أعلى سعر أولاً)":
 else:
     df_sorted = df_filtered.sort_values('createdAt', ascending=False)
 
-# ========== العنوان وإحصائيات الهيدر ==========
+# ========== هيدر الإحصائيات ==========
 st.title("🎯 War Era - Market Analyzer")
 st.markdown(f"تحليل متقدم لسوق **الطيارات، الدبابات، والمعدات النادرة** — {item_category}")
 
 if len(df_filtered) > 0:
-    sell_velocity = get_sell_velocity(item_code)
+    cat_velocity = get_category_sell_velocity(item_code)
 
     h1, h2, h3, h4, h5 = st.columns(5)
     with h1:
@@ -478,16 +611,16 @@ if len(df_filtered) > 0:
     with h4:
         st.metric("📊 متوسط السعر", f"${add_tax(df_filtered['price'].mean()):,.2f}")
     with h5:
-        if sell_velocity is not None:
-            st.metric("⚡ سرعة البيع", f"~{sell_velocity:.1f} ساعة", help="متوسط الوقت بين كل عملية بيع بناءً على السجل التاريخي")
+        if cat_velocity is not None:
+            st.metric("⚡ سرعة البيع (عام)", f"~{cat_velocity:.1f} ساعة", help="متوسط الوقت بين مبيعات هذا النوع عموماً")
         else:
-            st.metric("⚡ سرعة البيع", "لا يوجد بيانات", help="تحتاج مبيعات مسجلة في Sales Analyzer أولاً")
+            st.metric("⚡ سرعة البيع", "لا يوجد بيانات", help="تحتاج مبيعات مسجلة أولاً — تتم المزامنة تلقائياً كل ساعة")
     st.divider()
 
-# ========== التبويبات الأربعة ==========
+# ========== التبويبات ==========
 tab1, tab2, tab3, tab4 = st.tabs([
     "📋 الجدول",
-    "🏆 أفضل الصفقات",
+    "🔥 أفضل الصفقات",
     "🔍 تحليل العنصر",
     "💰 صائد الأرباح"
 ])
@@ -503,18 +636,14 @@ with tab1:
         display_df = df_sorted[['price', 'main_value', 'secondary_value', 'quality_score',
                                  'price_percentile', 'value_for_money', 'user', 'time_ago']].copy()
         display_df['price'] = display_df['price'].apply(add_tax)
-        display_df.columns = [
-            'السعر بعد الضريبة', main_name, f'{secondary_name}%',
-            'الجودة%', 'أرخص من%', 'القيمة/السعر', 'البائع', 'منذ'
-        ]
+        display_df.columns = ['السعر بعد الضريبة', main_name, f'{secondary_name}%',
+                               'الجودة%', 'أرخص من%', 'القيمة/السعر', 'البائع', 'منذ']
     else:
         display_df = df_sorted[['price', 'main_value', 'quality_score',
                                  'price_percentile', 'value_for_money', 'user', 'time_ago']].copy()
         display_df['price'] = display_df['price'].apply(add_tax)
-        display_df.columns = [
-            'السعر بعد الضريبة', main_name,
-            'الجودة%', 'أرخص من%', 'القيمة/السعر', 'البائع', 'منذ'
-        ]
+        display_df.columns = ['السعر بعد الضريبة', main_name,
+                               'الجودة%', 'أرخص من%', 'القيمة/السعر', 'البائع', 'منذ']
 
     st.data_editor(
         display_df,
@@ -522,12 +651,9 @@ with tab1:
             "السعر بعد الضريبة": st.column_config.NumberColumn("💰 السعر بعد الضريبة", format="$ %.2f"),
             "الجودة%": st.column_config.ProgressColumn("الجودة%", format="%.1f %%", min_value=0, max_value=100),
             "أرخص من%": st.column_config.ProgressColumn("أرخص من%", format="%.0f %%", min_value=0, max_value=100,
-                                                          help="هذا السعر أقل من X% من العناصر المماثلة — كلما ارتفعت النسبة كلما كانت الصفقة أفضل"),
+                help="هذا السعر أقل من X% من العروض الحالية — كلما ارتفعت النسبة كلما كانت الصفقة أفضل"),
         },
-        use_container_width=True,
-        height=500,
-        hide_index=True,
-        disabled=True
+        use_container_width=True, height=500, hide_index=True, disabled=True
     )
 
     # تنبيهات تيليجرام للعناصر الجديدة
@@ -536,57 +662,98 @@ with tab1:
     )]
     if len(recent_in_table) > 0:
         sent_alerts = load_sent_alerts()
-        for _, item in recent_in_table.iterrows():
-            alert_id = f"table_{item_category}_{item['main_value']}_{item['secondary_value']}_{item['price']}"
+        for _, item_row in recent_in_table.iterrows():
+            alert_id = f"table_{item_category}_{item_row['main_value']}_{item_row['secondary_value']}_{item_row['price']}"
             if alert_id not in sent_alerts:
                 sent_alerts.append(alert_id)
                 send_telegram_alert(
                     title="🆕 عنصر جديد في السوق!",
-                    message=f"{item_category}\n🔍 {item['main_name']}: {item['main_value']} | {item['secondary_name']}: {item['secondary_value']}",
-                    price=add_tax(item['price']),
+                    message=f"{item_category}\n🔍 {item_row['main_name']}: {item_row['main_value']} | {item_row['secondary_name']}: {item_row['secondary_value']}",
+                    price=add_tax(item_row['price']),
                     profit=None
                 )
         save_sent_alerts(sent_alerts)
 
 # ------------------------------------------------------------------
-# TAB 2: أفضل الصفقات
+# TAB 2: أفضل الصفقات — Change 3: منطق جديد مبني على سعر البيع الفعلي
 # ------------------------------------------------------------------
 with tab2:
-    st.subheader("🏆 أفضل 10 صفقات (بناءً على القيمة المعززة)")
+    st.subheader("🔥 أفضل الصفقات — مبنية على سعر البيع الفعلي")
 
-    best_value = df_filtered.nlargest(10, 'enhanced_value')
+    # العناصر التي لديها سعر بيع فعلي
+    deals_with_data = df_filtered[
+        df_filtered['actual_avg_price'].notna() & (df_filtered['actual_avg_price'] > 0)
+    ].copy()
 
-    for rank, (_, row) in enumerate(best_value.iterrows(), start=1):
-        with st.container(border=True):
-            col1, col2, col3 = st.columns([3, 1, 1])
-            with col1:
-                st.write(f"**{rank}. 💰 السعر بعد الضريبة: ${add_tax(row['price']):,.2f}** (منذ {row['time_ago']})")
-                if row['secondary_name']:
-                    st.write(f"   {row['main_name']}: {row['main_value']} | {row['secondary_name']}: {row['secondary_value']}%")
-                else:
-                    st.write(f"   {row['main_name']}: {row['main_value']}")
-                if row['actual_avg_price'] and row['actual_avg_price'] > 0:
-                    st.caption(f"📊 متوسط البيع الفعلي (آخر 3 أيام): ${row['actual_avg_price']:.2f}")
-                    if row['actual_profit'] > 0:
-                        st.caption(f"💰 الربح المتوقع: +${row['actual_profit']:.2f}")
-            with col2:
-                st.metric("الجودة", f"{row['quality_score']}%")
-                if row['actual_avg_price'] and row['actual_avg_price'] > 0:
-                    st.metric("الربح الفعلي", f"+{row['actual_profit']:.0f}$")
-            with col3:
-                if row['price_percentile'] is not None:
-                    pct = int(row['price_percentile'])
-                    label = "🔥 صفقة ممتازة" if pct >= 80 else "👍 سعر جيد" if pct >= 50 else "⚠️ سعر عالي"
-                    st.metric("أرخص من%", f"{pct}%", help="نسبة العناصر الأغلى من هذا السعر")
-                    st.caption(label)
-            st.caption(f"👤 البائع: {row['user']}")
+    # العناصر المسعّرة أقل من متوسط البيع الفعلي (ربح محتمل)
+    flip_candidates = deals_with_data[deals_with_data['actual_profit'] > 0].copy()
+    flip_candidates = flip_candidates.sort_values('actual_profit_pct', ascending=False)
+
+    if len(flip_candidates) > 0:
+        st.success(f"✅ وجدنا **{len(flip_candidates)}** عنصر مسعّر أقل من متوسط البيع الفعلي")
+
+        for rank, (_, row) in enumerate(flip_candidates.head(10).iterrows(), start=1):
+            profit_pct = row['actual_profit_pct']
+            is_best_flip = profit_pct >= 10
+
+            card_class = "best-flip" if is_best_flip else "deal-card"
+            badge = "🔥 Best Flip!" if profit_pct >= 20 else "🔥 صفقة ممتازة" if profit_pct >= 10 else "👍 صفقة جيدة"
+
+            with st.container(border=True):
+                col1, col2, col3 = st.columns([3, 1, 1])
+                with col1:
+                    header_text = f"**{rank}. {badge}** — منذ {row['time_ago']}"
+                    st.markdown(header_text)
+                    if row['secondary_name']:
+                        st.write(f"   {row['main_name']}: {row['main_value']} | {row['secondary_name']}: {row['secondary_value']}%")
+                    else:
+                        st.write(f"   {row['main_name']}: {row['main_value']}")
+                    st.caption(
+                        f"💰 سعر الشراء: **${add_tax(row['price']):,.2f}** &nbsp;|&nbsp; "
+                        f"📊 متوسط البيع الفعلي (3 أيام): **${row['actual_avg_price']:.2f}**"
+                    )
+                with col2:
+                    st.metric("الجودة", f"{row['quality_score']}%")
+                    st.metric("الربح المتوقع", f"+${row['actual_profit']:.2f}")
+                with col3:
+                    st.metric("هامش الربح", f"{profit_pct:.1f}%")
+                    if row['price_percentile'] is not None:
+                        st.caption(f"أرخص من {int(row['price_percentile'])}% من السوق")
+                st.caption(f"👤 البائع: {row['user']}")
+    else:
+        st.info("⚠️ لا توجد صفقات مربحة بناءً على بيانات البيع الفعلي حالياً.")
+        st.caption("السبب: بيانات المبيعات الفعلية غير متوفرة بعد، أو جميع العناصر مسعّرة فوق المتوسط.")
+
+        # Fallback: أفضل قيمة مقابل السعر
+        st.markdown("---")
+        st.subheader("🏆 أفضل قيمة مقابل السعر (بديل مؤقت)")
+        best_value = df_filtered.nlargest(10, 'enhanced_value')
+
+        for rank, (_, row) in enumerate(best_value.iterrows(), start=1):
+            with st.container(border=True):
+                col1, col2, col3 = st.columns([3, 1, 1])
+                with col1:
+                    st.write(f"**{rank}. 💰 ${add_tax(row['price']):,.2f}** (منذ {row['time_ago']})")
+                    if row['secondary_name']:
+                        st.write(f"   {row['main_name']}: {row['main_value']} | {row['secondary_name']}: {row['secondary_value']}%")
+                    else:
+                        st.write(f"   {row['main_name']}: {row['main_value']}")
+                with col2:
+                    st.metric("الجودة", f"{row['quality_score']}%")
+                with col3:
+                    if row['price_percentile'] is not None:
+                        pct = int(row['price_percentile'])
+                        label = "🔥 ممتازة" if pct >= 80 else "👍 جيدة" if pct >= 50 else "⚠️ عالي"
+                        st.metric("أرخص من%", f"{pct}%")
+                        st.caption(label)
+                st.caption(f"👤 البائع: {row['user']}")
 
 # ------------------------------------------------------------------
-# TAB 3: تحليل العنصر (دمج تحليل الأسعار التاريخي + تحليل السوق)
+# TAB 3: تحليل العنصر — مع سرعة البيع الخاصة (Change 2)
 # ------------------------------------------------------------------
 with tab3:
     st.subheader("🔍 تحليل العنصر — التاريخي والسوقي")
-    st.markdown("اختر عنصراً لتحليل تاريخ أسعاره ومقارنته بالسوق الحالي")
+    st.markdown("اختر عنصراً لتحليل تاريخ أسعاره، مقارنته بالسوق، وسرعة بيعه")
 
     temp_df = df_sorted.head(50).copy()
     temp_df['display'] = temp_df.apply(
@@ -597,12 +764,12 @@ with tab3:
     selected_display = st.selectbox("اختر عنصر للتحليل:", options=temp_df['display'].tolist())
 
     if selected_display:
-        selected = temp_df[temp_df['display'] == selected_display].iloc[0]
+        selected      = temp_df[temp_df['display'] == selected_display].iloc[0]
         current_price = selected['price']
 
         # --- تحديث سجل الأسعار ---
         price_history = load_price_history()
-        item_key = categorize_item(selected, category_config)
+        item_key      = categorize_item(selected, category_config)
         if item_key not in price_history:
             price_history[item_key] = []
         is_dup = any(
@@ -611,34 +778,52 @@ with tab3:
         )
         if not is_dup:
             price_history[item_key].append({
-                'price':          current_price,
-                'time':           datetime.now().isoformat(),
-                'user':           selected['user'],
-                'main_value':     selected['main_value'],
+                'price':           current_price,
+                'time':            datetime.now().isoformat(),
+                'user':            selected['user'],
+                'main_value':      selected['main_value'],
                 'secondary_value': selected['secondary_value']
             })
             price_history[item_key] = price_history[item_key][-50:]
             save_price_history(price_history)
 
-        history = price_history[item_key]
-        prices  = [h['price'] for h in history]
+        history        = price_history[item_key]
+        prices         = [h['price'] for h in history]
         min_price_hist = min(prices)
         max_price_hist = max(prices)
         avg_price_hist = sum(prices) / len(prices)
 
-        # --- عناصر مشابهة للتحليل السوقي ---
+        # --- عناصر مشابهة ---
         similar_items = df_filtered[
             (df_filtered['main_value'].between(selected['main_value'] - 10, selected['main_value'] + 10)) &
             (df_filtered['quality_score'].between(selected['quality_score'] - 10, selected['quality_score'] + 10))
         ].copy()
-        market_avg   = similar_items['price'].mean() if len(similar_items) > 1 else None
-        market_min   = similar_items['price'].min()  if len(similar_items) > 1 else None
-        market_max   = similar_items['price'].max()  if len(similar_items) > 1 else None
+        market_avg    = similar_items['price'].mean() if len(similar_items) > 1 else None
+        market_min    = similar_items['price'].min()  if len(similar_items) > 1 else None
+        market_max    = similar_items['price'].max()  if len(similar_items) > 1 else None
         similar_count = len(similar_items)
 
         actual_avg_price = get_average_sale_price(item_code, selected['main_value'], 3)
 
-        # --- قسم: الإحصائيات المجمعة ---
+        # --- Change 2: سرعة البيع الخاصة بهذا العنصر ---
+        item_velocity_hr, velocity_count = get_item_sell_velocity(
+            item_code, selected['main_value'], selected['secondary_value'], category_config
+        )
+        velocity_text = format_velocity(item_velocity_hr)
+
+        # --- شريط سرعة البيع ---
+        if velocity_text:
+            st.info(
+                f"🕐 **سرعة البيع لهذا النوع:** عناصر مشابهة تُباع كل **{velocity_text}** "
+                f"(بناءً على {velocity_count} صفقة مسجّلة)"
+            )
+        else:
+            if velocity_count > 0:
+                st.caption(f"🕐 سرعة البيع: سجلنا {velocity_count} صفقة فقط — نحتاج 2+ لحساب الوقت")
+            else:
+                st.caption("🕐 سرعة البيع: لا توجد مبيعات مسجّلة لهذا النوع بعد — تتم المزامنة تلقائياً كل ساعة")
+
+        # --- إحصائيات السعر ---
         st.markdown("#### 📊 إحصائيات السعر")
         c1, c2, c3, c4, c5 = st.columns(5)
         with c1:
@@ -650,18 +835,15 @@ with tab3:
         with c3:
             st.metric("📈 متوسط تاريخي", f"${add_tax(avg_price_hist):.0f}")
         with c4:
-            if market_avg:
-                st.metric("🏪 متوسط السوق الحالي", f"${add_tax(market_avg):.2f}")
-            else:
-                st.metric("🏪 متوسط السوق الحالي", "—")
+            st.metric("🏪 متوسط السوق الحالي", f"${add_tax(market_avg):.2f}" if market_avg else "—")
         with c5:
             if actual_avg_price:
                 st.metric("✅ متوسط البيع الفعلي", f"${actual_avg_price:.2f}",
                           help="متوسط أسعار المبيعات الحقيقية (آخر 3 أيام)")
             else:
-                st.metric("✅ متوسط البيع الفعلي", "لا يوجد بيانات")
+                st.metric("✅ متوسط البيع الفعلي", "جاري التجميع...")
 
-        # --- قسم: تقييم الصفقة ---
+        # --- تقييم الصفقة ---
         st.markdown("#### 🎯 تقييم الصفقة")
         col_hist, col_market = st.columns(2)
 
@@ -677,12 +859,13 @@ with tab3:
                 st.error("❌ سعر مرتفع — الأفضل تستنى")
 
         with col_market:
-            st.markdown("**بناءً على السوق الحالي:**")
+            st.markdown("**بناءً على البيع الفعلي / السوق:**")
             if actual_avg_price and actual_avg_price > 0:
+                profit_pct = (actual_avg_price - current_price) / current_price * 100
                 if current_price <= actual_avg_price * 0.8:
-                    st.success("✅ فرصة ممتازة — أقل من متوسط البيع بـ 20%+")
+                    st.success(f"✅ فرصة ممتازة — أقل من متوسط البيع بـ {profit_pct:.1f}%")
                 elif current_price <= actual_avg_price:
-                    st.success("👍 سعر جيد — أقل من متوسط البيع الفعلي")
+                    st.success(f"👍 سعر جيد — أقل من متوسط البيع بـ {profit_pct:.1f}%")
                 elif current_price <= actual_avg_price * 1.1:
                     st.warning("⚠️ سعر مقبول — قريب من متوسط البيع الفعلي")
                 else:
@@ -691,34 +874,31 @@ with tab3:
                 if current_price <= market_min:
                     st.success("✅ أقل سعر في السوق حالياً!")
                 elif current_price < market_avg * 0.8:
-                    pct_below = ((market_avg - current_price) / market_avg * 100)
-                    st.success(f"✅ سعر ممتاز — أقل من المتوسط بـ {pct_below:.0f}%")
+                    st.success(f"✅ سعر ممتاز — أقل من المتوسط بـ {((market_avg-current_price)/market_avg*100):.0f}%")
                 elif current_price < market_avg:
                     st.info("👍 سعر جيد — أقل بقليل من المتوسط")
                 elif current_price < market_avg * 1.2:
-                    pct_above = ((current_price - market_avg) / market_avg * 100)
-                    st.warning(f"⚠️ سعر مرتفع — أعلى من المتوسط بـ {pct_above:.0f}%")
+                    st.warning(f"⚠️ سعر مرتفع — أعلى من المتوسط بـ {((current_price-market_avg)/market_avg*100):.0f}%")
                 else:
-                    pct_above = ((current_price - market_avg) / market_avg * 100)
-                    st.error(f"❌ سعر مرتفع جداً — أعلى من المتوسط بـ {pct_above:.0f}%")
+                    st.error(f"❌ سعر مرتفع جداً — أعلى من المتوسط بـ {((current_price-market_avg)/market_avg*100):.0f}%")
             else:
                 st.caption("📊 لا توجد عناصر مشابهة كافية للمقارنة")
 
-        # --- قسم: السيولة ---
+        # --- السيولة ---
         if similar_count > 1:
             st.markdown("#### 🔄 سيولة السوق")
             liq_c1, liq_c2, liq_c3 = st.columns(3)
             with liq_c1:
                 st.metric("عناصر مشابهة", similar_count)
             with liq_c2:
-                if market_avg:
+                if market_min:
                     st.metric("أدنى سعر مشابه", f"${add_tax(market_min):.2f}")
             with liq_c3:
-                if market_avg:
+                if market_max:
                     st.metric("أعلى سعر مشابه", f"${add_tax(market_max):.2f}")
 
             if similar_count <= 3:
-                st.success(f"✅ سوق نادر جداً — {similar_count} عنصر فقط، سهولة بيع عالية")
+                st.success(f"✅ سوق نادر جداً — {similar_count} عنصر فقط")
             elif similar_count <= 8:
                 st.success(f"✅ سوق جيد — {similar_count} عناصر مشابهة")
             elif similar_count <= 15:
@@ -728,17 +908,17 @@ with tab3:
             else:
                 st.error(f"❌ سوق مشبع جداً — {similar_count} عناصر مشابهة")
 
-        # --- قسم: الرسوم البيانية ---
+        # --- الرسوم البيانية ---
         chart_c1, chart_c2 = st.columns(2)
-
         with chart_c1:
             st.markdown("#### 📈 تطور الأسعار التاريخي")
-            history_df = pd.DataFrame(sorted(history, key=lambda x: x['time']))
-            history_df['time_dt'] = pd.to_datetime(history_df['time'])
-            fig_hist = px.line(history_df, x='time_dt', y='price',
-                               title='تاريخ الأسعار', markers=True)
-            fig_hist.add_hline(y=current_price, line_dash="dash", line_color="red",   annotation_text="الحالي")
+            history_df             = pd.DataFrame(sorted(history, key=lambda x: x['time']))
+            history_df['time_dt']  = pd.to_datetime(history_df['time'])
+            fig_hist               = px.line(history_df, x='time_dt', y='price', title='تاريخ الأسعار', markers=True)
+            fig_hist.add_hline(y=current_price,  line_dash="dash", line_color="red",   annotation_text="الحالي")
             fig_hist.add_hline(y=min_price_hist, line_dash="dash", line_color="green", annotation_text="أقل سعر")
+            if actual_avg_price:
+                fig_hist.add_hline(y=actual_avg_price, line_dash="dot", line_color="cyan", annotation_text="متوسط البيع")
             fig_hist.update_layout(template='plotly_dark', margin=dict(t=40, b=0))
             st.plotly_chart(fig_hist, use_container_width=True)
 
@@ -751,10 +931,11 @@ with tab3:
                 if market_avg:
                     fig_dist.add_vline(x=current_price, line_dash="dash", line_color="red",   annotation_text="الحالي")
                     fig_dist.add_vline(x=market_avg,    line_dash="dash", line_color="green",  annotation_text="المتوسط")
+                if actual_avg_price:
+                    fig_dist.add_vline(x=actual_avg_price, line_dash="dot", line_color="cyan", annotation_text="متوسط البيع")
                 fig_dist.update_layout(template='plotly_dark', margin=dict(t=40, b=0))
                 st.plotly_chart(fig_dist, use_container_width=True)
 
-        # --- آخر الأسعار المشوهدة ---
         with st.expander("📜 آخر 10 أسعار شوهدت"):
             for h in sorted(history, key=lambda x: x['time'], reverse=True)[:10]:
                 ago_str = time_ago(h['time'])
@@ -769,7 +950,7 @@ with tab3:
                 st.dataframe(display_similar, use_container_width=True)
 
 # ------------------------------------------------------------------
-# TAB 4: صائد الأرباح — يعمل فقط عند الضغط على "مسح الآن"
+# TAB 4: صائد الأرباح
 # ------------------------------------------------------------------
 with tab4:
     st.subheader("💰 صائد الأرباح الشامل")
@@ -813,17 +994,17 @@ with tab4:
                         main_val = get_main_value(item['skills'], cat_config)
                         sec_val  = get_secondary_value(item['skills'], cat_config)
                         all_results.append({
-                            'category':       cat_name,
-                            'price':          item['price'],
-                            'quality':        quality,
-                            'main_value':     main_val,
+                            'category':        cat_name,
+                            'price':           item['price'],
+                            'quality':         quality,
+                            'main_value':      main_val,
                             'secondary_value': sec_val,
-                            'main_name':      get_main_name(cat_config),
-                            'secondary_name': get_secondary_name(cat_config),
-                            'user':           item['user'][:8],
-                            'time_ago':       time_ago(item['createdAt']),
-                            'hours_ago':      round(hours_diff, 1),
-                            'createdAt':      item['createdAt']
+                            'main_name':       get_main_name(cat_config),
+                            'secondary_name':  get_secondary_name(cat_config),
+                            'user':            item['user'][:8],
+                            'time_ago':        time_ago(item['createdAt']),
+                            'hours_ago':       round(hours_diff, 1),
+                            'createdAt':       item['createdAt']
                         })
                     except:
                         continue
@@ -845,20 +1026,20 @@ with tab4:
                 expected_profit = group_avg - row['price']
                 if expected_profit >= min_profit_usd:
                     profit_results.append({
-                        'category':       cat,
-                        'price':          row['price'],
-                        'avg_price':      group_avg,
+                        'category':        cat,
+                        'price':           row['price'],
+                        'avg_price':       group_avg,
                         'expected_profit': expected_profit,
-                        'profit_margin':  (expected_profit / row['price']) * 100,
-                        'quality':        row['quality'],
-                        'main_value':     row['main_value'],
+                        'profit_margin':   (expected_profit / row['price']) * 100,
+                        'quality':         row['quality'],
+                        'main_value':      row['main_value'],
                         'secondary_value': row['secondary_value'],
-                        'main_name':      row['main_name'],
-                        'secondary_name': row['secondary_name'],
-                        'user':           row['user'],
-                        'time_ago':       row['time_ago'],
-                        'hours_ago':      row['hours_ago'],
-                        'similar_count':  len(group)
+                        'main_name':       row['main_name'],
+                        'secondary_name':  row['secondary_name'],
+                        'user':            row['user'],
+                        'time_ago':        row['time_ago'],
+                        'hours_ago':       row['hours_ago'],
+                        'similar_count':   len(group)
                     })
 
     if not profit_results:
@@ -867,7 +1048,7 @@ with tab4:
 
     df_results = pd.DataFrame(profit_results).sort_values('expected_profit', ascending=False).head(20)
 
-    # تنبيهات تيليجرام للصفقات الجديدة
+    # تنبيهات تيليجرام
     recent_deals = df_results[df_results['hours_ago'] <= 1]
     if len(recent_deals) > 0:
         sent_alerts = load_sent_alerts()
