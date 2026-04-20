@@ -138,6 +138,13 @@
       "user": "69555230",
       "main_value": 107,
       "secondary_value": 0
+    },
+    {
+      "price": 127.0,
+      "time": "2026-04-20T18:50:32.604948",
+      "user": "698a4c04",
+      "main_value": 107,
+      "secondary_value": 0
     }
   ],
   "helmet6_V150": [
@@ -198,6 +205,13 @@
       "price": 510.0,
       "time": "2026-04-19T14:26:08.078514",
       "user": "68796073",
+      "main_value": 59,
+      "secondary_value": 0
+    },
+    {
+      "price": 509.9,
+      "time": "2026-04-20T18:59:13.205708",
+      "user": "69822f1f",
       "main_value": 59,
       "secondary_value": 0
     }
@@ -273,6 +287,13 @@
       "user": "697a6095",
       "main_value": 49,
       "secondary_value": 0
+    },
+    {
+      "price": 128.0,
+      "time": "2026-04-20T18:56:55.115921",
+      "user": "68a8b9aa",
+      "main_value": 49,
+      "secondary_value": 0
     }
   ],
   "tank_A165_C32": [
@@ -289,6 +310,13 @@
       "user": "69972a66",
       "main_value": 163,
       "secondary_value": 31
+    },
+    {
+      "price": 173.267,
+      "time": "2026-04-20T18:50:17.482063",
+      "user": "69aebe2a",
+      "main_value": 163,
+      "secondary_value": 32
     }
   ],
   "helmet5_V110": [
@@ -328,6 +356,13 @@
       "user": "69a9dda3",
       "main_value": 59,
       "secondary_value": 0
+    },
+    {
+      "price": 400.0,
+      "time": "2026-04-20T18:56:26.644116",
+      "user": "6895dc73",
+      "main_value": 60,
+      "secondary_value": 0
     }
   ],
   "chest5_V50": [
@@ -335,6 +370,13 @@
       "price": 131.98,
       "time": "2026-04-19T17:49:16.866126",
       "user": "69a3e618",
+      "main_value": 50,
+      "secondary_value": 0
+    },
+    {
+      "price": 129.0,
+      "time": "2026-04-20T18:53:06.289717",
+      "user": "698a4c04",
       "main_value": 50,
       "secondary_value": 0
     }
@@ -353,6 +395,13 @@
       "price": 158.317,
       "time": "2026-04-19T18:27:12.054872",
       "user": "687e0a98",
+      "main_value": 40,
+      "secondary_value": 0
+    },
+    {
+      "price": 152.999,
+      "time": "2026-04-20T18:55:55.965081",
+      "user": "68fb6975",
       "main_value": 40,
       "secondary_value": 0
     }
@@ -379,6 +428,13 @@
       "time": "2026-04-19T18:55:30.150927",
       "user": "692e0f48",
       "main_value": 38,
+      "secondary_value": 0
+    },
+    {
+      "price": 184.0,
+      "time": "2026-04-20T18:57:50.580080",
+      "user": "699d48f7",
+      "main_value": 39,
       "secondary_value": 0
     }
   ],
@@ -795,6 +851,24 @@
       "user": "69a9dda3",
       "main_value": 233,
       "secondary_value": 50
+    }
+  ],
+  "chest6_V70": [
+    {
+      "price": 380.0,
+      "time": "2026-04-20T18:53:24.478775",
+      "user": "69642711",
+      "main_value": 70,
+      "secondary_value": 0
+    }
+  ],
+  "pants6_V70": [
+    {
+      "price": 336.0,
+      "time": "2026-04-20T18:57:31.177126",
+      "user": "68c78b3c",
+      "main_value": 68,
+      "secondary_value": 0
     }
   ]
 }

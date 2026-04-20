@@ -4501,6 +4501,12 @@
   ],
   "pants5": [
     {
+      "price": 120.95,
+      "time": "2026-04-20T18:56:37.695Z",
+      "main_value": 47,
+      "secondary_value": 0
+    },
+    {
       "price": 101.95,
       "time": "2026-04-20T18:40:16.145Z",
       "main_value": 39,
@@ -5555,6 +5561,12 @@
   ],
   "boots5": [
     {
+      "price": 174.256,
+      "time": "2026-04-20T18:59:28.579Z",
+      "main_value": 38,
+      "secondary_value": 0
+    },
+    {
       "price": null,
       "time": "2026-04-20T18:37:04.892Z",
       "main_value": 37,
@@ -6084,6 +6096,12 @@
     }
   ],
   "boots6": [
+    {
+      "price": 395,
+      "time": "2026-04-20T18:57:57.224Z",
+      "main_value": 54,
+      "secondary_value": 0
+    },
     {
       "price": 499,
       "time": "2026-04-20T13:05:34.451Z",
