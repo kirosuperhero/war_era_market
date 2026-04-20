@@ -510,6 +510,24 @@
   "jet": [
     {
       "price": null,
+      "time": "2026-04-20T18:45:11.025Z",
+      "main_value": 288,
+      "secondary_value": 49
+    },
+    {
+      "price": null,
+      "time": "2026-04-20T18:37:04.892Z",
+      "main_value": 295,
+      "secondary_value": 47
+    },
+    {
+      "price": 400,
+      "time": "2026-04-20T18:34:03.248Z",
+      "main_value": 238,
+      "secondary_value": 48
+    },
+    {
+      "price": null,
       "time": "2026-04-20T17:03:05.289Z",
       "main_value": 257,
       "secondary_value": 49
@@ -1075,6 +1093,54 @@
   ],
   "tank": [
     {
+      "price": 146,
+      "time": "2026-04-20T18:22:00.939Z",
+      "main_value": 141,
+      "secondary_value": 28
+    },
+    {
+      "price": 156,
+      "time": "2026-04-20T18:12:58.301Z",
+      "main_value": 158,
+      "secondary_value": 29
+    },
+    {
+      "price": 156,
+      "time": "2026-04-20T18:12:55.493Z",
+      "main_value": 146,
+      "secondary_value": 31
+    },
+    {
+      "price": 164.7,
+      "time": "2026-04-20T18:03:07.937Z",
+      "main_value": 147,
+      "secondary_value": 33
+    },
+    {
+      "price": 152,
+      "time": "2026-04-20T18:00:39.959Z",
+      "main_value": 156,
+      "secondary_value": 34
+    },
+    {
+      "price": 152,
+      "time": "2026-04-20T17:38:38.805Z",
+      "main_value": 160,
+      "secondary_value": 33
+    },
+    {
+      "price": 154.4,
+      "time": "2026-04-20T17:31:21.994Z",
+      "main_value": 154,
+      "secondary_value": 28
+    },
+    {
+      "price": 160,
+      "time": "2026-04-20T17:22:03.856Z",
+      "main_value": 168,
+      "secondary_value": 28
+    },
+    {
       "price": 178,
       "time": "2026-04-20T17:18:11.792Z",
       "main_value": 145,
@@ -1623,6 +1689,42 @@
   ],
   "helmet5": [
     {
+      "price": null,
+      "time": "2026-04-20T18:37:04.892Z",
+      "main_value": 109,
+      "secondary_value": 0
+    },
+    {
+      "price": 123,
+      "time": "2026-04-20T18:03:55.058Z",
+      "main_value": 105,
+      "secondary_value": 0
+    },
+    {
+      "price": 126.99,
+      "time": "2026-04-20T18:03:44.448Z",
+      "main_value": 107,
+      "secondary_value": 0
+    },
+    {
+      "price": 126.99,
+      "time": "2026-04-20T18:03:40.832Z",
+      "main_value": 107,
+      "secondary_value": 0
+    },
+    {
+      "price": 149.999,
+      "time": "2026-04-20T17:41:40.737Z",
+      "main_value": 109,
+      "secondary_value": 0
+    },
+    {
+      "price": 105.5,
+      "time": "2026-04-20T17:41:11.964Z",
+      "main_value": 94,
+      "secondary_value": 0
+    },
+    {
       "price": 111,
       "time": "2026-04-20T17:20:27.965Z",
       "main_value": 100,
@@ -2128,6 +2230,42 @@
     }
   ],
   "chest5": [
+    {
+      "price": null,
+      "time": "2026-04-20T18:45:11.025Z",
+      "main_value": 44,
+      "secondary_value": 0
+    },
+    {
+      "price": null,
+      "time": "2026-04-20T18:37:04.892Z",
+      "main_value": 40,
+      "secondary_value": 0
+    },
+    {
+      "price": 113,
+      "time": "2026-04-20T18:34:19.109Z",
+      "main_value": 46,
+      "secondary_value": 0
+    },
+    {
+      "price": 112,
+      "time": "2026-04-20T18:04:50.471Z",
+      "main_value": 45,
+      "secondary_value": 0
+    },
+    {
+      "price": 109.9,
+      "time": "2026-04-20T18:04:48.612Z",
+      "main_value": 45,
+      "secondary_value": 0
+    },
+    {
+      "price": 108,
+      "time": "2026-04-20T18:04:46.481Z",
+      "main_value": 45,
+      "secondary_value": 0
+    },
     {
       "price": 123.8,
       "time": "2026-04-20T16:52:06.251Z",
@@ -3250,6 +3388,42 @@
   "gloves5": [
     {
       "price": null,
+      "time": "2026-04-20T18:45:11.025Z",
+      "main_value": 35,
+      "secondary_value": 0
+    },
+    {
+      "price": 115,
+      "time": "2026-04-20T18:31:35.473Z",
+      "main_value": 31,
+      "secondary_value": 0
+    },
+    {
+      "price": 124.8,
+      "time": "2026-04-20T18:06:39.819Z",
+      "main_value": 34,
+      "secondary_value": 0
+    },
+    {
+      "price": 123,
+      "time": "2026-04-20T18:06:37.564Z",
+      "main_value": 34,
+      "secondary_value": 0
+    },
+    {
+      "price": 120,
+      "time": "2026-04-20T18:06:35.554Z",
+      "main_value": 34,
+      "secondary_value": 0
+    },
+    {
+      "price": 114.95,
+      "time": "2026-04-20T17:47:08.540Z",
+      "main_value": 31,
+      "secondary_value": 0
+    },
+    {
+      "price": null,
       "time": "2026-04-20T17:03:05.289Z",
       "main_value": 33,
       "secondary_value": 0
@@ -4327,6 +4501,48 @@
   ],
   "pants5": [
     {
+      "price": 101.95,
+      "time": "2026-04-20T18:40:16.145Z",
+      "main_value": 39,
+      "secondary_value": 0
+    },
+    {
+      "price": 103,
+      "time": "2026-04-20T18:34:59.092Z",
+      "main_value": 42,
+      "secondary_value": 0
+    },
+    {
+      "price": 120,
+      "time": "2026-04-20T18:34:25.889Z",
+      "main_value": 46,
+      "secondary_value": 0
+    },
+    {
+      "price": 102,
+      "time": "2026-04-20T18:11:41.036Z",
+      "main_value": 42,
+      "secondary_value": 0
+    },
+    {
+      "price": 120,
+      "time": "2026-04-20T18:07:36.204Z",
+      "main_value": 46,
+      "secondary_value": 0
+    },
+    {
+      "price": 116,
+      "time": "2026-04-20T18:07:34.401Z",
+      "main_value": 45,
+      "secondary_value": 0
+    },
+    {
+      "price": 112,
+      "time": "2026-04-20T18:07:32.400Z",
+      "main_value": 45,
+      "secondary_value": 0
+    },
+    {
       "price": 129.402,
       "time": "2026-04-20T16:52:24.595Z",
       "main_value": 49,
@@ -5338,6 +5554,18 @@
     }
   ],
   "boots5": [
+    {
+      "price": null,
+      "time": "2026-04-20T18:37:04.892Z",
+      "main_value": 37,
+      "secondary_value": 0
+    },
+    {
+      "price": 177,
+      "time": "2026-04-20T18:05:25.181Z",
+      "main_value": 39,
+      "secondary_value": 0
+    },
     {
       "price": 178.21,
       "time": "2026-04-20T16:53:23.413Z",

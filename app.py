@@ -5,6 +5,7 @@ import requests
 import time
 import json
 import os
+import math
 from datetime import datetime
 import numpy as np
 
@@ -295,6 +296,122 @@ def get_price_percentile(price, all_prices):
     cheaper_than = sum(1 for p in all_prices if p > price)
     return round((cheaper_than / len(all_prices)) * 100, 0)
 
+# ========== Deal Score — مبني على بيانات السوق الفعلية ==========
+# معايرة من تحليل 712 عملية بيع فعلية:
+#   متوسط الهامش: 5.8% | p50: 4.2% | p90 (أفضل 10%): 12.7%
+#   الانحراف المطلق: p50=$7.5 | p90=$30.5
+
+def get_bucket_stats(item_code, main_value, secondary_value, category_config, days_back=7):
+    """
+    يحسب متوسط سعر البيع وعدد الصفقات للمجموعة المحددة (نفس منطق categorize_item).
+    يتجاهل السجلات بدون سعر (null = عناصر انتهت أو سُحبت، لم تُباع).
+    """
+    cache = load_sales_cache()
+    if item_code not in cache:
+        return None, 0
+
+    is_combat = category_config['type'] in ['jet', 'tank']
+    if is_combat:
+        target_a = round(main_value      / 5) * 5
+        target_c = round(secondary_value / 2) * 2
+    else:
+        target_v = round(main_value / 5) * 5
+
+    now    = datetime.now().astimezone()
+    prices = []
+    for sale in cache[item_code]:
+        try:
+            if sale.get('price') is None or sale['price'] <= 0:
+                continue
+            sale_time = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
+            if (now - sale_time).total_seconds() / 3600 > days_back * 24:
+                continue
+            s_main = sale.get('main_value', 0)
+            if is_combat:
+                s_a = round(s_main / 5) * 5
+                s_c = round(sale.get('secondary_value', 0) / 2) * 2
+                if s_a == target_a and s_c == target_c:
+                    prices.append(sale['price'])
+            else:
+                s_v = round(s_main / 5) * 5
+                if s_v == target_v:
+                    prices.append(sale['price'])
+        except:
+            continue
+
+    if not prices:
+        return None, 0
+    return sum(prices) / len(prices), len(prices)
+
+
+def calc_freshness_score(created_at_str):
+    """
+    تحلل أسي: e^(-0.025 * دقيقة_عمر_الإعلان)
+    0 دقيقة → 1.00 | 15 دقيقة → 0.69 | 30 دقيقة → 0.47 | 60 دقيقة → 0.22 | 120 دقيقة → 0.05
+    """
+    try:
+        created_at  = datetime.fromisoformat(created_at_str.replace('Z', '+00:00'))
+        minutes_old = (datetime.now().astimezone() - created_at).total_seconds() / 60
+        return round(math.exp(-0.025 * max(0, minutes_old)), 4)
+    except:
+        return 0.0
+
+
+def calc_velocity_score(avg_hours):
+    """
+    e^(-0.05 * ساعات_متوسط_البيع)
+    0h → 1.0 | 12h → 0.55 | 24h → 0.30 | 48h → 0.09
+    إذا لم تتوفر بيانات: نقاط محايدة (تعادل ~22 ساعة)
+    """
+    if avg_hours is None:
+        return 0.33
+    return round(math.exp(-0.05 * max(0, avg_hours)), 4)
+
+
+def calc_scarcity_score(similar_count):
+    """
+    1 / (1 + عدد_العناصر_المشابهة/5)
+    0 عناصر → 1.0 | 5 → 0.50 | 10 → 0.33 | 20 → 0.20
+    """
+    return round(1.0 / (1.0 + similar_count / 5.0), 4)
+
+
+def calc_deal_score(margin_pct, freshness, velocity_score, scarcity_score):
+    """
+    Deal Score (0–100) مُعاير على بيانات السوق الفعلية.
+    الأوزان: هامش 30% | حداثة 30% | سرعة بيع 25% | ندرة 15%
+    الهامش مُعاير على 13% (p90 فعلي لهذا السوق).
+    """
+    margin_score = min(1.0, margin_pct / 13.0)
+    raw = (
+        margin_score   * 0.30 +
+        freshness      * 0.30 +
+        velocity_score * 0.25 +
+        scarcity_score * 0.15
+    )
+    return round(raw * 100, 1)
+
+
+def get_deal_badge(score):
+    if score >= 65:
+        return "🔥🔥 Prime Snipe", "#ff2244"
+    elif score >= 50:
+        return "🔥 Hot Deal", "#ff6600"
+    elif score >= 35:
+        return "👍 Good Flip", "#00cc66"
+    else:
+        return "✅ Possible Flip", "#888888"
+
+
+def get_bucket_key_str(main_value, secondary_value, category_config):
+    if category_config['type'] in ['jet', 'tank']:
+        a = round(main_value      / 5) * 5
+        c = round(secondary_value / 2) * 2
+        return f"A{a}_C{c}"
+    else:
+        v = round(main_value / 5) * 5
+        return f"V{v}"
+
 # ========== جلب المبيعات لنوع معين ==========
 def fetch_transactions(item_code, limit=100):
     API_URL = "https://api4.warera.io/trpc/transaction.getPaginatedTransactions?batch=1"
@@ -582,6 +699,67 @@ df_filtered['price_percentile'] = df_filtered['price'].apply(
     lambda p: get_price_percentile(p, all_prices_list)
 )
 
+# ========== حساب Deal Score ==========
+# خطوة 1: مفتاح المجموعة (نفس منطق categorize_item)
+df_filtered['bucket_key'] = df_filtered.apply(
+    lambda r: get_bucket_key_str(r['main_value'], r['secondary_value'], category_config), axis=1
+)
+
+# خطوة 2: عدد العناصر في نفس المجموعة (ندرة)
+bucket_counts = df_filtered['bucket_key'].value_counts().to_dict()
+df_filtered['bucket_similar_count'] = df_filtered['bucket_key'].map(bucket_counts)
+
+# خطوة 3: متوسط سعر البيع الفعلي للمجموعة (من التاريخ، ليس السوق الحالي)
+def _bucket_stats(row):
+    return get_bucket_stats(item_code, row['main_value'], row['secondary_value'], category_config, days_back=7)
+
+bucket_stats_series = df_filtered.apply(_bucket_stats, axis=1)
+df_filtered['bucket_avg_price'] = bucket_stats_series.apply(lambda x: x[0])
+df_filtered['bucket_sale_count'] = bucket_stats_series.apply(lambda x: x[1])
+
+# خطوة 4: هامش الربح من المجموعة (أدق من actual_avg_price)
+df_filtered['bucket_profit']     = df_filtered.apply(
+    lambda r: (r['bucket_avg_price'] - r['price']) if r['bucket_avg_price'] else None, axis=1
+)
+df_filtered['bucket_margin_pct'] = df_filtered.apply(
+    lambda r: (r['bucket_profit'] / r['price'] * 100)
+    if (r['bucket_profit'] is not None and r['price'] > 0) else None, axis=1
+)
+
+# خطوة 5: مكونات Deal Score
+df_filtered['freshness_score']  = df_filtered['createdAt'].apply(calc_freshness_score)
+
+# سرعة البيع لكل عنصر (محسوبة مسبقاً)
+def _vel(row):
+    avg_hr, _ = get_item_sell_velocity(item_code, row['main_value'], row['secondary_value'], category_config)
+    return calc_velocity_score(avg_hr)
+
+df_filtered['velocity_score']   = df_filtered.apply(_vel, axis=1)
+df_filtered['scarcity_score']   = df_filtered['bucket_similar_count'].apply(calc_scarcity_score)
+
+# خطوة 6: Deal Score النهائي
+df_filtered['deal_score'] = df_filtered.apply(
+    lambda r: calc_deal_score(
+        r['bucket_margin_pct'] if r['bucket_margin_pct'] is not None else 0,
+        r['freshness_score'],
+        r['velocity_score'],
+        r['scarcity_score']
+    ), axis=1
+)
+
+# البوابات الصارمة (Hard Gates)
+# السعر المطلق: $5 للعناصر الرخيصة، $10 للعناصر الغالية
+def _min_abs_profit(price):
+    return 10.0 if price > 250 else 5.0
+
+df_filtered['min_abs_profit']    = df_filtered['price'].apply(_min_abs_profit)
+df_filtered['passes_hard_gates'] = (
+    df_filtered['bucket_margin_pct'].notna() &
+    (df_filtered['bucket_margin_pct']  >= 5.0) &
+    (df_filtered['bucket_profit']      >= df_filtered['min_abs_profit']) &
+    (df_filtered['bucket_sale_count']  >= 5)
+)
+
 # الترتيب
 if sort_by == "القيمة مقابل السعر":
     df_sorted = df_filtered.sort_values('value_for_money', ascending=False)
@@ -675,78 +853,129 @@ with tab1:
         save_sent_alerts(sent_alerts)
 
 # ------------------------------------------------------------------
-# TAB 2: أفضل الصفقات — Change 3: منطق جديد مبني على سعر البيع الفعلي
+# TAB 2: أفضل الصفقات — Deal Score المعاير على بيانات السوق الفعلية
 # ------------------------------------------------------------------
 with tab2:
-    st.subheader("🔥 أفضل الصفقات — مبنية على سعر البيع الفعلي")
+    st.subheader("🔥 أفضل الصفقات — Deal Score")
+    st.caption(
+        "مُعاير على 712 عملية بيع فعلية · "
+        "الأوزان: هامش 30% · حداثة 30% · سرعة بيع 25% · ندرة 15% · "
+        "البوابات: هامش ≥5% · ربح مطلق ≥$5 (أو $10 للعناصر +$250) · 5+ مبيعات مسجّلة"
+    )
 
-    # العناصر التي لديها سعر بيع فعلي
-    deals_with_data = df_filtered[
-        df_filtered['actual_avg_price'].notna() & (df_filtered['actual_avg_price'] > 0)
-    ].copy()
+    # العناصر التي تجتاز البوابات الصارمة
+    deals_df = df_filtered[df_filtered['passes_hard_gates']].copy()
+    deals_df = deals_df.sort_values('deal_score', ascending=False)
 
-    # العناصر المسعّرة أقل من متوسط البيع الفعلي (ربح محتمل)
-    flip_candidates = deals_with_data[deals_with_data['actual_profit'] > 0].copy()
-    flip_candidates = flip_candidates.sort_values('actual_profit_pct', ascending=False)
+    if len(deals_df) > 0:
+        st.success(f"✅ **{len(deals_df)}** عنصر اجتاز البوابات الصارمة — مرتّبة حسب Deal Score")
 
-    if len(flip_candidates) > 0:
-        st.success(f"✅ وجدنا **{len(flip_candidates)}** عنصر مسعّر أقل من متوسط البيع الفعلي")
+        for rank, (_, row) in enumerate(deals_df.head(12).iterrows(), start=1):
+            badge_text, badge_color = get_deal_badge(row['deal_score'])
+            margin_pct  = row['bucket_margin_pct']
+            abs_profit  = row['bucket_profit']
+            bucket_avg  = row['bucket_avg_price']
+            sale_count  = row['bucket_sale_count']
 
-        for rank, (_, row) in enumerate(flip_candidates.head(10).iterrows(), start=1):
-            profit_pct = row['actual_profit_pct']
-            is_best_flip = profit_pct >= 10
-
-            card_class = "best-flip" if is_best_flip else "deal-card"
-            badge = "🔥 Best Flip!" if profit_pct >= 20 else "🔥 صفقة ممتازة" if profit_pct >= 10 else "👍 صفقة جيدة"
+            # مكونات النقاط (للعرض)
+            m_contrib = min(1.0, margin_pct / 13.0) * 0.30 * 100
+            f_contrib = row['freshness_score']   * 0.30 * 100
+            v_contrib = row['velocity_score']    * 0.25 * 100
+            s_contrib = row['scarcity_score']    * 0.15 * 100
 
             with st.container(border=True):
-                col1, col2, col3 = st.columns([3, 1, 1])
-                with col1:
-                    header_text = f"**{rank}. {badge}** — منذ {row['time_ago']}"
-                    st.markdown(header_text)
-                    if row['secondary_name']:
-                        st.write(f"   {row['main_name']}: {row['main_value']} | {row['secondary_name']}: {row['secondary_value']}%")
-                    else:
-                        st.write(f"   {row['main_name']}: {row['main_value']}")
-                    st.caption(
-                        f"💰 سعر الشراء: **${add_tax(row['price']):,.2f}** &nbsp;|&nbsp; "
-                        f"📊 متوسط البيع الفعلي (3 أيام): **${row['actual_avg_price']:.2f}**"
+                top_left, top_right = st.columns([4, 1])
+                with top_left:
+                    st.markdown(
+                        f"**{rank}. {badge_text}** — "
+                        f"<span style='color:{badge_color};font-size:1.3em;font-weight:bold'>"
+                        f"Deal Score: {row['deal_score']:.0f}/100</span>",
+                        unsafe_allow_html=True
                     )
-                with col2:
-                    st.metric("الجودة", f"{row['quality_score']}%")
-                    st.metric("الربح المتوقع", f"+${row['actual_profit']:.2f}")
-                with col3:
-                    st.metric("هامش الربح", f"{profit_pct:.1f}%")
+                    if row['secondary_name']:
+                        st.write(f"🔍 {row['main_name']}: **{row['main_value']}** | {row['secondary_name']}: **{row['secondary_value']}%** | جودة: {row['quality_score']}%")
+                    else:
+                        st.write(f"🔍 {row['main_name']}: **{row['main_value']}** | جودة: {row['quality_score']}%")
+                with top_right:
+                    st.caption(f"منذ {row['time_ago']}")
+                    st.caption(f"👤 {row['user']}")
+
+                c1, c2, c3, c4 = st.columns(4)
+                with c1:
+                    st.metric("💰 سعر الشراء", f"${add_tax(row['price']):.2f}")
+                    st.caption(f"متوسط البيع الفعلي: ${bucket_avg:.2f}")
+                with c2:
+                    st.metric("💎 الربح المتوقع", f"+${abs_profit:.2f}")
+                    st.caption(f"هامش: {margin_pct:.1f}%")
+                with c3:
+                    st.metric("📦 عروض مشابهة", int(row['bucket_similar_count']))
+                    st.caption(f"{int(sale_count)} صفقة مرجعية (7 أيام)")
+                with c4:
                     if row['price_percentile'] is not None:
-                        st.caption(f"أرخص من {int(row['price_percentile'])}% من السوق")
-                st.caption(f"👤 البائع: {row['user']}")
+                        st.metric("أرخص من", f"{int(row['price_percentile'])}%")
+
+                # شريط تفصيل النقاط
+                with st.expander("📊 تفصيل النقاط"):
+                    bar_c1, bar_c2, bar_c3, bar_c4 = st.columns(4)
+                    with bar_c1:
+                        st.metric("هامش (30%)", f"{m_contrib:.1f} نقطة",
+                                  help=f"هامش {margin_pct:.1f}% من أصل 13% حد المقارنة")
+                    with bar_c2:
+                        age_min = (1.0 - row['freshness_score']) / 0.025 if row['freshness_score'] < 1.0 else 0
+                        freshness_pct = row['freshness_score'] * 100
+                        st.metric("حداثة (30%)", f"{f_contrib:.1f} نقطة",
+                                  help=f"عمر العرض ~{age_min:.0f} دقيقة · حداثة {freshness_pct:.0f}%")
+                    with bar_c3:
+                        vel_pct = row['velocity_score'] * 100
+                        st.metric("سرعة بيع (25%)", f"{v_contrib:.1f} نقطة",
+                                  help=f"درجة سرعة البيع {vel_pct:.0f}%")
+                    with bar_c4:
+                        scar_pct = row['scarcity_score'] * 100
+                        st.metric("ندرة (15%)", f"{s_contrib:.1f} نقطة",
+                                  help=f"{int(row['bucket_similar_count'])} عنصر مشابه في السوق")
     else:
-        st.info("⚠️ لا توجد صفقات مربحة بناءً على بيانات البيع الفعلي حالياً.")
-        st.caption("السبب: بيانات المبيعات الفعلية غير متوفرة بعد، أو جميع العناصر مسعّرة فوق المتوسط.")
+        # لا توجد عناصر تجتاز البوابات — اشرح السبب وأظهر أفضل ما هو متاح
+        st.warning("⚠️ لا توجد عناصر تجتاز البوابات الصارمة حالياً.")
 
-        # Fallback: أفضل قيمة مقابل السعر
+        # تشخيص: كم عنصر يملك بيانات مبيعات، كم يملك هامش ≥5%
+        has_bucket = df_filtered['bucket_avg_price'].notna().sum()
+        has_margin = (df_filtered['bucket_margin_pct'].fillna(0) >= 5).sum()
+        has_count  = (df_filtered['bucket_sale_count'] >= 5).sum()
+
+        d1, d2, d3 = st.columns(3)
+        with d1: st.metric("لديها بيانات مبيعات", f"{has_bucket}/{len(df_filtered)}")
+        with d2: st.metric("هامش ≥5%", f"{has_margin}/{len(df_filtered)}")
+        with d3: st.metric("5+ مبيعات مرجعية", f"{has_count}/{len(df_filtered)}")
+
+        st.caption(
+            "أسباب محتملة: بيانات المبيعات قليلة للمجموعة المحددة — "
+            "المزامنة التلقائية تُضيف بيانات كل ساعة — "
+            "أو جميع العروض الحالية مسعّرة فوق المتوسط التاريخي."
+        )
+
+        # Fallback: أفضل Deal Score بدون بوابات صارمة
         st.markdown("---")
-        st.subheader("🏆 أفضل قيمة مقابل السعر (بديل مؤقت)")
-        best_value = df_filtered.nlargest(10, 'enhanced_value')
-
-        for rank, (_, row) in enumerate(best_value.iterrows(), start=1):
+        st.subheader("📊 أفضل نقاط متاحة (بدون فلتر البوابات)")
+        best_available = df_filtered.nlargest(8, 'deal_score')
+        for rank, (_, row) in enumerate(best_available.iterrows(), start=1):
+            badge_text, _ = get_deal_badge(row['deal_score'])
             with st.container(border=True):
                 col1, col2, col3 = st.columns([3, 1, 1])
                 with col1:
-                    st.write(f"**{rank}. 💰 ${add_tax(row['price']):,.2f}** (منذ {row['time_ago']})")
+                    st.write(f"**{rank}. Deal Score: {row['deal_score']:.0f}** — منذ {row['time_ago']}")
                     if row['secondary_name']:
                         st.write(f"   {row['main_name']}: {row['main_value']} | {row['secondary_name']}: {row['secondary_value']}%")
                     else:
                         st.write(f"   {row['main_name']}: {row['main_value']}")
+                    if row['bucket_avg_price']:
+                        st.caption(f"متوسط البيع: ${row['bucket_avg_price']:.2f} | هامش: {row['bucket_margin_pct']:.1f}%")
+                    else:
+                        st.caption("لا توجد بيانات مبيعات لهذه المجموعة بعد")
                 with col2:
-                    st.metric("الجودة", f"{row['quality_score']}%")
+                    st.metric("💰 السعر", f"${add_tax(row['price']):.2f}")
                 with col3:
-                    if row['price_percentile'] is not None:
-                        pct = int(row['price_percentile'])
-                        label = "🔥 ممتازة" if pct >= 80 else "👍 جيدة" if pct >= 50 else "⚠️ عالي"
-                        st.metric("أرخص من%", f"{pct}%")
-                        st.caption(label)
-                st.caption(f"👤 البائع: {row['user']}")
+                    st.metric("الجودة", f"{row['quality_score']}%")
+                st.caption(f"👤 {row['user']}")
 
 # ------------------------------------------------------------------
 # TAB 3: تحليل العنصر — مع سرعة البيع الخاصة (Change 2)
