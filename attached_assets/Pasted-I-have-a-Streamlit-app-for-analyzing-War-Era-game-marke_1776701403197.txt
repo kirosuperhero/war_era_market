@@ -1,0 +1,46 @@
+I have a Streamlit app for analyzing War Era game market (jets, tanks, legendary/mythic equipment).
+
+The current code works fine but I need UI/UX improvements:
+
+1. **Sales statistics dashboard** - Show:
+   - Last 3 days average selling price for each item type
+   - Volume of sales (how many sold)
+   - Best time to buy/sell (based on transaction history)
+
+2. **General UI improvements**:
+   - Better contrast and readability
+   - Cleaner layout with less clutter
+   - Mobile responsive
+
+Keep all existing functionality (Telegram alerts, price history, tax calculation, transaction tracking, etc.)
+
+---
+
+**I agree with most of your analysis. Let's do this:**
+
+**Priority 1 (Code cleanup & performance):**
+
+1. **Add a "Scan Now" button to Tab 5** - Currently it auto-scans every time the tab loads (12 API calls). Change it to only scan when user clicks a "Scan Now" button.
+
+2. **Merge Tab 3 (Price History) and Tab 4 (Market Analysis)** into one "Item Analysis" tab. They are too similar and confuse users.
+
+3. **Remove dead code** - Delete these functions that are defined but never used:
+   - `predict_price`
+   - `compare_sellers`
+   - `categorize_jet`
+
+4. **Move sidebar stats to top of the main page** - The sidebar is overloaded. Put quick stats (total items, lowest price, highest quality, average price) in a header row above the tabs.
+
+**Priority 2 (New features):**
+
+5. **Add Price Percentile** - For each item show: "This item is priced in the bottom X% of listings" so user instantly knows how good the deal is. Calculate based on current listings of same item type.
+
+6. **Add Sell Velocity** - Show "Avg time to sell: ~X hours" for each item category based on transaction history you're already caching. This helps flippers know how fast they can resell.
+
+---
+
+**Important:** 
+- Don't remove any existing functionality (Telegram alerts, tax calculation, transaction tracking, etc.)
+- Start with Priority 1 items first (#1, #2, #3, #4), then Priority 2 (#5, #6)
+
+Thank you!
