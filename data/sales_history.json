@@ -1,0 +1,7262 @@
+{
+  "jet": [
+    {
+      "id": "69e5fc3975d82ea9ba1d5035",
+      "price": 420,
+      "createdAt": "2026-04-20T10:13:13.508Z",
+      "main_value": 256
+    },
+    {
+      "id": "69e5eda87889ee682cb9e62b",
+      "price": 379,
+      "createdAt": "2026-04-20T09:11:04.651Z",
+      "main_value": 232
+    },
+    {
+      "id": "69e5da58d80cf7528ac521c0",
+      "price": 400,
+      "createdAt": "2026-04-20T07:48:40.999Z",
+      "main_value": 279
+    },
+    {
+      "id": "69e5d8222c3707f729b7cedb",
+      "price": 400,
+      "createdAt": "2026-04-20T07:39:14.793Z",
+      "main_value": 275
+    },
+    {
+      "id": "69e5d39f8515e0b0719ba868",
+      "price": 400,
+      "createdAt": "2026-04-20T07:19:59.228Z",
+      "main_value": 296
+    },
+    {
+      "id": "69e5c52281ab6bc306fdeec8",
+      "price": null,
+      "createdAt": "2026-04-20T06:18:10.177Z",
+      "main_value": 272
+    },
+    {
+      "id": "69e5b779fd3e61dbde487024",
+      "price": 400,
+      "createdAt": "2026-04-20T05:19:53.784Z",
+      "main_value": 248
+    },
+    {
+      "id": "69e5a9f12fb189c0202fd23e",
+      "price": null,
+      "createdAt": "2026-04-20T04:22:09.670Z",
+      "main_value": 300
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba4",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 226
+    },
+    {
+      "id": "69e56dbccc7986c95ae6ff60",
+      "price": 399.01,
+      "createdAt": "2026-04-20T00:05:16.044Z",
+      "main_value": 246
+    },
+    {
+      "id": "69e55277ac2af149c31b7b4e",
+      "price": 396.04,
+      "createdAt": "2026-04-19T22:08:55.601Z",
+      "main_value": 229
+    },
+    {
+      "id": "69e54fb09012dc9afdd806ea",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.803Z",
+      "main_value": 300
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965b6",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 298
+    },
+    {
+      "id": "69e5460f7acf98d445e82e23",
+      "price": 440,
+      "createdAt": "2026-04-19T21:15:59.896Z",
+      "main_value": 271
+    },
+    {
+      "id": "69e53ffcb680587ba0f5032d",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 226
+    },
+    {
+      "id": "69e53ffcb680587ba0f50191",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 227
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6b8",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 237
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6b7",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 256
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6b6",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 288
+    },
+    {
+      "id": "69e5374ad063e0832e51729d",
+      "price": 400,
+      "createdAt": "2026-04-19T20:12:58.057Z",
+      "main_value": 252
+    },
+    {
+      "id": "69e52fcaac2af149c3d447e5",
+      "price": 418,
+      "createdAt": "2026-04-19T19:40:58.366Z",
+      "main_value": 269
+    },
+    {
+      "id": "69e52d22fe61f8ad03ce6870",
+      "price": 410,
+      "createdAt": "2026-04-19T19:29:38.228Z",
+      "main_value": 270
+    },
+    {
+      "id": "69e5232b9cd54625e603a528",
+      "price": null,
+      "createdAt": "2026-04-19T18:47:07.405Z",
+      "main_value": 275
+    },
+    {
+      "id": "69e5228590bba79f8d755e5f",
+      "price": 396.03,
+      "createdAt": "2026-04-19T18:44:21.588Z",
+      "main_value": 245
+    },
+    {
+      "id": "69e51b63d80cf7528afcdf8a",
+      "price": 396.04,
+      "createdAt": "2026-04-19T18:13:55.756Z",
+      "main_value": 252
+    },
+    {
+      "id": "69e51157120ca003b2c2d57d",
+      "price": 396.04,
+      "createdAt": "2026-04-19T17:31:03.660Z",
+      "main_value": 272
+    },
+    {
+      "id": "69e50cd110ea2fde23639522",
+      "price": 396,
+      "createdAt": "2026-04-19T17:11:45.561Z",
+      "main_value": 254
+    },
+    {
+      "id": "69e5053a3fe129d7cdffd13c",
+      "price": 395,
+      "createdAt": "2026-04-19T16:39:22.599Z",
+      "main_value": 241
+    },
+    {
+      "id": "69e4fbe1c0d033e93bd8cd6b",
+      "price": 420,
+      "createdAt": "2026-04-19T15:59:29.175Z",
+      "main_value": 296
+    },
+    {
+      "id": "69e4f63ed80cf7528ac39467",
+      "price": 470,
+      "createdAt": "2026-04-19T15:35:26.815Z",
+      "main_value": 294
+    },
+    {
+      "id": "69e4f0283fe129d7cde4478e",
+      "price": 395,
+      "createdAt": "2026-04-19T15:09:28.905Z",
+      "main_value": 252
+    },
+    {
+      "id": "69e4e94b9e86ddd1958a1ffe",
+      "price": 394.6,
+      "createdAt": "2026-04-19T14:40:11.667Z",
+      "main_value": 241
+    },
+    {
+      "id": "69e4b98dcc7986c95acaee29",
+      "price": 396,
+      "createdAt": "2026-04-19T11:16:29.902Z",
+      "main_value": 255
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c84fd",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 244
+    },
+    {
+      "id": "69e4a4af581404c7c16bc09c",
+      "price": 430,
+      "createdAt": "2026-04-19T09:47:27.475Z",
+      "main_value": 254
+    },
+    {
+      "id": "69e4a375af8d292c0464afe3",
+      "price": 360,
+      "createdAt": "2026-04-19T09:42:13.326Z",
+      "main_value": 234
+    },
+    {
+      "id": "69e496b3581404c7c156051e",
+      "price": 470,
+      "createdAt": "2026-04-19T08:47:47.148Z",
+      "main_value": 298
+    },
+    {
+      "id": "69e48e6a51ec4b9a06ab61e8",
+      "price": 370,
+      "createdAt": "2026-04-19T08:12:26.365Z",
+      "main_value": 236
+    },
+    {
+      "id": "69e47fa675d82ea9ba656aff",
+      "price": 358,
+      "createdAt": "2026-04-19T07:09:26.778Z",
+      "main_value": 232
+    },
+    {
+      "id": "69e472da976e82568447a891",
+      "price": 360,
+      "createdAt": "2026-04-19T06:14:50.429Z",
+      "main_value": 271
+    },
+    {
+      "id": "69e4519f79d940ce0ecec537",
+      "price": null,
+      "createdAt": "2026-04-19T03:53:03.975Z",
+      "main_value": 239
+    },
+    {
+      "id": "69e44d35d026b6804d1fe8b1",
+      "price": 512,
+      "createdAt": "2026-04-19T03:34:13.576Z",
+      "main_value": 277
+    },
+    {
+      "id": "69e446d885300617545bfa23",
+      "price": null,
+      "createdAt": "2026-04-19T03:07:04.197Z",
+      "main_value": 281
+    },
+    {
+      "id": "69e446d885300617545bfa22",
+      "price": null,
+      "createdAt": "2026-04-19T03:07:04.197Z",
+      "main_value": 276
+    },
+    {
+      "id": "69e3fe524860eeea21b1c288",
+      "price": 396,
+      "createdAt": "2026-04-18T21:57:38.126Z",
+      "main_value": 258
+    },
+    {
+      "id": "69e3e640d80cf7528ae7c70c",
+      "price": 395,
+      "createdAt": "2026-04-18T20:14:56.023Z",
+      "main_value": 258
+    },
+    {
+      "id": "69e3dc87d063e0832eae495c",
+      "price": 400,
+      "createdAt": "2026-04-18T19:33:27.246Z",
+      "main_value": 258
+    },
+    {
+      "id": "69e3dc83d063e0832eae300c",
+      "price": 410,
+      "createdAt": "2026-04-18T19:33:23.450Z",
+      "main_value": 254
+    },
+    {
+      "id": "69e3dc703dbda1615a74b645",
+      "price": 399.99,
+      "createdAt": "2026-04-18T19:33:04.453Z",
+      "main_value": 247
+    },
+    {
+      "id": "69e3d69de4d84ac0496066b1",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.598Z",
+      "main_value": 231
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c3",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 241
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c2",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 238
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c1",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.069Z",
+      "main_value": 285
+    },
+    {
+      "id": "69e3d4d6cc7986c95af5dd10",
+      "price": 395,
+      "createdAt": "2026-04-18T19:00:38.569Z",
+      "main_value": 262
+    },
+    {
+      "id": "69e3d4d2d80cf7528ab6af2b",
+      "price": 395,
+      "createdAt": "2026-04-18T19:00:34.677Z",
+      "main_value": 252
+    },
+    {
+      "id": "69e3d41e172879795f34112e",
+      "price": 388,
+      "createdAt": "2026-04-18T18:57:34.664Z",
+      "main_value": 247
+    },
+    {
+      "id": "69e3cff10a4ca07a2ef3ffa4",
+      "price": 394,
+      "createdAt": "2026-04-18T18:39:45.085Z",
+      "main_value": 277
+    },
+    {
+      "id": "69e3cfd8ac2af149c311cac9",
+      "price": 574.257,
+      "createdAt": "2026-04-18T18:39:20.679Z",
+      "main_value": 291
+    },
+    {
+      "id": "69e3ce7b2c3707f7298b30cc",
+      "price": 395,
+      "createdAt": "2026-04-18T18:33:31.685Z",
+      "main_value": 229
+    },
+    {
+      "id": "69e3abc7cc7986c95a71aaf9",
+      "price": 415,
+      "createdAt": "2026-04-18T16:05:27.465Z",
+      "main_value": 257
+    },
+    {
+      "id": "69e39fc73d07a81810b8ab3e",
+      "price": 390,
+      "createdAt": "2026-04-18T15:14:15.961Z",
+      "main_value": 252
+    },
+    {
+      "id": "69e39fc6ffe1ed67b95cbd16",
+      "price": 396,
+      "createdAt": "2026-04-18T15:14:14.010Z",
+      "main_value": 237
+    },
+    {
+      "id": "69e39e24976e8256843fe6c1",
+      "price": 550,
+      "createdAt": "2026-04-18T15:07:16.995Z",
+      "main_value": 277
+    },
+    {
+      "id": "69e39afc10ea2fde2314264f",
+      "price": 388,
+      "createdAt": "2026-04-18T14:53:48.549Z",
+      "main_value": 228
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b8977",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 282
+    },
+    {
+      "id": "69e37910f7ce94ea6188dbe3",
+      "price": null,
+      "createdAt": "2026-04-18T12:29:04.504Z",
+      "main_value": 277
+    },
+    {
+      "id": "69e376e610ea2fde23e1f93f",
+      "price": 397,
+      "createdAt": "2026-04-18T12:19:50.567Z",
+      "main_value": 234
+    },
+    {
+      "id": "69e36f816f3043204eea0aac",
+      "price": 495.04,
+      "createdAt": "2026-04-18T11:48:17.427Z",
+      "main_value": 274
+    },
+    {
+      "id": "69e35a1478af10c9622258c8",
+      "price": 396.1,
+      "createdAt": "2026-04-18T10:16:52.218Z",
+      "main_value": 235
+    },
+    {
+      "id": "69e34d579e86ddd19554d4f5",
+      "price": 450,
+      "createdAt": "2026-04-18T09:22:31.268Z",
+      "main_value": 293
+    },
+    {
+      "id": "69e34c5475d82ea9baa4f5b5",
+      "price": 360,
+      "createdAt": "2026-04-18T09:18:12.780Z",
+      "main_value": 228
+    },
+    {
+      "id": "69e32c7108c646d795af6db4",
+      "price": null,
+      "createdAt": "2026-04-18T07:02:09.750Z",
+      "main_value": 249
+    },
+    {
+      "id": "69e32bb798c90004d5748b4a",
+      "price": 550,
+      "createdAt": "2026-04-18T06:59:03.972Z",
+      "main_value": 290
+    },
+    {
+      "id": "69e3212b2cdab899ea65d46a",
+      "price": null,
+      "createdAt": "2026-04-18T06:14:03.977Z",
+      "main_value": 264
+    },
+    {
+      "id": "69e31df617fc79f1ed4016e2",
+      "price": 375,
+      "createdAt": "2026-04-18T06:00:22.541Z",
+      "main_value": 236
+    },
+    {
+      "id": "69e31d79fe61f8ad03c9693b",
+      "price": 400,
+      "createdAt": "2026-04-18T05:58:17.668Z",
+      "main_value": 253
+    },
+    {
+      "id": "69e309c13833125cb01f7c18",
+      "price": null,
+      "createdAt": "2026-04-18T04:34:09.477Z",
+      "main_value": 287
+    },
+    {
+      "id": "69e2e470af8d292c0429f867",
+      "price": 400,
+      "createdAt": "2026-04-18T01:54:56.690Z",
+      "main_value": 227
+    },
+    {
+      "id": "69e2d5b43cf2d0ab8c809f39",
+      "price": null,
+      "createdAt": "2026-04-18T00:52:04.825Z",
+      "main_value": 270
+    },
+    {
+      "id": "69e2d5b43cf2d0ab8c809f38",
+      "price": null,
+      "createdAt": "2026-04-18T00:52:04.825Z",
+      "main_value": 227
+    },
+    {
+      "id": "69e2d54051ec4b9a0619a738",
+      "price": 396,
+      "createdAt": "2026-04-18T00:50:08.966Z",
+      "main_value": 247
+    },
+    {
+      "id": "69e2c16917fc79f1ed0ee65a",
+      "price": 427,
+      "createdAt": "2026-04-17T23:25:29.146Z",
+      "main_value": 233
+    },
+    {
+      "id": "69e2ba8509204aee635dd411",
+      "price": null,
+      "createdAt": "2026-04-17T22:56:05.025Z",
+      "main_value": 231
+    },
+    {
+      "id": "69e2ba8509204aee635dd410",
+      "price": null,
+      "createdAt": "2026-04-17T22:56:05.025Z",
+      "main_value": 228
+    },
+    {
+      "id": "69e2aa58f27b4932bcacc30e",
+      "price": null,
+      "createdAt": "2026-04-17T21:47:04.135Z",
+      "main_value": 233
+    },
+    {
+      "id": "69e2aa47cd345e3239f24eb7",
+      "price": 388,
+      "createdAt": "2026-04-17T21:46:47.373Z",
+      "main_value": 262
+    },
+    {
+      "id": "69e2a5c66f3043204e1dbd20",
+      "price": 470.297,
+      "createdAt": "2026-04-17T21:27:34.814Z",
+      "main_value": 274
+    },
+    {
+      "id": "69e29d7485efb031f2d08a91",
+      "price": null,
+      "createdAt": "2026-04-17T20:52:04.842Z",
+      "main_value": 242
+    },
+    {
+      "id": "69e28f3675d82ea9bad9c62a",
+      "price": 540,
+      "createdAt": "2026-04-17T19:51:18.552Z",
+      "main_value": 262
+    },
+    {
+      "id": "69e2786400e0981e8174d83b",
+      "price": 405,
+      "createdAt": "2026-04-17T18:13:56.848Z",
+      "main_value": 255
+    },
+    {
+      "id": "69e26cf4f7b095e977990cc9",
+      "price": 399.9,
+      "createdAt": "2026-04-17T17:25:08.877Z",
+      "main_value": 242
+    },
+    {
+      "id": "69e25c345c9d66749061a8d2",
+      "price": 371.287,
+      "createdAt": "2026-04-17T16:13:40.785Z",
+      "main_value": 227
+    },
+    {
+      "id": "69e253af7acf98d445dcd5c6",
+      "price": 400,
+      "createdAt": "2026-04-17T15:37:19.124Z",
+      "main_value": 250
+    },
+    {
+      "id": "69e25238b65c6ca351dd694d",
+      "price": null,
+      "createdAt": "2026-04-17T15:31:04.235Z",
+      "main_value": 283
+    },
+    {
+      "id": "69e24d087889ee682cf4fd57",
+      "price": 350,
+      "createdAt": "2026-04-17T15:08:56.602Z",
+      "main_value": 289
+    },
+    {
+      "id": "69e24554b8ca6db91ffa1037",
+      "price": null,
+      "createdAt": "2026-04-17T14:36:04.204Z",
+      "main_value": 255
+    },
+    {
+      "id": "69e2407151ec4b9a06748e4a",
+      "price": 396,
+      "createdAt": "2026-04-17T14:15:13.930Z",
+      "main_value": 239
+    },
+    {
+      "id": "69e23f8aaf8d292c044290f4",
+      "price": 400,
+      "createdAt": "2026-04-17T14:11:22.055Z",
+      "main_value": 239
+    },
+    {
+      "id": "69e23f55976e8256846f79d5",
+      "price": 346.534,
+      "createdAt": "2026-04-17T14:10:29.933Z",
+      "main_value": 263
+    },
+    {
+      "id": "69e23d5b17fc79f1ed52a526",
+      "price": 400,
+      "createdAt": "2026-04-17T14:02:03.340Z",
+      "main_value": 268
+    }
+  ],
+  "tank": [
+    {
+      "id": "69e5fcaf74724ad4948b6ba7",
+      "price": null,
+      "createdAt": "2026-04-20T10:15:11.107Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e5fb7aea073349a49d31ae",
+      "price": 154,
+      "createdAt": "2026-04-20T10:10:02.061Z",
+      "main_value": 168
+    },
+    {
+      "id": "69e5fb30976e825684177c5b",
+      "price": 152,
+      "createdAt": "2026-04-20T10:08:48.130Z",
+      "main_value": 167
+    },
+    {
+      "id": "69e5faeaf7b095e977211a13",
+      "price": 162,
+      "createdAt": "2026-04-20T10:07:38.802Z",
+      "main_value": 154
+    },
+    {
+      "id": "69e5fa86172879795f720865",
+      "price": 149.504,
+      "createdAt": "2026-04-20T10:05:58.745Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e5f900f7b095e9771f1a85",
+      "price": 149,
+      "createdAt": "2026-04-20T09:59:28.051Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e5f733d026b6804df48e98",
+      "price": 149.504,
+      "createdAt": "2026-04-20T09:51:47.930Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e5ee1bfe61f8ad03925a47",
+      "price": 189.108,
+      "createdAt": "2026-04-20T09:12:59.076Z",
+      "main_value": 164
+    },
+    {
+      "id": "69e5ec82d80cf7528ad6aa38",
+      "price": 155,
+      "createdAt": "2026-04-20T09:06:10.778Z",
+      "main_value": 151
+    },
+    {
+      "id": "69e5eadd172879795f653f9c",
+      "price": 174.8,
+      "createdAt": "2026-04-20T08:59:09.181Z",
+      "main_value": 157
+    },
+    {
+      "id": "69e5e742cc7986c95a3bfe17",
+      "price": 145,
+      "createdAt": "2026-04-20T08:43:46.256Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e5e6185c9d667490c5209b",
+      "price": 151,
+      "createdAt": "2026-04-20T08:38:48.875Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e5e5b07889ee682cab7a2a",
+      "price": 181,
+      "createdAt": "2026-04-20T08:37:04.585Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e5e4e40968c69062de9bdc",
+      "price": 151,
+      "createdAt": "2026-04-20T08:33:40.337Z",
+      "main_value": 148
+    },
+    {
+      "id": "69e5e47efe61f8ad03808c4d",
+      "price": 150,
+      "createdAt": "2026-04-20T08:31:58.966Z",
+      "main_value": 144
+    },
+    {
+      "id": "69e5df6bd80cf7528ac9a511",
+      "price": 150,
+      "createdAt": "2026-04-20T08:10:19.903Z",
+      "main_value": 143
+    },
+    {
+      "id": "69e5d9a7af8d292c04d51ffc",
+      "price": 167,
+      "createdAt": "2026-04-20T07:45:43.194Z",
+      "main_value": 165
+    },
+    {
+      "id": "69e5d98178af10c9625aef79",
+      "price": 157,
+      "createdAt": "2026-04-20T07:45:05.836Z",
+      "main_value": 163
+    },
+    {
+      "id": "69e5d26d9e86ddd1959d709b",
+      "price": 153,
+      "createdAt": "2026-04-20T07:14:53.053Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e5d2558515e0b0719af9d0",
+      "price": 150,
+      "createdAt": "2026-04-20T07:14:29.228Z",
+      "main_value": 167
+    },
+    {
+      "id": "69e5d120976e825684f81864",
+      "price": 156.853,
+      "createdAt": "2026-04-20T07:09:20.635Z",
+      "main_value": 164
+    },
+    {
+      "id": "69e5d117976e825684f80afa",
+      "price": 155,
+      "createdAt": "2026-04-20T07:09:11.619Z",
+      "main_value": 165
+    },
+    {
+      "id": "69e5c4def7b095e977f5c955",
+      "price": 172,
+      "createdAt": "2026-04-20T06:17:02.861Z",
+      "main_value": 163
+    },
+    {
+      "id": "69e5bce5af8d292c04c3a90f",
+      "price": 150,
+      "createdAt": "2026-04-20T05:43:01.558Z",
+      "main_value": 148
+    },
+    {
+      "id": "69e5b592cd345e3239e6f488",
+      "price": 149,
+      "createdAt": "2026-04-20T05:11:46.132Z",
+      "main_value": 147
+    },
+    {
+      "id": "69e5ad47cc7986c95a105008",
+      "price": 150.5,
+      "createdAt": "2026-04-20T04:36:23.617Z",
+      "main_value": 162
+    },
+    {
+      "id": "69e5ac195f9c121f5ac41e69",
+      "price": 166,
+      "createdAt": "2026-04-20T04:31:21.907Z",
+      "main_value": 157
+    },
+    {
+      "id": "69e5ab6205801c7f991c50c1",
+      "price": 157,
+      "createdAt": "2026-04-20T04:28:18.769Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e5a9f12fb189c0202fd09e",
+      "price": null,
+      "createdAt": "2026-04-20T04:22:09.510Z",
+      "main_value": 169
+    },
+    {
+      "id": "69e5a7fcfd3e61dbde3e4a09",
+      "price": 175,
+      "createdAt": "2026-04-20T04:13:48.227Z",
+      "main_value": 170
+    },
+    {
+      "id": "69e5a6e9d063e0832ecf98c1",
+      "price": 159,
+      "createdAt": "2026-04-20T04:09:13.139Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e59f2cc0d033e93bb34495",
+      "price": 169.306,
+      "createdAt": "2026-04-20T03:36:12.541Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e59e273dbda1615a71a525",
+      "price": 156,
+      "createdAt": "2026-04-20T03:31:51.732Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e59e25ac2af149c3543016",
+      "price": 160,
+      "createdAt": "2026-04-20T03:31:49.238Z",
+      "main_value": 159
+    },
+    {
+      "id": "69e59aa205801c7f9914bcc1",
+      "price": 150,
+      "createdAt": "2026-04-20T03:16:50.640Z",
+      "main_value": 144
+    },
+    {
+      "id": "69e599de17fc79f1eda8a3b4",
+      "price": 155,
+      "createdAt": "2026-04-20T03:13:34.575Z",
+      "main_value": 167
+    },
+    {
+      "id": "69e595b875d82ea9bad67ebb",
+      "price": 152.999,
+      "createdAt": "2026-04-20T02:55:52.448Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e5924600e0981e816375dc",
+      "price": 151,
+      "createdAt": "2026-04-20T02:41:10.957Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3db",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 151
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3da",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d9",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 159
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d8",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 164
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebaa",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba9",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 153
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba8",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 162
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba7",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e5898d75d82ea9bacc8e98",
+      "price": 167.9,
+      "createdAt": "2026-04-20T02:03:57.424Z",
+      "main_value": 168
+    },
+    {
+      "id": "69e589807889ee682c6fe827",
+      "price": 164,
+      "createdAt": "2026-04-20T02:03:44.145Z",
+      "main_value": 148
+    },
+    {
+      "id": "69e58001f7b095e977cab798",
+      "price": 155,
+      "createdAt": "2026-04-20T01:23:13.601Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e57fadaf8d292c0499bba7",
+      "price": 150,
+      "createdAt": "2026-04-20T01:21:49.046Z",
+      "main_value": 170
+    },
+    {
+      "id": "69e57bc005ac367fff44662e",
+      "price": null,
+      "createdAt": "2026-04-20T01:05:04.680Z",
+      "main_value": 170
+    },
+    {
+      "id": "69e5783878af10c9621a8b33",
+      "price": 180,
+      "createdAt": "2026-04-20T00:50:00.903Z",
+      "main_value": 157
+    },
+    {
+      "id": "69e5783690bba79f8d019075",
+      "price": 180,
+      "createdAt": "2026-04-20T00:49:58.890Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e573ab75d82ea9baba5856",
+      "price": 144.553,
+      "createdAt": "2026-04-20T00:30:35.690Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e572149e86ddd195642e0f",
+      "price": 140,
+      "createdAt": "2026-04-20T00:23:48.186Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e5702990bba79f8dfd6759",
+      "price": 154.454,
+      "createdAt": "2026-04-20T00:15:37.098Z",
+      "main_value": 147
+    },
+    {
+      "id": "69e5702190bba79f8dfd3d47",
+      "price": 149.504,
+      "createdAt": "2026-04-20T00:15:29.546Z",
+      "main_value": 144
+    },
+    {
+      "id": "69e56d2617fc79f1ed8cf8f2",
+      "price": 230,
+      "createdAt": "2026-04-20T00:02:46.746Z",
+      "main_value": 170
+    },
+    {
+      "id": "69e56aa3356dbd0cc9efc478",
+      "price": null,
+      "createdAt": "2026-04-19T23:52:03.975Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e562e88f75eba90c5b58e0",
+      "price": null,
+      "createdAt": "2026-04-19T23:19:04.300Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e562e88f75eba90c5b58df",
+      "price": null,
+      "createdAt": "2026-04-19T23:19:04.300Z",
+      "main_value": 164
+    },
+    {
+      "id": "69e553d1fd3e61dbdefb8669",
+      "price": 150,
+      "createdAt": "2026-04-19T22:14:41.531Z",
+      "main_value": 152
+    },
+    {
+      "id": "69e550b017fc79f1ed706359",
+      "price": 200,
+      "createdAt": "2026-04-19T22:01:20.806Z",
+      "main_value": 163
+    },
+    {
+      "id": "69e54fb09012dc9afdd806ed",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.803Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e54fb09012dc9afdd806ec",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.803Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e54eb890bba79f8ddef18a",
+      "price": 150,
+      "createdAt": "2026-04-19T21:52:56.774Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e54d4ffd3e61dbdef0552f",
+      "price": 127,
+      "createdAt": "2026-04-19T21:46:55.928Z",
+      "main_value": 152
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965b9",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 147
+    },
+    {
+      "id": "69e548eac830caae5680a89a",
+      "price": 215,
+      "createdAt": "2026-04-19T21:28:10.882Z",
+      "main_value": 165
+    },
+    {
+      "id": "69e548e8c830caae5680a13b",
+      "price": 199,
+      "createdAt": "2026-04-19T21:28:08.843Z",
+      "main_value": 165
+    },
+    {
+      "id": "69e54819652519adc9e92c91",
+      "price": 160,
+      "createdAt": "2026-04-19T21:24:41.013Z",
+      "main_value": 154
+    },
+    {
+      "id": "69e5464b581404c7c15f789a",
+      "price": 144,
+      "createdAt": "2026-04-19T21:16:59.160Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e546438515e0b071296ae7",
+      "price": 146,
+      "createdAt": "2026-04-19T21:16:51.740Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e54565e6af14c14901aa62",
+      "price": 155,
+      "createdAt": "2026-04-19T21:13:09.295Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e5454caf8d292c0460e3d4",
+      "price": 152,
+      "createdAt": "2026-04-19T21:12:44.636Z",
+      "main_value": 154
+    },
+    {
+      "id": "69e54493172879795fe9210e",
+      "price": 179,
+      "createdAt": "2026-04-19T21:09:39.810Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e544347f69424e5966c6d6",
+      "price": 150,
+      "createdAt": "2026-04-19T21:08:04.067Z",
+      "main_value": 159
+    },
+    {
+      "id": "69e5442c9e86ddd19534cd05",
+      "price": 152,
+      "createdAt": "2026-04-19T21:07:56.150Z",
+      "main_value": 167
+    },
+    {
+      "id": "69e5431ffe61f8ad03fec4a2",
+      "price": 155,
+      "createdAt": "2026-04-19T21:03:27.063Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e53ffcb680587ba0f50331",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 143
+    },
+    {
+      "id": "69e53ffcb680587ba0f50330",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 153
+    },
+    {
+      "id": "69e53f59120ca003b2112e63",
+      "price": 174,
+      "createdAt": "2026-04-19T20:47:21.127Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c9",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 143
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c8",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 163
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c7",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c6",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 144
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c5",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 167
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c4",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 152
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c3",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 156
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c2",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 162
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c1",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6c0",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 163
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6bf",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 169
+    },
+    {
+      "id": "69e5390a0968c690625525c2",
+      "price": 173,
+      "createdAt": "2026-04-19T20:20:26.683Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e535accc7986c95a924e71",
+      "price": 164.999,
+      "createdAt": "2026-04-19T20:06:04.369Z",
+      "main_value": 161
+    },
+    {
+      "id": "69e5356b3dbda1615a01473c",
+      "price": 170,
+      "createdAt": "2026-04-19T20:04:59.800Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e53532120ca003b2fe68aa",
+      "price": 169,
+      "createdAt": "2026-04-19T20:04:02.744Z",
+      "main_value": 143
+    },
+    {
+      "id": "69e533d7a5c2850e9244bf0d",
+      "price": 150.9,
+      "createdAt": "2026-04-19T19:58:15.116Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e53260ac2af149c3da27ad",
+      "price": 200,
+      "createdAt": "2026-04-19T19:52:00.386Z",
+      "main_value": 160
+    },
+    {
+      "id": "69e5324e17fc79f1ed303e2c",
+      "price": 170,
+      "createdAt": "2026-04-19T19:51:42.654Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e6007d4860eeea21734e78",
+      "price": 158,
+      "createdAt": "2026-04-20T10:31:25.228Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e5fe7cac2af149c39482c9",
+      "price": 159.794,
+      "createdAt": "2026-04-20T10:22:52.080Z",
+      "main_value": 156
+    },
+    {
+      "id": "69e5fe74f9474bb1586af54e",
+      "price": 165,
+      "createdAt": "2026-04-20T10:22:44.559Z",
+      "main_value": 158
+    },
+    {
+      "id": "69e5fd6605801c7f996fe0cc",
+      "price": 145,
+      "createdAt": "2026-04-20T10:18:14.574Z",
+      "main_value": 143
+    }
+  ],
+  "helmet5": [
+    {
+      "id": "69e5f113d826d1905c92fc51",
+      "price": null,
+      "createdAt": "2026-04-20T09:25:39.090Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e5eaa1277577237f4e8a7d",
+      "price": null,
+      "createdAt": "2026-04-20T08:58:09.453Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e5e545d80cf7528aceb679",
+      "price": 106,
+      "createdAt": "2026-04-20T08:35:17.907Z",
+      "main_value": 96
+    },
+    {
+      "id": "69e5e21e3dbda1615a9d8e8d",
+      "price": 113,
+      "createdAt": "2026-04-20T08:21:50.970Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e5ba4610d516df500f581b",
+      "price": 105.5,
+      "createdAt": "2026-04-20T05:31:50.026Z",
+      "main_value": 97
+    },
+    {
+      "id": "69e5a9f12fb189c0202fd23f",
+      "price": null,
+      "createdAt": "2026-04-20T04:22:09.670Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3ef",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebb3",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebb2",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebb1",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 96
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebae",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e5819d2a51e2df35e505dd",
+      "price": null,
+      "createdAt": "2026-04-20T01:30:05.786Z",
+      "main_value": 110
+    },
+    {
+      "id": "69e580d6d063e0832eb33657",
+      "price": 107,
+      "createdAt": "2026-04-20T01:26:46.276Z",
+      "main_value": 98
+    },
+    {
+      "id": "69e58090d80cf7528a9510a9",
+      "price": 152,
+      "createdAt": "2026-04-20T01:25:36.579Z",
+      "main_value": 109
+    },
+    {
+      "id": "69e5721bd026b6804d939083",
+      "price": 104.6,
+      "createdAt": "2026-04-20T00:23:55.146Z",
+      "main_value": 92
+    },
+    {
+      "id": "69e56ff375d82ea9bab5d864",
+      "price": 114.8,
+      "createdAt": "2026-04-20T00:14:43.530Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e56e2b91c75a72f694ec35",
+      "price": 112,
+      "createdAt": "2026-04-20T00:07:07.792Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e565a0c0d033e93b8df960",
+      "price": 117.999,
+      "createdAt": "2026-04-19T23:30:40.891Z",
+      "main_value": 102
+    },
+    {
+      "id": "69e56591e64f9fd72965eed9",
+      "price": 118,
+      "createdAt": "2026-04-19T23:30:25.130Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e561bb9b2be41127bae9be",
+      "price": null,
+      "createdAt": "2026-04-19T23:14:03.980Z",
+      "main_value": 106
+    },
+    {
+      "id": "69e54fb09012dc9afdd804da",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.598Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e54fb09012dc9afdd804d9",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.598Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e54d7278af10c962f58310",
+      "price": 118,
+      "createdAt": "2026-04-19T21:47:30.932Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965c0",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 93
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965bf",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965be",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 106
+    },
+    {
+      "id": "69e54548120ca003b2189142",
+      "price": 100,
+      "createdAt": "2026-04-19T21:12:40.591Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e53ffcb680587ba0f50336",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e6",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e5",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e4",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e3",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e2",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 97
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e1",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6df",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6de",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6dc",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e532312c3707f7290af224",
+      "price": 105,
+      "createdAt": "2026-04-19T19:51:13.912Z",
+      "main_value": 92
+    },
+    {
+      "id": "69e53230ffe1ed67b9911791",
+      "price": 104,
+      "createdAt": "2026-04-19T19:51:12.636Z",
+      "main_value": 93
+    },
+    {
+      "id": "69e51e00b240c13e70525d69",
+      "price": null,
+      "createdAt": "2026-04-19T18:25:04.463Z",
+      "main_value": 96
+    },
+    {
+      "id": "69e5146c5c9d667490f67f90",
+      "price": 107,
+      "createdAt": "2026-04-19T17:44:12.096Z",
+      "main_value": 97
+    },
+    {
+      "id": "69e50d98120ca003b2ba1fd2",
+      "price": 119.299,
+      "createdAt": "2026-04-19T17:15:04.767Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e5074817fc79f1edd64f2e",
+      "price": 125,
+      "createdAt": "2026-04-19T16:48:08.982Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e50290f9474bb1584fbbdb",
+      "price": 113.99,
+      "createdAt": "2026-04-19T16:28:00.754Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e501e35f9c121f5a042a52",
+      "price": 119.2,
+      "createdAt": "2026-04-19T16:25:07.472Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e501c36f3043204e1dd7ed",
+      "price": 118.99,
+      "createdAt": "2026-04-19T16:24:35.477Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e501bcfe61f8ad0378eb30",
+      "price": 117,
+      "createdAt": "2026-04-19T16:24:28.958Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e4ff88013f59a1422fca70",
+      "price": null,
+      "createdAt": "2026-04-19T16:15:04.899Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e4fddc98c90004d5d19c60",
+      "price": 113,
+      "createdAt": "2026-04-19T16:07:56.652Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e4fdd790bba79f8d27f460",
+      "price": 115,
+      "createdAt": "2026-04-19T16:07:51.524Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e4fcb42c3707f729aeed24",
+      "price": 103,
+      "createdAt": "2026-04-19T16:03:00.477Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e4f447172879795f3d5fb3",
+      "price": 106.5,
+      "createdAt": "2026-04-19T15:27:03.918Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e4f32d3dbda1615a83dc3e",
+      "price": 103,
+      "createdAt": "2026-04-19T15:22:21.164Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e4efb415776912e2347fbf",
+      "price": 108,
+      "createdAt": "2026-04-19T15:07:32.218Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e4e6d18515e0b071951443",
+      "price": 107.921,
+      "createdAt": "2026-04-19T14:29:37.288Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e4e3659e86ddd19581a1a3",
+      "price": 107.92,
+      "createdAt": "2026-04-19T14:15:01.536Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e4e29b976e825684ce8d92",
+      "price": 109,
+      "createdAt": "2026-04-19T14:11:39.535Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e4e23efd3e61dbde2d8695",
+      "price": 115,
+      "createdAt": "2026-04-19T14:10:06.310Z",
+      "main_value": 104
+    },
+    {
+      "id": "69e4e110e7ab88fc63b5f3c9",
+      "price": null,
+      "createdAt": "2026-04-19T14:05:04.592Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e4d287ea073349a4706ed3",
+      "price": 104,
+      "createdAt": "2026-04-19T13:03:03.455Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e4caec4860eeea21417ccb",
+      "price": 150,
+      "createdAt": "2026-04-19T12:30:36.139Z",
+      "main_value": 110
+    },
+    {
+      "id": "69e4ca5f7acf98d44507900c",
+      "price": 135,
+      "createdAt": "2026-04-19T12:28:15.181Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e4b57051ec4b9a06cec6f5",
+      "price": 118,
+      "createdAt": "2026-04-19T10:58:56.721Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e4b34a5f9c121f5aac9879",
+      "price": 100,
+      "createdAt": "2026-04-19T10:49:46.832Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c87f4",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.589Z",
+      "main_value": 92
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c87f3",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.589Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c8505",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e4a94dfe61f8ad030cc5bd",
+      "price": 106,
+      "createdAt": "2026-04-19T10:07:09.008Z",
+      "main_value": 93
+    },
+    {
+      "id": "69e4a3cd976e8256848352af",
+      "price": 106.931,
+      "createdAt": "2026-04-19T09:43:41.011Z",
+      "main_value": 97
+    },
+    {
+      "id": "69e49c4975d82ea9ba816ee8",
+      "price": 104.999,
+      "createdAt": "2026-04-19T09:11:37.976Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e497dae64f9fd7292d1d14",
+      "price": 120,
+      "createdAt": "2026-04-19T08:52:42.116Z",
+      "main_value": 106
+    },
+    {
+      "id": "69e494bc75d82ea9ba7906df",
+      "price": 105,
+      "createdAt": "2026-04-19T08:39:24.324Z",
+      "main_value": 98
+    },
+    {
+      "id": "69e486eef9474bb158c07f01",
+      "price": 152.38,
+      "createdAt": "2026-04-19T07:40:30.372Z",
+      "main_value": 109
+    },
+    {
+      "id": "69e485e5fd3e61dbdeb32dd4",
+      "price": 109,
+      "createdAt": "2026-04-19T07:36:05.805Z",
+      "main_value": 102
+    },
+    {
+      "id": "69e470d7172879795fb3e1c9",
+      "price": 150.7,
+      "createdAt": "2026-04-19T06:06:15.357Z",
+      "main_value": 109
+    },
+    {
+      "id": "69e46928c830caae563f2c0a",
+      "price": 100,
+      "createdAt": "2026-04-19T05:33:28.490Z",
+      "main_value": 95
+    },
+    {
+      "id": "69e463c90968c6906215a9f4",
+      "price": 102,
+      "createdAt": "2026-04-19T05:10:33.468Z",
+      "main_value": 105
+    },
+    {
+      "id": "69e462e1581404c7c125371b",
+      "price": 107,
+      "createdAt": "2026-04-19T05:06:41.824Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e462dfc0d033e93b2c199b",
+      "price": 106,
+      "createdAt": "2026-04-19T05:06:39.790Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e462dd98c90004d52d0857",
+      "price": 102,
+      "createdAt": "2026-04-19T05:06:37.488Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e43d1300e0981e8136fff5",
+      "price": 200,
+      "createdAt": "2026-04-19T02:25:23.351Z",
+      "main_value": 110
+    },
+    {
+      "id": "69e4317ec830caae56267fb8",
+      "price": 170,
+      "createdAt": "2026-04-19T01:35:58.985Z",
+      "main_value": 106
+    },
+    {
+      "id": "69e428dde489d870aa62997e",
+      "price": null,
+      "createdAt": "2026-04-19T00:59:09.845Z",
+      "main_value": 91
+    },
+    {
+      "id": "69e4243e172879795f942a48",
+      "price": 106.9,
+      "createdAt": "2026-04-19T00:39:26.135Z",
+      "main_value": 97
+    },
+    {
+      "id": "69e40c4217fc79f1eddb74f4",
+      "price": 102,
+      "createdAt": "2026-04-18T22:57:06.810Z",
+      "main_value": 94
+    },
+    {
+      "id": "69e3f79605801c7f99593e4e",
+      "price": 109,
+      "createdAt": "2026-04-18T21:28:54.693Z",
+      "main_value": 101
+    },
+    {
+      "id": "69e3eb047f69424e591bf96a",
+      "price": 160,
+      "createdAt": "2026-04-18T20:35:16.196Z",
+      "main_value": 110
+    },
+    {
+      "id": "69e3e990631b6655aed453c3",
+      "price": null,
+      "createdAt": "2026-04-18T20:29:04.588Z",
+      "main_value": 92
+    },
+    {
+      "id": "69e3e990631b6655aed453c2",
+      "price": null,
+      "createdAt": "2026-04-18T20:29:04.588Z",
+      "main_value": 108
+    },
+    {
+      "id": "69e3e35005801c7f99367833",
+      "price": 105.9,
+      "createdAt": "2026-04-18T20:02:24.441Z",
+      "main_value": 92
+    },
+    {
+      "id": "69e3e24b09e746fe7c827a42",
+      "price": null,
+      "createdAt": "2026-04-18T19:58:03.278Z",
+      "main_value": 95
+    },
+    {
+      "id": "69e3d69de4d84ac0496066c4",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 93
+    },
+    {
+      "id": "69e3d69de4d84ac0496066c3",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e3d69de4d84ac0496066c2",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 99
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058f3",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 95
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058f2",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 96
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058f1",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 98
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058f0",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 100
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058ef",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 107
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058ed",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 108
+    }
+  ],
+  "helmet6": [
+    {
+      "id": "69e5e1fd5f9c121f5af04782",
+      "price": 315,
+      "createdAt": "2026-04-20T08:21:17.225Z",
+      "main_value": 121
+    },
+    {
+      "id": "69e5ca93fd3e61dbde58462d",
+      "price": 320,
+      "createdAt": "2026-04-20T06:41:23.387Z",
+      "main_value": 143
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d5",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 140
+    },
+    {
+      "id": "69e54fb09012dc9afdd804d7",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.597Z",
+      "main_value": 122
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6bb",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e52d31ffe1ed67b980dd3f",
+      "price": 380,
+      "createdAt": "2026-04-19T19:29:53.843Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e5232b9cd54625e603a529",
+      "price": null,
+      "createdAt": "2026-04-19T18:47:07.405Z",
+      "main_value": 126
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51827",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 123
+    },
+    {
+      "id": "69e4e76aea073349a48a4e9d",
+      "price": 420,
+      "createdAt": "2026-04-19T14:32:10.404Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e4e110e7ab88fc63b5f3c6",
+      "price": null,
+      "createdAt": "2026-04-19T14:05:04.591Z",
+      "main_value": 131
+    },
+    {
+      "id": "69e44c5690bba79f8d6928ec",
+      "price": 316,
+      "createdAt": "2026-04-19T03:30:30.795Z",
+      "main_value": 138
+    },
+    {
+      "id": "69e3d69de4d84ac0496066b3",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 139
+    },
+    {
+      "id": "69e3d69de4d84ac0496066b2",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c5",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 126
+    },
+    {
+      "id": "69e3cde77f69424e59e11b75",
+      "price": 300,
+      "createdAt": "2026-04-18T18:31:03.075Z",
+      "main_value": 128
+    },
+    {
+      "id": "69e38b6043d8ef446e1b909f",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:12.097Z",
+      "main_value": 125
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b897c",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 122
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b897a",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e2d5b43cf2d0ab8c809f3a",
+      "price": null,
+      "createdAt": "2026-04-18T00:52:04.825Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e2c372962760c499893596",
+      "price": null,
+      "createdAt": "2026-04-17T23:34:10.437Z",
+      "main_value": 148
+    },
+    {
+      "id": "69e2ba47b99bba72ebdabaa5",
+      "price": null,
+      "createdAt": "2026-04-17T22:55:03.652Z",
+      "main_value": 126
+    },
+    {
+      "id": "69e2b2c71a97dd8a0d8d8aeb",
+      "price": null,
+      "createdAt": "2026-04-17T22:23:04.003Z",
+      "main_value": 136
+    },
+    {
+      "id": "69e2aa100a4ca07a2ebdbf65",
+      "price": 299,
+      "createdAt": "2026-04-17T21:45:52.685Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e27a88f4e868b1d5dc5a26",
+      "price": null,
+      "createdAt": "2026-04-17T18:23:05.009Z",
+      "main_value": 146
+    },
+    {
+      "id": "69e2787410d516df50f195ea",
+      "price": 330,
+      "createdAt": "2026-04-17T18:14:12.870Z",
+      "main_value": 134
+    },
+    {
+      "id": "69e275604b6d31e3b7e63f3a",
+      "price": null,
+      "createdAt": "2026-04-17T18:01:04.898Z",
+      "main_value": 130
+    },
+    {
+      "id": "69e25c3ce6af14c1490a0774",
+      "price": 319,
+      "createdAt": "2026-04-17T16:13:48.029Z",
+      "main_value": 121
+    },
+    {
+      "id": "69e23ab2af8d292c0435c3ec",
+      "price": 319,
+      "createdAt": "2026-04-17T13:50:42.903Z",
+      "main_value": 126
+    },
+    {
+      "id": "69e239bffe61f8ad03c0e03b",
+      "price": 386,
+      "createdAt": "2026-04-17T13:46:39.422Z",
+      "main_value": 145
+    },
+    {
+      "id": "69e1e5b4c5445deb3c8d2aba",
+      "price": null,
+      "createdAt": "2026-04-17T07:48:04.471Z",
+      "main_value": 140
+    },
+    {
+      "id": "69e17e467f69424e59d4534c",
+      "price": 580,
+      "createdAt": "2026-04-17T00:26:46.356Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e17c04a234367b08d4aa2a",
+      "price": null,
+      "createdAt": "2026-04-17T00:17:08.723Z",
+      "main_value": 147
+    },
+    {
+      "id": "69e163b2172879795ff584dd",
+      "price": 425,
+      "createdAt": "2026-04-16T22:33:22.781Z",
+      "main_value": 150
+    },
+    {
+      "id": "69e12c694eacbff0ac128bf6",
+      "price": 435,
+      "createdAt": "2026-04-16T18:37:29.927Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e118f7ba97d27e6764f200",
+      "price": 430,
+      "createdAt": "2026-04-16T17:14:31.087Z",
+      "main_value": 149
+    },
+    {
+      "id": "69e116a68b5710b5c771f9b0",
+      "price": null,
+      "createdAt": "2026-04-16T17:04:38.891Z",
+      "main_value": 122
+    },
+    {
+      "id": "69e10d0faf97b01a97ba919f",
+      "price": 325,
+      "createdAt": "2026-04-16T16:23:43.230Z",
+      "main_value": 128
+    },
+    {
+      "id": "69e10c72b6989dc211bfb39f",
+      "price": 310,
+      "createdAt": "2026-04-16T16:21:06.708Z",
+      "main_value": 127
+    },
+    {
+      "id": "69e0e858cf831d2ef605ad74",
+      "price": null,
+      "createdAt": "2026-04-16T13:47:04.671Z",
+      "main_value": 128
+    },
+    {
+      "id": "69e0e858cf831d2ef605ad73",
+      "price": null,
+      "createdAt": "2026-04-16T13:47:04.671Z",
+      "main_value": 136
+    },
+    {
+      "id": "69e06d1073005c15aff56523",
+      "price": null,
+      "createdAt": "2026-04-16T05:01:04.011Z",
+      "main_value": 137
+    },
+    {
+      "id": "69e06d1073005c15aff56522",
+      "price": null,
+      "createdAt": "2026-04-16T05:01:04.011Z",
+      "main_value": 141
+    },
+    {
+      "id": "69e05e89f87026f449e490b0",
+      "price": null,
+      "createdAt": "2026-04-16T03:59:05.083Z",
+      "main_value": 129
+    },
+    {
+      "id": "69e010e9bd0b3c0772774ecf",
+      "price": 366.337,
+      "createdAt": "2026-04-15T22:27:53.710Z",
+      "main_value": 142
+    },
+    {
+      "id": "69e00e9d01e0fc88c61cf10b",
+      "price": null,
+      "createdAt": "2026-04-15T22:18:05.226Z",
+      "main_value": 137
+    },
+    {
+      "id": "69e00d1a81a9217c39a6af48",
+      "price": null,
+      "createdAt": "2026-04-15T22:11:38.450Z",
+      "main_value": 149
+    },
+    {
+      "id": "69dfd872a2a31c9a24712464",
+      "price": 400,
+      "createdAt": "2026-04-15T18:26:58.760Z",
+      "main_value": 147
+    },
+    {
+      "id": "69dfc97eb6989dc2112bdea0",
+      "price": 399,
+      "createdAt": "2026-04-15T17:23:10.749Z",
+      "main_value": 148
+    },
+    {
+      "id": "69dfb7d39725293300f22af3",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:47.979Z",
+      "main_value": 149
+    },
+    {
+      "id": "69dfafb06f5569a2792a140f",
+      "price": null,
+      "createdAt": "2026-04-15T15:33:04.075Z",
+      "main_value": 124
+    },
+    {
+      "id": "69df5cb98442fb67a857553e",
+      "price": null,
+      "createdAt": "2026-04-15T09:39:05.759Z",
+      "main_value": 132
+    },
+    {
+      "id": "69df3debb6989dc211623203",
+      "price": 310,
+      "createdAt": "2026-04-15T07:27:39.368Z",
+      "main_value": 130
+    },
+    {
+      "id": "69dee2d73f861fc934879de0",
+      "price": null,
+      "createdAt": "2026-04-15T00:59:03.911Z",
+      "main_value": 132
+    },
+    {
+      "id": "69dec195fe5fcf30e24a8bdd",
+      "price": null,
+      "createdAt": "2026-04-14T22:37:09.337Z",
+      "main_value": 130
+    },
+    {
+      "id": "69de9677e0c8fdaaf349dccf",
+      "price": null,
+      "createdAt": "2026-04-14T19:33:11.194Z",
+      "main_value": 143
+    },
+    {
+      "id": "69de3041bc35420fd5157da2",
+      "price": null,
+      "createdAt": "2026-04-14T12:17:05.774Z",
+      "main_value": 144
+    },
+    {
+      "id": "69de017a2f5556574d327d3d",
+      "price": 326.733,
+      "createdAt": "2026-04-14T08:57:30.388Z",
+      "main_value": 134
+    },
+    {
+      "id": "69ddf5b857df07a9855d3670",
+      "price": 326.732,
+      "createdAt": "2026-04-14T08:07:20.951Z",
+      "main_value": 134
+    },
+    {
+      "id": "69ddc25fee3b630e2649e7e4",
+      "price": 330,
+      "createdAt": "2026-04-14T04:28:15.079Z",
+      "main_value": 137
+    },
+    {
+      "id": "69dd749b80230b5a12f73139",
+      "price": 374,
+      "createdAt": "2026-04-13T22:56:27.973Z",
+      "main_value": 142
+    },
+    {
+      "id": "69dd40a74c9765d7bc03ed12",
+      "price": 306.931,
+      "createdAt": "2026-04-13T19:14:47.319Z",
+      "main_value": 126
+    },
+    {
+      "id": "69dd40a4ee3b630e26ec4852",
+      "price": 305,
+      "createdAt": "2026-04-13T19:14:44.916Z",
+      "main_value": 121
+    },
+    {
+      "id": "69dd09feb6989dc2115a9798",
+      "price": 425,
+      "createdAt": "2026-04-13T15:21:34.105Z",
+      "main_value": 149
+    },
+    {
+      "id": "69dcfcdc2752053179e02f56",
+      "price": 326.732,
+      "createdAt": "2026-04-13T14:25:32.994Z",
+      "main_value": 126
+    },
+    {
+      "id": "69dcb291e978a3a3656e9201",
+      "price": 377,
+      "createdAt": "2026-04-13T09:08:33.726Z",
+      "main_value": 143
+    },
+    {
+      "id": "69dca9cc66fc1b1614818d11",
+      "price": null,
+      "createdAt": "2026-04-13T08:31:08.723Z",
+      "main_value": 123
+    },
+    {
+      "id": "69dc9ec9831c5a161f7519c8",
+      "price": null,
+      "createdAt": "2026-04-13T07:44:09.414Z",
+      "main_value": 123
+    },
+    {
+      "id": "69dc56aee6e58358224541d5",
+      "price": 306.931,
+      "createdAt": "2026-04-13T02:36:30.726Z",
+      "main_value": 123
+    },
+    {
+      "id": "69dc3eeb5e0cac8483823e72",
+      "price": 405.941,
+      "createdAt": "2026-04-13T00:55:07.842Z",
+      "main_value": 148
+    },
+    {
+      "id": "69dc1ea0113433d4593ab85c",
+      "price": 444.5,
+      "createdAt": "2026-04-12T22:37:20.037Z",
+      "main_value": 149
+    },
+    {
+      "id": "69dc0437ef89964e54b776f8",
+      "price": null,
+      "createdAt": "2026-04-12T20:44:39.177Z",
+      "main_value": 128
+    },
+    {
+      "id": "69dbbfeb5f926a2a3f631507",
+      "price": 386.139,
+      "createdAt": "2026-04-12T15:53:15.077Z",
+      "main_value": 145
+    },
+    {
+      "id": "69dbbdbfd9bd18f25fa79814",
+      "price": 390,
+      "createdAt": "2026-04-12T15:43:59.802Z",
+      "main_value": 145
+    },
+    {
+      "id": "69db771aa00c0386d714a226",
+      "price": 354,
+      "createdAt": "2026-04-12T10:42:34.219Z",
+      "main_value": 142
+    },
+    {
+      "id": "69dac824e783c6a08bdf1bac",
+      "price": null,
+      "createdAt": "2026-04-11T22:16:04.794Z",
+      "main_value": 138
+    },
+    {
+      "id": "69dab402cbe18767598ce3ad",
+      "price": null,
+      "createdAt": "2026-04-11T20:50:10.149Z",
+      "main_value": 126
+    },
+    {
+      "id": "69da8300bdb2247ec6dab63e",
+      "price": null,
+      "createdAt": "2026-04-11T17:21:04.187Z",
+      "main_value": 126
+    },
+    {
+      "id": "69da70419fa02eb138ac01c0",
+      "price": null,
+      "createdAt": "2026-04-11T16:01:05.051Z",
+      "main_value": 144
+    },
+    {
+      "id": "69da6de8e8c1b29a5ccb5d6c",
+      "price": null,
+      "createdAt": "2026-04-11T15:51:04.577Z",
+      "main_value": 130
+    },
+    {
+      "id": "69da61c137107e82892993ef",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 147
+    },
+    {
+      "id": "69da5e86cc676fbecc475b2d",
+      "price": 392.5,
+      "createdAt": "2026-04-11T14:45:26.869Z",
+      "main_value": 147
+    },
+    {
+      "id": "69da0e5704b938af904186ab",
+      "price": 387,
+      "createdAt": "2026-04-11T09:03:19.593Z",
+      "main_value": 141
+    },
+    {
+      "id": "69d9f4445f680a94a7482e68",
+      "price": null,
+      "createdAt": "2026-04-11T07:12:04.851Z",
+      "main_value": 127
+    },
+    {
+      "id": "69d9f4445f680a94a7482e67",
+      "price": null,
+      "createdAt": "2026-04-11T07:12:04.851Z",
+      "main_value": 145
+    },
+    {
+      "id": "69d9a36de91176e51d0f8833",
+      "price": null,
+      "createdAt": "2026-04-11T01:27:09.877Z",
+      "main_value": 126
+    },
+    {
+      "id": "69d9962f0e645543231b0532",
+      "price": 360,
+      "createdAt": "2026-04-11T00:30:39.518Z",
+      "main_value": 122
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea660",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 133
+    },
+    {
+      "id": "69d922f85bfa02cef5d19d00",
+      "price": null,
+      "createdAt": "2026-04-10T16:19:04.641Z",
+      "main_value": 125
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d90f",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 127
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d90e",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 129
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d90d",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 141
+    },
+    {
+      "id": "69d8a2557f0f8da155f968c0",
+      "price": 400,
+      "createdAt": "2026-04-10T07:10:13.030Z",
+      "main_value": 140
+    },
+    {
+      "id": "69d8a15c66b8ab5bc5b307d2",
+      "price": null,
+      "createdAt": "2026-04-10T07:06:04.705Z",
+      "main_value": 136
+    },
+    {
+      "id": "69d88fbb4336cd270a85b243",
+      "price": 465.347,
+      "createdAt": "2026-04-10T05:50:51.146Z",
+      "main_value": 148
+    },
+    {
+      "id": "69d88c6be2be4932da417183",
+      "price": 372,
+      "createdAt": "2026-04-10T05:36:43.128Z",
+      "main_value": 126
+    },
+    {
+      "id": "69d8857960efa274e77d9e9e",
+      "price": null,
+      "createdAt": "2026-04-10T05:07:05.081Z",
+      "main_value": 130
+    },
+    {
+      "id": "69d8857960efa274e77d9e9d",
+      "price": null,
+      "createdAt": "2026-04-10T05:07:05.081Z",
+      "main_value": 137
+    },
+    {
+      "id": "69d84a2bc68be9ad5a9d3eb7",
+      "price": null,
+      "createdAt": "2026-04-10T00:54:03.994Z",
+      "main_value": 130
+    },
+    {
+      "id": "69d8427ad08aa786411959f1",
+      "price": 376,
+      "createdAt": "2026-04-10T00:21:14.038Z",
+      "main_value": 126
+    },
+    {
+      "id": "69d826160a0333e357800501",
+      "price": null,
+      "createdAt": "2026-04-09T22:20:06.307Z",
+      "main_value": 127
+    }
+  ],
+  "chest5": [
+    {
+      "id": "69e5ebdd0a4ca07a2ed605aa",
+      "price": 102.6,
+      "createdAt": "2026-04-20T09:03:25.722Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5e43505801c7f994a66c0",
+      "price": 102.5,
+      "createdAt": "2026-04-20T08:30:45.341Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e5d23c189596e6b4f25c01",
+      "price": null,
+      "createdAt": "2026-04-20T07:14:04.362Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5cf7e8515e0b071973822",
+      "price": 112,
+      "createdAt": "2026-04-20T07:02:22.831Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e5c9904afb7c68307e6a03",
+      "price": null,
+      "createdAt": "2026-04-20T06:37:04.086Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e5b5f2df42cd747a50b571",
+      "price": 112,
+      "createdAt": "2026-04-20T05:13:22.063Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e5a9f12fb189c0202fd240",
+      "price": null,
+      "createdAt": "2026-04-20T04:22:09.670Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e5a7c4ffe1ed67b9095351",
+      "price": 106,
+      "createdAt": "2026-04-20T04:12:52.886Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3f1",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3ee",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3ed",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3ec",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e7",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebb0",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5722305801c7f99f4ad39",
+      "price": 104,
+      "createdAt": "2026-04-20T00:24:03.495Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e57013f9474bb1580d897d",
+      "price": 113,
+      "createdAt": "2026-04-20T00:15:15.517Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e56ea27811d7fa8509b61a",
+      "price": 110,
+      "createdAt": "2026-04-20T00:09:06.687Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e5651fd80cf7528a7e2258",
+      "price": 127,
+      "createdAt": "2026-04-19T23:28:31.348Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e562397811d7fa85fea080",
+      "price": 104,
+      "createdAt": "2026-04-19T23:16:09.492Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e55b2478af10c96203b36f",
+      "price": 111,
+      "createdAt": "2026-04-19T22:45:56.537Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e5594f91c75a72f67a520c",
+      "price": 103,
+      "createdAt": "2026-04-19T22:38:07.946Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e54d896f3043204ebd3f4b",
+      "price": 109.9,
+      "createdAt": "2026-04-19T21:47:53.455Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e54a1e75d82ea9ba986f09",
+      "price": 102,
+      "createdAt": "2026-04-19T21:33:18.294Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e549ab3fe129d7cd7eda14",
+      "price": 104,
+      "createdAt": "2026-04-19T21:31:23.470Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e53ffcb680587ba0f50195",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e53ffcb680587ba0f50193",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e53eb82c3707f7292fea9c",
+      "price": 101.95,
+      "createdAt": "2026-04-19T20:44:40.767Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e53e373fe129d7cd742d41",
+      "price": 101,
+      "createdAt": "2026-04-19T20:42:31.441Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6e0",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6dd",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6db",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d5",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d4",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e5345a17fc79f1ed36a99e",
+      "price": 115,
+      "createdAt": "2026-04-19T20:00:26.081Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e534243fe129d7cd5b4e34",
+      "price": 113,
+      "createdAt": "2026-04-19T19:59:32.330Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e53389652519adc9cb1ef4",
+      "price": 120,
+      "createdAt": "2026-04-19T19:56:57.467Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e5323d8515e0b071034794",
+      "price": 103.999,
+      "createdAt": "2026-04-19T19:51:25.331Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5323bd026b6804d398afa",
+      "price": 103.5,
+      "createdAt": "2026-04-19T19:51:23.123Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5210c4ac03f5ccaaea1f0",
+      "price": null,
+      "createdAt": "2026-04-19T18:38:04.830Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e51dd8581404c7c10304d9",
+      "price": 105,
+      "createdAt": "2026-04-19T18:24:24.773Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e5014f7889ee682ca2fd32",
+      "price": 104.1,
+      "createdAt": "2026-04-19T16:22:39.283Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e4ff31afa9145f81e4d6d9",
+      "price": 132,
+      "createdAt": "2026-04-19T16:13:37.596Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e4fdb40968c69062c1346e",
+      "price": 113.7,
+      "createdAt": "2026-04-19T16:07:16.875Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e4fdb2c830caae56e1bc01",
+      "price": 115,
+      "createdAt": "2026-04-19T16:07:14.364Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4fcd817fc79f1edc35b17",
+      "price": 113.6,
+      "createdAt": "2026-04-19T16:03:36.777Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51833",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4f15cc830caae56cf4efc",
+      "price": 103,
+      "createdAt": "2026-04-19T15:14:36.916Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4f15ac830caae56cf4c48",
+      "price": 103,
+      "createdAt": "2026-04-19T15:14:34.003Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4f038d80cf7528abe1f81",
+      "price": 102.97,
+      "createdAt": "2026-04-19T15:09:44.726Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e4ec7f75d82ea9bae4be74",
+      "price": 130,
+      "createdAt": "2026-04-19T14:53:51.422Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e4ea27c0d033e93bbfe797",
+      "price": 120,
+      "createdAt": "2026-04-19T14:43:51.791Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e4ea1ecc7986c95a07c257",
+      "price": 120,
+      "createdAt": "2026-04-19T14:43:42.025Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e4e6def9474bb1582ac59e",
+      "price": 104,
+      "createdAt": "2026-04-19T14:29:50.284Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e4e638720207975c6f99db",
+      "price": null,
+      "createdAt": "2026-04-19T14:27:04.182Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e4e38cfd0752b7dda8573b",
+      "price": 102.97,
+      "createdAt": "2026-04-19T14:15:40.201Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e4e34ffd3e61dbde2fc2d4",
+      "price": 112,
+      "createdAt": "2026-04-19T14:14:39.398Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e4e2a075d82ea9badda612",
+      "price": 109.999,
+      "createdAt": "2026-04-19T14:11:44.954Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4e278cc7986c95afe5686",
+      "price": 107,
+      "createdAt": "2026-04-19T14:11:04.987Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4e2763dbda1615a765427",
+      "price": 107,
+      "createdAt": "2026-04-19T14:11:02.984Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4e227cc7986c95afbf46b",
+      "price": 106.99,
+      "createdAt": "2026-04-19T14:09:43.288Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e4e18baf8d292c04a4b550",
+      "price": 103,
+      "createdAt": "2026-04-19T14:07:07.965Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4e110e7ab88fc63b5f3c8",
+      "price": null,
+      "createdAt": "2026-04-19T14:05:04.592Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e4e110e7ab88fc63b5f3c7",
+      "price": null,
+      "createdAt": "2026-04-19T14:05:04.592Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4bdc6fd0752b7dd886eb9",
+      "price": 111,
+      "createdAt": "2026-04-19T11:34:30.133Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e4bdc3a5c2850e929d575e",
+      "price": 111,
+      "createdAt": "2026-04-19T11:34:27.671Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e4b99315776912e2fa7f90",
+      "price": 109,
+      "createdAt": "2026-04-19T11:16:35.689Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4b49551ec4b9a06cbf3ba",
+      "price": 126.732,
+      "createdAt": "2026-04-19T10:55:17.842Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4b14690bba79f8dcf9954",
+      "price": 115,
+      "createdAt": "2026-04-19T10:41:10.496Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e4ab8511f00bcfa90eb38c",
+      "price": 114.9,
+      "createdAt": "2026-04-19T10:16:37.472Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4a855ac2af149c3f7d62f",
+      "price": 107.9,
+      "createdAt": "2026-04-19T10:03:01.672Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4a2a9d80cf7528a66ba40",
+      "price": 115,
+      "createdAt": "2026-04-19T09:38:49.591Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e486e2fe61f8ad03dddb47",
+      "price": 126,
+      "createdAt": "2026-04-19T07:40:18.792Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e483759e86ddd1950b7a40",
+      "price": 112,
+      "createdAt": "2026-04-19T07:25:41.424Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4832305801c7f99a24ce2",
+      "price": 103.999,
+      "createdAt": "2026-04-19T07:24:19.882Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e477c23dbda1615aff4818",
+      "price": 110.783,
+      "createdAt": "2026-04-19T06:35:46.247Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e47787f7b095e9775230a0",
+      "price": 104,
+      "createdAt": "2026-04-19T06:34:47.086Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e470cbfd3e61dbde9d09cd",
+      "price": 133,
+      "createdAt": "2026-04-19T06:06:03.986Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e469023dbda1615af3a729",
+      "price": 100,
+      "createdAt": "2026-04-19T05:32:50.739Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e468e1c830caae563e36a5",
+      "price": 100,
+      "createdAt": "2026-04-19T05:32:17.016Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e468bd172879795faee104",
+      "price": 99.9,
+      "createdAt": "2026-04-19T05:31:41.350Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e462b7f9474bb158aaddf1",
+      "price": 133,
+      "createdAt": "2026-04-19T05:05:59.779Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e43981c3a64a49e5c068ed",
+      "price": null,
+      "createdAt": "2026-04-19T02:10:09.021Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e428dde489d870aa62997d",
+      "price": null,
+      "createdAt": "2026-04-19T00:59:09.845Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e428dde489d870aa62997c",
+      "price": null,
+      "createdAt": "2026-04-19T00:59:09.845Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4243498c90004d5178ba4",
+      "price": 105,
+      "createdAt": "2026-04-19T00:39:16.666Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4177a8515e0b071c8d255",
+      "price": 102,
+      "createdAt": "2026-04-18T23:44:58.519Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e40ef6a5c2850e923ad557",
+      "price": 125,
+      "createdAt": "2026-04-18T23:08:38.069Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e3f05b3f2b8695de002886",
+      "price": null,
+      "createdAt": "2026-04-18T20:58:03.782Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e3e990631b6655aed453c1",
+      "price": null,
+      "createdAt": "2026-04-18T20:29:04.588Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e3e357ac2af149c35a996e",
+      "price": 105,
+      "createdAt": "2026-04-18T20:02:31.646Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e3de83ffe1ed67b907405e",
+      "price": 102,
+      "createdAt": "2026-04-18T19:41:55.705Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3dcf63dbda1615a7711ed",
+      "price": 100,
+      "createdAt": "2026-04-18T19:35:18.700Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e3d69de4d84ac0496066c1",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058eb",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e9",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e8",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e5",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e4",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e2",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e3c50e7acf98d445e62487",
+      "price": 107.5,
+      "createdAt": "2026-04-18T17:53:18.668Z",
+      "main_value": 40
+    }
+  ],
+  "chest6": [
+    {
+      "id": "69e5ee12fd3e61dbde802319",
+      "price": 300,
+      "createdAt": "2026-04-20T09:12:50.446Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e5ea9c277577237f4e79e0",
+      "price": null,
+      "createdAt": "2026-04-20T08:58:04.098Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e5e8a8d026b6804de09351",
+      "price": 340,
+      "createdAt": "2026-04-20T08:49:44.065Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e5c9904afb7c68307e6a00",
+      "price": null,
+      "createdAt": "2026-04-20T06:37:04.086Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e569b4b563aeef997d886e",
+      "price": null,
+      "createdAt": "2026-04-19T23:48:04.083Z",
+      "main_value": 61
+    },
+    {
+      "id": "69e5605f10d516df50d58247",
+      "price": 305,
+      "createdAt": "2026-04-19T23:08:15.745Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965b8",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e52d4605801c7f998fc6b4",
+      "price": 340.999,
+      "createdAt": "2026-04-19T19:30:14.640Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e478c617fc79f1ed2261f0",
+      "price": 315.941,
+      "createdAt": "2026-04-19T06:40:06.609Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e44a873fe129d7cd3b2b65",
+      "price": 320,
+      "createdAt": "2026-04-19T03:22:47.713Z",
+      "main_value": 69
+    },
+    {
+      "id": "69e3dcbbfd3e61dbde38effd",
+      "price": 330,
+      "createdAt": "2026-04-18T19:34:19.275Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e3ceb64860eeea21689c08",
+      "price": 302,
+      "createdAt": "2026-04-18T18:34:30.640Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e3aa49581404c7c12c4f5d",
+      "price": 310,
+      "createdAt": "2026-04-18T15:59:05.934Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e3982ba5c2850e92a36e62",
+      "price": 317.88,
+      "createdAt": "2026-04-18T14:41:47.848Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b897b",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e32b90172879795fe3e3f7",
+      "price": 336,
+      "createdAt": "2026-04-18T06:58:24.213Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e2ba8509204aee635dd412",
+      "price": null,
+      "createdAt": "2026-04-17T22:56:05.025Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e27882a5c2850e9293e89b",
+      "price": 319,
+      "createdAt": "2026-04-17T18:14:26.270Z",
+      "main_value": 61
+    },
+    {
+      "id": "69e25c43e6af14c1490a07dd",
+      "price": 318,
+      "createdAt": "2026-04-17T16:13:55.611Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e25b257441f3c84779bf5f",
+      "price": null,
+      "createdAt": "2026-04-17T16:09:09.800Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e251c12451c9a655bdb6d7",
+      "price": null,
+      "createdAt": "2026-04-17T15:29:05.195Z",
+      "main_value": 62
+    },
+    {
+      "id": "69e24be98705cf21bdcd797a",
+      "price": null,
+      "createdAt": "2026-04-17T15:04:09.511Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e23ea7b910d1dae81ddcaf",
+      "price": null,
+      "createdAt": "2026-04-17T14:07:35.275Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e2309fc830caae5635b5fb",
+      "price": 312,
+      "createdAt": "2026-04-17T13:07:43.098Z",
+      "main_value": 62
+    },
+    {
+      "id": "69e213e50a4ca07a2e163013",
+      "price": 316.9,
+      "createdAt": "2026-04-17T11:05:09.982Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e1f1e43efe8098aa174b7d",
+      "price": null,
+      "createdAt": "2026-04-17T08:40:04.080Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e1ae41e6af14c14981fffe",
+      "price": 320,
+      "createdAt": "2026-04-17T03:51:29.608Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e17df25c9d667490b0ed2c",
+      "price": 400,
+      "createdAt": "2026-04-17T00:25:22.185Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e126cf4263dac0b8c05640",
+      "price": 315,
+      "createdAt": "2026-04-16T18:13:35.218Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e124b1a03070cad57424f7",
+      "price": 445,
+      "createdAt": "2026-04-16T18:04:33.334Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e116a68b5710b5c771f9af",
+      "price": null,
+      "createdAt": "2026-04-16T17:04:38.891Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e0ea74331e24bb6c352818",
+      "price": null,
+      "createdAt": "2026-04-16T13:56:04.789Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e0c482f42f0c5b67c9800b",
+      "price": null,
+      "createdAt": "2026-04-16T11:14:10.337Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e0c0a15bb1f1ef9fdff943",
+      "price": 366.337,
+      "createdAt": "2026-04-16T10:57:37.537Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e0b540b3bd1d5320da54ac",
+      "price": null,
+      "createdAt": "2026-04-16T10:09:04.210Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e06776235ad89bc32051db",
+      "price": null,
+      "createdAt": "2026-04-16T04:37:10.051Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e0336d7bc90fa1ef1ac7b2",
+      "price": null,
+      "createdAt": "2026-04-16T00:55:09.699Z",
+      "main_value": 63
+    },
+    {
+      "id": "69e011f75ad8e3fd88e76a88",
+      "price": 305,
+      "createdAt": "2026-04-15T22:32:23.066Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e00e9d01e0fc88c61cf10d",
+      "price": null,
+      "createdAt": "2026-04-15T22:18:05.227Z",
+      "main_value": 68
+    },
+    {
+      "id": "69dff0a9f179c48e9d04f548",
+      "price": 470,
+      "createdAt": "2026-04-15T20:10:17.263Z",
+      "main_value": 70
+    },
+    {
+      "id": "69dfd85da2a31c9a2470c6dc",
+      "price": 400,
+      "createdAt": "2026-04-15T18:26:37.173Z",
+      "main_value": 69
+    },
+    {
+      "id": "69dfb7d39725293300f22af4",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:47.979Z",
+      "main_value": 64
+    },
+    {
+      "id": "69dfb7d09725293300f2133b",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 70
+    },
+    {
+      "id": "69df8970a2a31c9a24187e67",
+      "price": 360,
+      "createdAt": "2026-04-15T12:49:52.609Z",
+      "main_value": 68
+    },
+    {
+      "id": "69df83ed076dbfc20bf067de",
+      "price": 370,
+      "createdAt": "2026-04-15T12:26:21.149Z",
+      "main_value": 67
+    },
+    {
+      "id": "69df5cb98442fb67a8575540",
+      "price": null,
+      "createdAt": "2026-04-15T09:39:05.759Z",
+      "main_value": 67
+    },
+    {
+      "id": "69def1dc11deffc94d8b9d06",
+      "price": null,
+      "createdAt": "2026-04-15T02:03:08.892Z",
+      "main_value": 68
+    },
+    {
+      "id": "69dee14a8348a58fd7bd2587",
+      "price": 330,
+      "createdAt": "2026-04-15T00:52:26.005Z",
+      "main_value": 61
+    },
+    {
+      "id": "69deb8fcaf97b01a97131bd4",
+      "price": 365,
+      "createdAt": "2026-04-14T22:00:28.927Z",
+      "main_value": 67
+    },
+    {
+      "id": "69de9677e0c8fdaaf349dcd0",
+      "price": null,
+      "createdAt": "2026-04-14T19:33:11.194Z",
+      "main_value": 61
+    },
+    {
+      "id": "69de79386e69016f87690114",
+      "price": 337.998,
+      "createdAt": "2026-04-14T17:28:24.006Z",
+      "main_value": 64
+    },
+    {
+      "id": "69de4829b3a5adde2fb81bd7",
+      "price": null,
+      "createdAt": "2026-04-14T13:59:05.115Z",
+      "main_value": 58
+    },
+    {
+      "id": "69de01aa2f5556574d332ff1",
+      "price": 330,
+      "createdAt": "2026-04-14T08:58:18.646Z",
+      "main_value": 57
+    },
+    {
+      "id": "69ddf5c080230b5a125116ba",
+      "price": 330,
+      "createdAt": "2026-04-14T08:07:28.572Z",
+      "main_value": 58
+    },
+    {
+      "id": "69ddd771ef91801ecc240320",
+      "price": null,
+      "createdAt": "2026-04-14T05:58:09.698Z",
+      "main_value": 61
+    },
+    {
+      "id": "69ddc26be28eff0d47f10576",
+      "price": 330,
+      "createdAt": "2026-04-14T04:28:27.977Z",
+      "main_value": 64
+    },
+    {
+      "id": "69dd611550e785b8cdcf5502",
+      "price": null,
+      "createdAt": "2026-04-13T21:33:09.797Z",
+      "main_value": 61
+    },
+    {
+      "id": "69dd3d924fb641a75850e9a5",
+      "price": null,
+      "createdAt": "2026-04-13T19:01:38.652Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dd1305c0ab8d33483964d0",
+      "price": null,
+      "createdAt": "2026-04-13T16:00:05.400Z",
+      "main_value": 67
+    },
+    {
+      "id": "69dc8c455d6c1eb2cf6d8423",
+      "price": null,
+      "createdAt": "2026-04-13T06:25:09.539Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dc09eff0f30a80625cafbc",
+      "price": null,
+      "createdAt": "2026-04-12T21:09:03.768Z",
+      "main_value": 65
+    },
+    {
+      "id": "69dc0599c69c7bca19a390d1",
+      "price": null,
+      "createdAt": "2026-04-12T20:50:33.074Z",
+      "main_value": 68
+    },
+    {
+      "id": "69dc045c203c346a62aad4b2",
+      "price": 410,
+      "createdAt": "2026-04-12T20:45:16.110Z",
+      "main_value": 69
+    },
+    {
+      "id": "69dc03d8c2ad8b4893928351",
+      "price": null,
+      "createdAt": "2026-04-12T20:43:04.465Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dbf3b5dac39fe27e08305a",
+      "price": 346.535,
+      "createdAt": "2026-04-12T19:34:13.362Z",
+      "main_value": 64
+    },
+    {
+      "id": "69dbd120b2a2e9eb5095b948",
+      "price": null,
+      "createdAt": "2026-04-12T17:06:40.229Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dbd120b2a2e9eb5095b947",
+      "price": null,
+      "createdAt": "2026-04-12T17:06:40.229Z",
+      "main_value": 68
+    },
+    {
+      "id": "69dbcc72d16208490cb191b1",
+      "price": 370,
+      "createdAt": "2026-04-12T16:46:42.790Z",
+      "main_value": 67
+    },
+    {
+      "id": "69dba77d04b938af9013213f",
+      "price": 360,
+      "createdAt": "2026-04-12T14:09:01.565Z",
+      "main_value": 64
+    },
+    {
+      "id": "69db70310fe95d96594aefc4",
+      "price": null,
+      "createdAt": "2026-04-12T10:13:05.183Z",
+      "main_value": 56
+    },
+    {
+      "id": "69db132354ec21b885cf01a3",
+      "price": null,
+      "createdAt": "2026-04-12T03:36:03.720Z",
+      "main_value": 63
+    },
+    {
+      "id": "69dade312326ab922928c410",
+      "price": null,
+      "createdAt": "2026-04-11T23:50:09.477Z",
+      "main_value": 60
+    },
+    {
+      "id": "69daab14a1f2b2e40cb24da4",
+      "price": null,
+      "createdAt": "2026-04-11T20:12:04.808Z",
+      "main_value": 57
+    },
+    {
+      "id": "69da70419fa02eb138ac01c3",
+      "price": null,
+      "createdAt": "2026-04-11T16:01:05.051Z",
+      "main_value": 59
+    },
+    {
+      "id": "69da6a63b4bc679e20a88b7d",
+      "price": null,
+      "createdAt": "2026-04-11T15:36:03.984Z",
+      "main_value": 61
+    },
+    {
+      "id": "69da64bff5419ebd5bc999db",
+      "price": 369,
+      "createdAt": "2026-04-11T15:11:59.262Z",
+      "main_value": 63
+    },
+    {
+      "id": "69da61c337107e828929a1eb",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:15.506Z",
+      "main_value": 70
+    },
+    {
+      "id": "69da5e9a92e0a751da9a581a",
+      "price": 367,
+      "createdAt": "2026-04-11T14:45:46.855Z",
+      "main_value": 64
+    },
+    {
+      "id": "69da1068a5b9865fe7bde1b4",
+      "price": null,
+      "createdAt": "2026-04-11T09:12:08.964Z",
+      "main_value": 64
+    },
+    {
+      "id": "69da0c5b1b4838dca8686491",
+      "price": 367.499,
+      "createdAt": "2026-04-11T08:54:51.147Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d9f4445f680a94a7482e69",
+      "price": null,
+      "createdAt": "2026-04-11T07:12:04.851Z",
+      "main_value": 69
+    },
+    {
+      "id": "69d9bc040f46399c5d9f0c38",
+      "price": null,
+      "createdAt": "2026-04-11T03:12:04.477Z",
+      "main_value": 66
+    },
+    {
+      "id": "69d9b31b26318a14863712c9",
+      "price": null,
+      "createdAt": "2026-04-11T02:34:03.929Z",
+      "main_value": 65
+    },
+    {
+      "id": "69d9a36de91176e51d0f8834",
+      "price": null,
+      "createdAt": "2026-04-11T01:27:09.877Z",
+      "main_value": 70
+    },
+    {
+      "id": "69d9a36de91176e51d0f836e",
+      "price": null,
+      "createdAt": "2026-04-11T01:27:09.442Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d99635e2be4932dae1cdaa",
+      "price": 360,
+      "createdAt": "2026-04-11T00:30:45.135Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea662",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 66
+    },
+    {
+      "id": "69d955996c6da73d0b14dec2",
+      "price": null,
+      "createdAt": "2026-04-10T19:55:05.161Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d955996c6da73d0b14dec1",
+      "price": null,
+      "createdAt": "2026-04-10T19:55:05.161Z",
+      "main_value": 64
+    },
+    {
+      "id": "69d8ce9d2ddb4979a675c22d",
+      "price": null,
+      "createdAt": "2026-04-10T10:19:09.450Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d84243429b60c9de1ca6f3",
+      "price": 370,
+      "createdAt": "2026-04-10T00:20:19.378Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d826160a0333e357800504",
+      "price": null,
+      "createdAt": "2026-04-09T22:20:06.307Z",
+      "main_value": 59
+    },
+    {
+      "id": "69d826160a0333e357800502",
+      "price": null,
+      "createdAt": "2026-04-09T22:20:06.307Z",
+      "main_value": 68
+    },
+    {
+      "id": "69d823f81ac18073cb15dc45",
+      "price": null,
+      "createdAt": "2026-04-09T22:11:04.700Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d7c8d135c6c6a0c0ab05ed",
+      "price": 410,
+      "createdAt": "2026-04-09T15:42:09.140Z",
+      "main_value": 66
+    },
+    {
+      "id": "69d7c3a5d994493b55a486f2",
+      "price": null,
+      "createdAt": "2026-04-09T15:20:05.349Z",
+      "main_value": 64
+    },
+    {
+      "id": "69d78dfdbe0436eea1a5f58f",
+      "price": null,
+      "createdAt": "2026-04-09T11:31:09.562Z",
+      "main_value": 68
+    },
+    {
+      "id": "69d7809c1f1e5c3d42ef68cb",
+      "price": null,
+      "createdAt": "2026-04-09T10:34:04.022Z",
+      "main_value": 60
+    },
+    {
+      "id": "69d7773fb7576211e5f52752",
+      "price": null,
+      "createdAt": "2026-04-09T09:54:07.966Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d7773eb7576211e5f51c86",
+      "price": null,
+      "createdAt": "2026-04-09T09:54:06.731Z",
+      "main_value": 62
+    }
+  ],
+  "gloves5": [
+    {
+      "id": "69e5ef977acf98d4456c6b8e",
+      "price": 143.1,
+      "createdAt": "2026-04-20T09:19:19.255Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5ea9c277577237f4e79e1",
+      "price": null,
+      "createdAt": "2026-04-20T08:58:04.098Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5d9f92c3707f729b91dd5",
+      "price": 149,
+      "createdAt": "2026-04-20T07:47:05.590Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5d23c189596e6b4f25c00",
+      "price": null,
+      "createdAt": "2026-04-20T07:14:04.362Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e5d23c189596e6b4f25b3f",
+      "price": null,
+      "createdAt": "2026-04-20T07:14:04.271Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5cfd27811d7fa853dddcf",
+      "price": 162.475,
+      "createdAt": "2026-04-20T07:03:46.320Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5c9904afb7c68307e6a02",
+      "price": null,
+      "createdAt": "2026-04-20T06:37:04.086Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e5c198ffe1ed67b9199bf0",
+      "price": 124,
+      "createdAt": "2026-04-20T06:03:04.522Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e5becd3747bd33b28e8cd8",
+      "price": null,
+      "createdAt": "2026-04-20T05:51:09.248Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5b74aaf8d292c04be747c",
+      "price": 122,
+      "createdAt": "2026-04-20T05:19:06.860Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e5b67f10d516df500dc29f",
+      "price": 130,
+      "createdAt": "2026-04-20T05:15:43.181Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5a5563dbda1615a75c1b6",
+      "price": 139.55,
+      "createdAt": "2026-04-20T04:02:30.903Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e598ddfe61f8ad03494d39",
+      "price": 118,
+      "createdAt": "2026-04-20T03:09:17.680Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e6",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e5",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e4",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e3",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e2",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e585d454fe58f176b5b77d",
+      "price": null,
+      "createdAt": "2026-04-20T01:48:04.225Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e57f06172879795f220bc2",
+      "price": 133,
+      "createdAt": "2026-04-20T01:19:02.549Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e57e9ec830caae56b47887",
+      "price": 129.9,
+      "createdAt": "2026-04-20T01:17:18.474Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e577d75c9d667490780b70",
+      "price": 143,
+      "createdAt": "2026-04-20T00:48:23.231Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5763c78af10c96217f950",
+      "price": 130,
+      "createdAt": "2026-04-20T00:41:32.637Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e574a80968c6906294b78c",
+      "price": 99.01,
+      "createdAt": "2026-04-20T00:34:48.995Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e5745c0968c69062938689",
+      "price": 148,
+      "createdAt": "2026-04-20T00:33:32.178Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5722ac830caae56aadc2e",
+      "price": 117.7,
+      "createdAt": "2026-04-20T00:24:10.531Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e56e827811d7fa85095b69",
+      "price": 157,
+      "createdAt": "2026-04-20T00:08:34.341Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e56930976e825684a9cfcf",
+      "price": 129,
+      "createdAt": "2026-04-19T23:45:52.740Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e5617a8515e0b0714c831a",
+      "price": 118,
+      "createdAt": "2026-04-19T23:12:58.306Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e558968515e0b071470573",
+      "price": 118,
+      "createdAt": "2026-04-19T22:35:02.205Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e54fb09012dc9afdd806ee",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.803Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e54d9cac2af149c31307d5",
+      "price": 130,
+      "createdAt": "2026-04-19T21:48:12.032Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965bc",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965bb",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e547decd345e323992a807",
+      "price": 135,
+      "createdAt": "2026-04-19T21:23:42.214Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e547b6f7b095e97799283b",
+      "price": 131,
+      "createdAt": "2026-04-19T21:23:02.646Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e53ffcb680587ba0f50334",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e53ffcb680587ba0f50192",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d3",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d2",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d1",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d0",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6cf",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5370a652519adc9d6632a",
+      "price": 140,
+      "createdAt": "2026-04-19T20:11:54.056Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5324bd026b6804d3a2f18",
+      "price": 118,
+      "createdAt": "2026-04-19T19:51:39.208Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e532467acf98d445aa472f",
+      "price": 117.8,
+      "createdAt": "2026-04-19T19:51:34.568Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e5322dbfad6f7deb9ec3b6",
+      "price": null,
+      "createdAt": "2026-04-19T19:51:09.644Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e52dc5172879795fa6b732",
+      "price": 118,
+      "createdAt": "2026-04-19T19:32:21.492Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e52c4311f00bcfa9b2e89c",
+      "price": 146,
+      "createdAt": "2026-04-19T19:25:55.155Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5298417fc79f1ed108858",
+      "price": 158.317,
+      "createdAt": "2026-04-19T19:14:12.925Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e522ed581404c7c10f5408",
+      "price": 124.5,
+      "createdAt": "2026-04-19T18:46:05.362Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e5210c4ac03f5ccaaea1ee",
+      "price": null,
+      "createdAt": "2026-04-19T18:38:04.830Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5210c4ac03f5ccaaea1ed",
+      "price": null,
+      "createdAt": "2026-04-19T18:38:04.830Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5148fea073349a4ca2759",
+      "price": 133,
+      "createdAt": "2026-04-19T17:44:47.897Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e50fa0c0d033e93bf48fd4",
+      "price": 119.01,
+      "createdAt": "2026-04-19T17:23:44.875Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e504da976e825684f5bb09",
+      "price": 116,
+      "createdAt": "2026-04-19T16:37:46.613Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e502b23dbda1615a9bf309",
+      "price": 145.5,
+      "createdAt": "2026-04-19T16:28:34.197Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e50295ffe1ed67b92fe565",
+      "price": 137.8,
+      "createdAt": "2026-04-19T16:28:05.093Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5020b90bba79f8d2d34b1",
+      "price": 116.1,
+      "createdAt": "2026-04-19T16:25:47.149Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e501fd75d82ea9ba00abf2",
+      "price": 116.2,
+      "createdAt": "2026-04-19T16:25:33.964Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4fd92c830caae56e11943",
+      "price": 122.9,
+      "createdAt": "2026-04-19T16:06:42.683Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e4fd91cc7986c95a1cbfe1",
+      "price": 120,
+      "createdAt": "2026-04-19T16:06:41.427Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e4fcb9a5c2850e92e8583c",
+      "price": 132.77,
+      "createdAt": "2026-04-19T16:03:05.595Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51832",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e4f355df42cd747a8858f2",
+      "price": 134.5,
+      "createdAt": "2026-04-19T15:23:01.701Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4f2ab2c3707f729a709bf",
+      "price": 134,
+      "createdAt": "2026-04-19T15:20:11.829Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4e74d10ea2fde23415a46",
+      "price": 125.9,
+      "createdAt": "2026-04-19T14:31:41.477Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4e725172879795f323dfe",
+      "price": 125,
+      "createdAt": "2026-04-19T14:31:01.170Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4e6f12c3707f7299d2211",
+      "price": 124.95,
+      "createdAt": "2026-04-19T14:30:09.737Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4e3270968c69062a522d3",
+      "price": 124,
+      "createdAt": "2026-04-19T14:13:59.882Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e4e28ffd3e61dbde2e0ea6",
+      "price": 139,
+      "createdAt": "2026-04-19T14:11:27.433Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e4e281fe61f8ad0355aee4",
+      "price": 128,
+      "createdAt": "2026-04-19T14:11:13.417Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4e197af8d292c04a5077b",
+      "price": 127.5,
+      "createdAt": "2026-04-19T14:07:19.559Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4d4c97889ee682c6b5aa0",
+      "price": 130,
+      "createdAt": "2026-04-19T13:12:41.335Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4c8aac0d033e93b9c3f4b",
+      "price": 111,
+      "createdAt": "2026-04-19T12:20:58.768Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4c347cd345e3239e9e252",
+      "price": 145.098,
+      "createdAt": "2026-04-19T11:57:59.959Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4bc8cd2db7201f19a0f31",
+      "price": 128,
+      "createdAt": "2026-04-19T11:29:16.572Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e4b76c2c3707f72960c6a5",
+      "price": 160,
+      "createdAt": "2026-04-19T11:07:24.572Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e4b4ba51ec4b9a06ccece6",
+      "price": 144.8,
+      "createdAt": "2026-04-19T10:55:54.991Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c87f2",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.589Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c8504",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e4acd1c830caae5682a405",
+      "price": 130,
+      "createdAt": "2026-04-19T10:22:09.862Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4a9647889ee682c41fac5",
+      "price": 119,
+      "createdAt": "2026-04-19T10:07:32.837Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e4a3c3581404c7c16adb89",
+      "price": 117.99,
+      "createdAt": "2026-04-19T09:43:31.049Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e4a2e72c3707f7293ed87d",
+      "price": 118,
+      "createdAt": "2026-04-19T09:39:51.435Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e48b61976e8256846021ec",
+      "price": 140,
+      "createdAt": "2026-04-19T07:59:29.374Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e485d6cc7986c95a82894b",
+      "price": 117,
+      "createdAt": "2026-04-19T07:35:50.709Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e485d27889ee682c171b6e",
+      "price": 116,
+      "createdAt": "2026-04-19T07:35:46.318Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e484bc5a0f1f468935d4f2",
+      "price": null,
+      "createdAt": "2026-04-19T07:31:08.633Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e478cd0968c69062242f01",
+      "price": 118,
+      "createdAt": "2026-04-19T06:40:13.085Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e470c1fd3e61dbde9cb7b0",
+      "price": 145.9,
+      "createdAt": "2026-04-19T06:05:53.465Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e45cd6af8d292c0431b331",
+      "price": 116,
+      "createdAt": "2026-04-19T04:40:54.454Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4519f79d940ce0ecec53a",
+      "price": null,
+      "createdAt": "2026-04-19T03:53:03.975Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e446d885300617545bf963",
+      "price": null,
+      "createdAt": "2026-04-19T03:07:04.114Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e439406f556c3e662e4dbd",
+      "price": null,
+      "createdAt": "2026-04-19T02:09:04.108Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e42d6578af10c962b254f1",
+      "price": 145.8,
+      "createdAt": "2026-04-19T01:18:29.811Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e423782d3c6e517fc23bb0",
+      "price": null,
+      "createdAt": "2026-04-19T00:36:08.211Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e41079e64f9fd729dc1a9f",
+      "price": 139,
+      "createdAt": "2026-04-18T23:15:05.161Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e40e5af9474bb15881fb14",
+      "price": 145,
+      "createdAt": "2026-04-18T23:06:02.532Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e40e4a6f3043204e3dd8c9",
+      "price": 144,
+      "createdAt": "2026-04-18T23:05:46.686Z",
+      "main_value": 39
+    }
+  ],
+  "gloves6": [
+    {
+      "id": "69e5c52281ab6bc306fdeec9",
+      "price": null,
+      "createdAt": "2026-04-20T06:18:10.177Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e5be488515e0b0718c12b3",
+      "price": 376.238,
+      "createdAt": "2026-04-20T05:48:56.626Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba6",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e59155fa9d8c393b4eeba5",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e53ffcb680587ba0f5032f",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6bd",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e52d56fe61f8ad03d08d95",
+      "price": 358,
+      "createdAt": "2026-04-19T19:30:30.073Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e5210c4ac03f5ccaaea1e9",
+      "price": null,
+      "createdAt": "2026-04-19T18:38:04.830Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51828",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e4db29ffe1ed67b9f78db8",
+      "price": 369,
+      "createdAt": "2026-04-19T13:39:53.523Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e4519f79d940ce0ecec538",
+      "price": null,
+      "createdAt": "2026-04-19T03:53:03.975Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e44a4d75d82ea9ba41ac2d",
+      "price": 360,
+      "createdAt": "2026-04-19T03:21:49.919Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b897d",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e37f04ffe1ed67b9035e4f",
+      "price": 365,
+      "createdAt": "2026-04-18T12:54:28.726Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e3745c15776912e2b2a196",
+      "price": 314,
+      "createdAt": "2026-04-18T12:09:00.708Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e365d6d2db7201f1314f0d",
+      "price": 385,
+      "createdAt": "2026-04-18T11:07:02.439Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e34930df42cd747abe6dc2",
+      "price": 360,
+      "createdAt": "2026-04-18T09:04:48.987Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e32b99d063e0832e129ed0",
+      "price": 357,
+      "createdAt": "2026-04-18T06:58:33.623Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e31db53dbda1615afa929e",
+      "price": 355,
+      "createdAt": "2026-04-18T05:59:17.852Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e29acaaf8d292c04d3dec0",
+      "price": 415,
+      "createdAt": "2026-04-17T20:40:42.871Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e278915f9c121f5a937aa2",
+      "price": 327,
+      "createdAt": "2026-04-17T18:14:41.440Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e25ce17acf98d445e84d28",
+      "price": 335,
+      "createdAt": "2026-04-17T16:16:33.266Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e25c4ae6af14c1490a0e33",
+      "price": 316.832,
+      "createdAt": "2026-04-17T16:14:02.827Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e251c12451c9a655bdbc2c",
+      "price": null,
+      "createdAt": "2026-04-17T15:29:05.681Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e251c12451c9a655bdbc2b",
+      "price": null,
+      "createdAt": "2026-04-17T15:29:05.681Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e246bc9c3dbe5df6bdbe48",
+      "price": null,
+      "createdAt": "2026-04-17T14:42:04.122Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e246bc9c3dbe5df6bdbe47",
+      "price": null,
+      "createdAt": "2026-04-17T14:42:04.122Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e245532c3707f7295280ea",
+      "price": 316,
+      "createdAt": "2026-04-17T14:36:03.618Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e23ea7b910d1dae81ddcb0",
+      "price": null,
+      "createdAt": "2026-04-17T14:07:35.275Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e23ea7b910d1dae81dda8f",
+      "price": null,
+      "createdAt": "2026-04-17T14:07:35.054Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e191594657eaef5701c71f",
+      "price": null,
+      "createdAt": "2026-04-17T01:48:09.669Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e172c22b46453a2b4879ea",
+      "price": null,
+      "createdAt": "2026-04-16T23:37:38.867Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e1443778af10c9623413d4",
+      "price": 350,
+      "createdAt": "2026-04-16T20:19:03.790Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e13fc77da05b96242dd9c4",
+      "price": null,
+      "createdAt": "2026-04-16T20:00:07.715Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e13fa03fe129d7cd65215e",
+      "price": 350,
+      "createdAt": "2026-04-16T19:59:28.244Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e11db4056e34a956fc444f",
+      "price": 310,
+      "createdAt": "2026-04-16T17:34:44.514Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e08044368b0c88e5c48c74",
+      "price": 300,
+      "createdAt": "2026-04-16T06:23:00.570Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e06775235ad89bc3204def",
+      "price": null,
+      "createdAt": "2026-04-16T04:37:09.664Z",
+      "main_value": 52
+    },
+    {
+      "id": "69dfd84cc12b0f486f4fa9f3",
+      "price": 380,
+      "createdAt": "2026-04-15T18:26:20.368Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dfb7d09725293300f2133a",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 51
+    },
+    {
+      "id": "69dfb7d09725293300f21335",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dfb7d09725293300f21334",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dfb7d09725293300f21333",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 60
+    },
+    {
+      "id": "69dfb51b90a7880b62ec1fc9",
+      "price": null,
+      "createdAt": "2026-04-15T15:56:11.328Z",
+      "main_value": 51
+    },
+    {
+      "id": "69dfaefebe9308e166405de6",
+      "price": 307,
+      "createdAt": "2026-04-15T15:30:06.261Z",
+      "main_value": 51
+    },
+    {
+      "id": "69df72edc12b0f486fb8cc84",
+      "price": 320,
+      "createdAt": "2026-04-15T11:13:49.059Z",
+      "main_value": 51
+    },
+    {
+      "id": "69df5cb98442fb67a857553f",
+      "price": null,
+      "createdAt": "2026-04-15T09:39:05.759Z",
+      "main_value": 51
+    },
+    {
+      "id": "69df36c41da8142b69d6f76d",
+      "price": 332,
+      "createdAt": "2026-04-15T06:57:08.707Z",
+      "main_value": 55
+    },
+    {
+      "id": "69deb90a2862fd757afc9648",
+      "price": 340,
+      "createdAt": "2026-04-14T22:00:42.912Z",
+      "main_value": 52
+    },
+    {
+      "id": "69dea0c0cda70b6fac5db002",
+      "price": null,
+      "createdAt": "2026-04-14T20:17:04.310Z",
+      "main_value": 57
+    },
+    {
+      "id": "69de78e834d852c57f58e5f7",
+      "price": null,
+      "createdAt": "2026-04-14T17:27:04.875Z",
+      "main_value": 55
+    },
+    {
+      "id": "69de78e834d852c57f58e5f6",
+      "price": null,
+      "createdAt": "2026-04-14T17:27:04.875Z",
+      "main_value": 56
+    },
+    {
+      "id": "69de62693017974fc1694109",
+      "price": 370,
+      "createdAt": "2026-04-14T15:51:05.478Z",
+      "main_value": 57
+    },
+    {
+      "id": "69ddf5c880230b5a12511c58",
+      "price": 349,
+      "createdAt": "2026-04-14T08:07:36.680Z",
+      "main_value": 53
+    },
+    {
+      "id": "69ddca60f179c48e9d5573dc",
+      "price": 350,
+      "createdAt": "2026-04-14T05:02:24.907Z",
+      "main_value": 56
+    },
+    {
+      "id": "69ddc2c9c12b0f486fdb7a89",
+      "price": 349.999,
+      "createdAt": "2026-04-14T04:30:01.258Z",
+      "main_value": 55
+    },
+    {
+      "id": "69ddbb88dace4717aba7caf6",
+      "price": null,
+      "createdAt": "2026-04-14T03:59:04.847Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dd697ceb6a48b7f42d6948",
+      "price": 371.287,
+      "createdAt": "2026-04-13T22:09:00.218Z",
+      "main_value": 59
+    },
+    {
+      "id": "69dd3d924fb641a75850eaaa",
+      "price": null,
+      "createdAt": "2026-04-13T19:01:38.778Z",
+      "main_value": 53
+    },
+    {
+      "id": "69dd37d1586063830feae6d9",
+      "price": null,
+      "createdAt": "2026-04-13T18:37:05.272Z",
+      "main_value": 60
+    },
+    {
+      "id": "69dccdaa67d43c23b4e2a104",
+      "price": null,
+      "createdAt": "2026-04-13T11:04:10.908Z",
+      "main_value": 55
+    },
+    {
+      "id": "69dc879595fcc536276d32f9",
+      "price": 346.535,
+      "createdAt": "2026-04-13T06:05:09.089Z",
+      "main_value": 55
+    },
+    {
+      "id": "69dbdef57fd70f8c602c83ff",
+      "price": 445,
+      "createdAt": "2026-04-12T18:05:41.936Z",
+      "main_value": 60
+    },
+    {
+      "id": "69dbd120b2a2e9eb5095b946",
+      "price": null,
+      "createdAt": "2026-04-12T17:06:40.229Z",
+      "main_value": 55
+    },
+    {
+      "id": "69db99b2eae008773cb02891",
+      "price": null,
+      "createdAt": "2026-04-12T13:10:10.971Z",
+      "main_value": 55
+    },
+    {
+      "id": "69db83917f0f8da1556e9344",
+      "price": 360,
+      "createdAt": "2026-04-12T11:35:45.522Z",
+      "main_value": 60
+    },
+    {
+      "id": "69db2a5880c3fbef0b71d482",
+      "price": null,
+      "createdAt": "2026-04-12T05:15:04.228Z",
+      "main_value": 53
+    },
+    {
+      "id": "69db132354ec21b885cf01a2",
+      "price": null,
+      "createdAt": "2026-04-12T03:36:03.720Z",
+      "main_value": 60
+    },
+    {
+      "id": "69dafefebee3259e722ff9d4",
+      "price": null,
+      "createdAt": "2026-04-12T02:10:06.887Z",
+      "main_value": 56
+    },
+    {
+      "id": "69dac8652644a63c627633c1",
+      "price": null,
+      "createdAt": "2026-04-11T22:17:09.640Z",
+      "main_value": 55
+    },
+    {
+      "id": "69dac8652644a63c62762fc9",
+      "price": null,
+      "createdAt": "2026-04-11T22:17:09.288Z",
+      "main_value": 59
+    },
+    {
+      "id": "69dab7f8fd0254432862b0d0",
+      "price": null,
+      "createdAt": "2026-04-11T21:07:04.457Z",
+      "main_value": 52
+    },
+    {
+      "id": "69daae5cd01c94a376db03ed",
+      "price": null,
+      "createdAt": "2026-04-11T20:26:04.745Z",
+      "main_value": 52
+    },
+    {
+      "id": "69daad61f769d327a116d148",
+      "price": 390,
+      "createdAt": "2026-04-11T20:21:53.778Z",
+      "main_value": 55
+    },
+    {
+      "id": "69daa49b1ca1408e1d6d2da1",
+      "price": 360,
+      "createdAt": "2026-04-11T19:44:27.716Z",
+      "main_value": 54
+    },
+    {
+      "id": "69da70419fa02eb138ac01c2",
+      "price": null,
+      "createdAt": "2026-04-11T16:01:05.051Z",
+      "main_value": 54
+    },
+    {
+      "id": "69da70419fa02eb138ac01c1",
+      "price": null,
+      "createdAt": "2026-04-11T16:01:05.051Z",
+      "main_value": 59
+    },
+    {
+      "id": "69da6de8e8c1b29a5ccb5d6d",
+      "price": null,
+      "createdAt": "2026-04-11T15:51:04.577Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da61c137107e82892993f2",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 52
+    },
+    {
+      "id": "69da61c137107e82892993f1",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da61c137107e82892993f0",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 58
+    },
+    {
+      "id": "69da5eafe2be4932dab62de9",
+      "price": 420,
+      "createdAt": "2026-04-11T14:46:07.097Z",
+      "main_value": 58
+    },
+    {
+      "id": "69da16db3553eff9bd655cfc",
+      "price": 350,
+      "createdAt": "2026-04-11T09:39:39.116Z",
+      "main_value": 53
+    },
+    {
+      "id": "69d9db1cf66a3dde50c57e11",
+      "price": 449,
+      "createdAt": "2026-04-11T05:24:44.328Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d99639abd1bf8c1f3f3f99",
+      "price": 345,
+      "createdAt": "2026-04-11T00:30:49.931Z",
+      "main_value": 54
+    },
+    {
+      "id": "69d966b4a3a4ac9b94dd149a",
+      "price": null,
+      "createdAt": "2026-04-10T21:08:04.752Z",
+      "main_value": 60
+    },
+    {
+      "id": "69d927c1328deca637f317ad",
+      "price": 420,
+      "createdAt": "2026-04-10T16:39:29.326Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d9200df5419ebd5b2cd2b5",
+      "price": 385,
+      "createdAt": "2026-04-10T16:06:37.811Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d910930fda012ada1bbf83",
+      "price": 440,
+      "createdAt": "2026-04-10T15:00:35.666Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d8ee87f769d327a14b5373",
+      "price": 419,
+      "createdAt": "2026-04-10T12:35:19.206Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d911",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 54
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d910",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 55
+    },
+    {
+      "id": "69d8c31af7cc0387ade3dd0b",
+      "price": 389,
+      "createdAt": "2026-04-10T09:30:02.875Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d8b544559a28344c00af47",
+      "price": 370,
+      "createdAt": "2026-04-10T08:31:00.909Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d899abd08aa7864161beb6",
+      "price": 374.5,
+      "createdAt": "2026-04-10T06:33:15.412Z",
+      "main_value": 55
+    },
+    {
+      "id": "69d8857960efa274e77d9e9f",
+      "price": null,
+      "createdAt": "2026-04-10T05:07:05.081Z",
+      "main_value": 55
+    },
+    {
+      "id": "69d87d59d11e8da8536f1e9a",
+      "price": 430,
+      "createdAt": "2026-04-10T04:32:25.439Z",
+      "main_value": 59
+    },
+    {
+      "id": "69d87203b5d6b0d96b295c01",
+      "price": null,
+      "createdAt": "2026-04-10T03:44:03.332Z",
+      "main_value": 54
+    },
+    {
+      "id": "69d8637b97720338f5643f54",
+      "price": null,
+      "createdAt": "2026-04-10T02:42:03.544Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d826160a0333e357800506",
+      "price": null,
+      "createdAt": "2026-04-09T22:20:06.307Z",
+      "main_value": 51
+    }
+  ],
+  "pants5": [
+    {
+      "id": "69e5e5cf172879795f5e8d6e",
+      "price": 165,
+      "createdAt": "2026-04-20T08:37:35.926Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e5cfdf120ca003b292d088",
+      "price": 155,
+      "createdAt": "2026-04-20T07:03:59.104Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e5becd3747bd33b28e8caf",
+      "price": null,
+      "createdAt": "2026-04-20T05:51:09.224Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5a9f12fb189c0202fd09f",
+      "price": null,
+      "createdAt": "2026-04-20T04:22:09.510Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5a79d0968c69062ac3636",
+      "price": 104.95,
+      "createdAt": "2026-04-20T04:12:13.789Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e5a7708515e0b0717aa95f",
+      "price": 120,
+      "createdAt": "2026-04-20T04:11:28.470Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3f0",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3eb",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3ea",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e9",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e8",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebaf",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebad",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e5819d2a51e2df35e50531",
+      "price": null,
+      "createdAt": "2026-04-20T01:30:05.698Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e5750175d82ea9babb1388",
+      "price": 118.812,
+      "createdAt": "2026-04-20T00:36:17.719Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e57237c0d033e93b983693",
+      "price": 104,
+      "createdAt": "2026-04-20T00:24:23.604Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5700175d82ea9bab608c1",
+      "price": 118.81,
+      "createdAt": "2026-04-20T00:14:57.954Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e56eb1fd0752b7dd69f105",
+      "price": 115,
+      "createdAt": "2026-04-20T00:09:21.954Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e56cb43fe129d7cd998a2d",
+      "price": 165,
+      "createdAt": "2026-04-20T00:00:52.783Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e565408a29e3b66d74d015",
+      "price": null,
+      "createdAt": "2026-04-19T23:29:04.606Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e562e88f75eba90c5b58e2",
+      "price": null,
+      "createdAt": "2026-04-19T23:19:04.300Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5629af7b095e977b5d951",
+      "price": 104,
+      "createdAt": "2026-04-19T23:17:46.420Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e55e25d063e0832e8d49e1",
+      "price": 85,
+      "createdAt": "2026-04-19T22:58:45.381Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e54db39e86ddd19541cb6a",
+      "price": 118,
+      "createdAt": "2026-04-19T21:48:35.020Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965bd",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e5489205801c7f99ce5cc4",
+      "price": 128.5,
+      "createdAt": "2026-04-19T21:26:42.652Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e54766ffe1ed67b9c18b37",
+      "price": 115,
+      "createdAt": "2026-04-19T21:21:42.941Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e53ffcb680587ba0f50335",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e53ffcb680587ba0f50196",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e53ffcb680587ba0f50194",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.537Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6da",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d9",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d8",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d7",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6d6",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e53410f9474bb158b675c6",
+      "price": 115,
+      "createdAt": "2026-04-19T19:59:12.341Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e5339491c75a72f6458b06",
+      "price": 129,
+      "createdAt": "2026-04-19T19:57:08.816Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e532576f3043204e8c6778",
+      "price": 104.8,
+      "createdAt": "2026-04-19T19:51:51.139Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e532526f3043204e8c5003",
+      "price": 104.799,
+      "createdAt": "2026-04-19T19:51:46.834Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e52bed91c75a72f63bfe5c",
+      "price": 119.01,
+      "createdAt": "2026-04-19T19:24:29.410Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e523cf78af10c962a31826",
+      "price": 105,
+      "createdAt": "2026-04-19T18:49:51.975Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e5210c4ac03f5ccaaea1ef",
+      "price": null,
+      "createdAt": "2026-04-19T18:38:04.830Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e50ed47acf98d44557328b",
+      "price": 104,
+      "createdAt": "2026-04-19T17:20:20.121Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e503ca172879795f509b78",
+      "price": 100,
+      "createdAt": "2026-04-19T16:33:14.726Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e50210e6af14c149a06310",
+      "price": 104,
+      "createdAt": "2026-04-19T16:25:52.309Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e4ff88013f59a1422fca6f",
+      "price": null,
+      "createdAt": "2026-04-19T16:15:04.899Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e4fd9b75d82ea9baf9948b",
+      "price": 114,
+      "createdAt": "2026-04-19T16:06:51.774Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e4fd993dbda1615a916bfd",
+      "price": 110,
+      "createdAt": "2026-04-19T16:06:49.434Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e4f0483fe129d7cde58916",
+      "price": 106,
+      "createdAt": "2026-04-19T15:10:00.671Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e4ec6a2c3707f729a1fc97",
+      "price": 125,
+      "createdAt": "2026-04-19T14:53:30.943Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4e6fd9e86ddd19586a671",
+      "price": 108,
+      "createdAt": "2026-04-19T14:30:21.667Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e4e638720207975c6f99da",
+      "price": null,
+      "createdAt": "2026-04-19T14:27:04.182Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e4e638720207975c6f99d9",
+      "price": null,
+      "createdAt": "2026-04-19T14:27:04.182Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e4e463c830caae56c09bab",
+      "price": 124.5,
+      "createdAt": "2026-04-19T14:19:15.167Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4e3130968c69062a48f96",
+      "price": 113.999,
+      "createdAt": "2026-04-19T14:13:39.240Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e4e26fcc7986c95afdef17",
+      "price": 112,
+      "createdAt": "2026-04-19T14:10:55.217Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e4e26ce64f9fd7298fdf37",
+      "price": 122,
+      "createdAt": "2026-04-19T14:10:52.505Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4e267cc7986c95afdab17",
+      "price": 120.98,
+      "createdAt": "2026-04-19T14:10:47.949Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e4aebdf9474bb158f26049",
+      "price": 104.5,
+      "createdAt": "2026-04-19T10:30:21.513Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e4a8730968c690625fb59a",
+      "price": 107.9,
+      "createdAt": "2026-04-19T10:03:31.441Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e4a3d9c0d033e93b74750c",
+      "price": 105,
+      "createdAt": "2026-04-19T09:43:53.392Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e4a2b5af8d292c04628ff1",
+      "price": 119,
+      "createdAt": "2026-04-19T09:39:01.540Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e486dbfd3e61dbdeb45c57",
+      "price": 136.1,
+      "createdAt": "2026-04-19T07:40:11.659Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e485fec0d033e93b44ab2a",
+      "price": 121,
+      "createdAt": "2026-04-19T07:36:30.523Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4839e98c90004d5426c48",
+      "price": 126,
+      "createdAt": "2026-04-19T07:26:22.446Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e47c9ffe61f8ad03d3e839",
+      "price": 118.99,
+      "createdAt": "2026-04-19T06:56:31.459Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e47c90d80cf7528a3eed3c",
+      "price": 112,
+      "createdAt": "2026-04-19T06:56:16.317Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e47c8ccc7986c95a77f663",
+      "price": 110,
+      "createdAt": "2026-04-19T06:56:12.493Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e47818d026b6804d34c9f9",
+      "price": 121,
+      "createdAt": "2026-04-19T06:37:12.797Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e47816cc7986c95a7537a4",
+      "price": 120,
+      "createdAt": "2026-04-19T06:37:10.800Z",
+      "main_value": 47
+    },
+    {
+      "id": "69e4519f79d940ce0ecec53b",
+      "price": null,
+      "createdAt": "2026-04-19T03:53:03.975Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e42d157a1edf341d0ab054",
+      "price": null,
+      "createdAt": "2026-04-19T01:17:09.349Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4242c7889ee682cd9e40a",
+      "price": 105.5,
+      "createdAt": "2026-04-19T00:39:08.262Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e41ec4ed1a4300630f1872",
+      "price": null,
+      "createdAt": "2026-04-19T00:16:04.086Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4007ce64f9fd729d0bb68",
+      "price": 103,
+      "createdAt": "2026-04-18T22:06:52.281Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3fec6976e8256840a65a0",
+      "price": 110,
+      "createdAt": "2026-04-18T21:59:34.917Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e3f7c675d82ea9ba1259a6",
+      "price": 107,
+      "createdAt": "2026-04-18T21:29:42.506Z",
+      "main_value": 41
+    },
+    {
+      "id": "69e3f7adf9474bb158714814",
+      "price": 109.999,
+      "createdAt": "2026-04-18T21:29:17.717Z",
+      "main_value": 44
+    },
+    {
+      "id": "69e3f466976e8256840578f3",
+      "price": 193,
+      "createdAt": "2026-04-18T21:15:18.677Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3f3495c9d6674900bb4cd",
+      "price": 86,
+      "createdAt": "2026-04-18T21:10:33.446Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3f288d063e0832ed62d51",
+      "price": 104,
+      "createdAt": "2026-04-18T21:07:20.602Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3e36d05801c7f9936e0ad",
+      "price": 107,
+      "createdAt": "2026-04-18T20:02:53.755Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e3e24b09e746fe7c827a41",
+      "price": null,
+      "createdAt": "2026-04-18T19:58:03.278Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e3d69de4d84ac0496066c0",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e3d69de4d84ac0496066bf",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e3d69de4d84ac0496066be",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:13.599Z",
+      "main_value": 46
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058ee",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058ec",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058ea",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e7",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 48
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e6",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058e3",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 50
+    },
+    {
+      "id": "69e3ce9810ea2fde236407b4",
+      "price": 130,
+      "createdAt": "2026-04-18T18:34:00.114Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e3ce290968c69062777515",
+      "price": 109.999,
+      "createdAt": "2026-04-18T18:32:09.405Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e3c203d80cf7528a6cd4b3",
+      "price": 117,
+      "createdAt": "2026-04-18T17:40:19.233Z",
+      "main_value": 45
+    },
+    {
+      "id": "69e3b9cdea073349a465c842",
+      "price": 109.021,
+      "createdAt": "2026-04-18T17:05:17.421Z",
+      "main_value": 43
+    },
+    {
+      "id": "69e3b43611f00bcfa9274360",
+      "price": 100,
+      "createdAt": "2026-04-18T16:41:26.463Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e3b2dfc0d033e93b4ffcf3",
+      "price": 134.99,
+      "createdAt": "2026-04-18T16:35:43.135Z",
+      "main_value": 49
+    },
+    {
+      "id": "69e3a974fe61f8ad03b925b9",
+      "price": 108,
+      "createdAt": "2026-04-18T15:55:32.381Z",
+      "main_value": 42
+    },
+    {
+      "id": "69e38f08fd3e61dbde6beaa8",
+      "price": 160,
+      "createdAt": "2026-04-18T14:02:48.372Z",
+      "main_value": 50
+    }
+  ],
+  "pants6": [
+    {
+      "id": "69e5edeb7889ee682cbb3bcf",
+      "price": 295,
+      "createdAt": "2026-04-20T09:12:11.750Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d7",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 61
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d6",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e54fb09012dc9afdd806eb",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.803Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6be",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6bc",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e52d6ff9474bb1589de2f3",
+      "price": 349.999,
+      "createdAt": "2026-04-19T19:30:55.966Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c84ff",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 63
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c84fe",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e44bd97acf98d44599da74",
+      "price": 405,
+      "createdAt": "2026-04-19T03:28:25.347Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e446d885300617545bf961",
+      "price": null,
+      "createdAt": "2026-04-19T03:07:04.114Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e3dc287889ee682c880a18",
+      "price": 342,
+      "createdAt": "2026-04-18T19:31:52.962Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c8",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c7",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c6",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e3cc51ac2af149c30143c4",
+      "price": 338,
+      "createdAt": "2026-04-18T18:24:17.874Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e3981f7811d7fa8522daaf",
+      "price": 330,
+      "createdAt": "2026-04-18T14:41:35.498Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e38b6043d8ef446e1b90a0",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:12.097Z",
+      "main_value": 69
+    },
+    {
+      "id": "69e3738d172879795f39d99c",
+      "price": 337.999,
+      "createdAt": "2026-04-18T12:05:33.356Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e333f83fe129d7cd6cf816",
+      "price": 335,
+      "createdAt": "2026-04-18T07:34:16.707Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e330a60968c690624e3b72",
+      "price": 341,
+      "createdAt": "2026-04-18T07:20:06.656Z",
+      "main_value": 67
+    },
+    {
+      "id": "69e32c7108c646d795af6aed",
+      "price": null,
+      "createdAt": "2026-04-18T07:02:09.444Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e2789bea073349a415bf55",
+      "price": 340,
+      "createdAt": "2026-04-17T18:14:51.684Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e23ea7b910d1dae81ddcb1",
+      "price": null,
+      "createdAt": "2026-04-17T14:07:35.275Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e23e846f3043204e7dd956",
+      "price": 341,
+      "createdAt": "2026-04-17T14:07:00.151Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e21b6597531484d79a2c16",
+      "price": null,
+      "createdAt": "2026-04-17T11:37:09.663Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e213efafa9145f81ff52ed",
+      "price": 338.999,
+      "createdAt": "2026-04-17T11:05:19.844Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e1c4a591c75a72f6fc5229",
+      "price": 310,
+      "createdAt": "2026-04-17T05:27:01.737Z",
+      "main_value": 62
+    },
+    {
+      "id": "69e191594657eaef5701c570",
+      "price": null,
+      "createdAt": "2026-04-17T01:48:09.507Z",
+      "main_value": 68
+    },
+    {
+      "id": "69e13fc77da05b96242dd9c5",
+      "price": null,
+      "createdAt": "2026-04-16T20:00:07.715Z",
+      "main_value": 65
+    },
+    {
+      "id": "69e124a42f5556574d635826",
+      "price": 411.88,
+      "createdAt": "2026-04-16T18:04:20.269Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e11e5d3017974fc19c6d53",
+      "price": 340,
+      "createdAt": "2026-04-16T17:37:33.084Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e11828c20ac2f48e109e5f",
+      "price": null,
+      "createdAt": "2026-04-16T17:11:04.368Z",
+      "main_value": 64
+    },
+    {
+      "id": "69e116a78b5710b5c771fd06",
+      "price": null,
+      "createdAt": "2026-04-16T17:04:39.239Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e116a68b5710b5c771f9ae",
+      "price": null,
+      "createdAt": "2026-04-16T17:04:38.891Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e10a39a42e300f965ca3f9",
+      "price": 340,
+      "createdAt": "2026-04-16T16:11:37.535Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e075e1ed8587fbd690379d",
+      "price": 340,
+      "createdAt": "2026-04-16T05:38:41.776Z",
+      "main_value": 66
+    },
+    {
+      "id": "69e05e89f87026f449e490af",
+      "price": null,
+      "createdAt": "2026-04-16T03:59:05.083Z",
+      "main_value": 70
+    },
+    {
+      "id": "69e00e9d01e0fc88c61cf10c",
+      "price": null,
+      "createdAt": "2026-04-15T22:18:05.227Z",
+      "main_value": 66
+    },
+    {
+      "id": "69dff246b6989dc21181a237",
+      "price": 340,
+      "createdAt": "2026-04-15T20:17:10.133Z",
+      "main_value": 56
+    },
+    {
+      "id": "69dfd83aa2a31c9a24704f23",
+      "price": 365,
+      "createdAt": "2026-04-15T18:26:02.472Z",
+      "main_value": 69
+    },
+    {
+      "id": "69dfb7d09725293300f21339",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 69
+    },
+    {
+      "id": "69dfb7d09725293300f21338",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 69
+    },
+    {
+      "id": "69dfb7d09725293300f21337",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 70
+    },
+    {
+      "id": "69dfb7d09725293300f21336",
+      "price": null,
+      "createdAt": "2026-04-15T16:07:44.610Z",
+      "main_value": 70
+    },
+    {
+      "id": "69df9700af97b01a97fb2cda",
+      "price": 350,
+      "createdAt": "2026-04-15T13:47:44.618Z",
+      "main_value": 68
+    },
+    {
+      "id": "69df8899964098bcb01fe04f",
+      "price": 346.535,
+      "createdAt": "2026-04-15T12:46:17.667Z",
+      "main_value": 68
+    },
+    {
+      "id": "69df887c8f56e8180173c273",
+      "price": 346,
+      "createdAt": "2026-04-15T12:45:48.198Z",
+      "main_value": 68
+    },
+    {
+      "id": "69df88568f56e8180172ce71",
+      "price": 345,
+      "createdAt": "2026-04-15T12:45:10.183Z",
+      "main_value": 68
+    },
+    {
+      "id": "69df18ff3017974fc10c566b",
+      "price": 320,
+      "createdAt": "2026-04-15T04:50:07.846Z",
+      "main_value": 67
+    },
+    {
+      "id": "69deaf4ee4e03432f9ae7afa",
+      "price": null,
+      "createdAt": "2026-04-14T21:19:10.999Z",
+      "main_value": 62
+    },
+    {
+      "id": "69ddf5cd57df07a9855d99c0",
+      "price": 340,
+      "createdAt": "2026-04-14T08:07:41.989Z",
+      "main_value": 56
+    },
+    {
+      "id": "69ddc2d1b6989dc211f6ab18",
+      "price": 345,
+      "createdAt": "2026-04-14T04:30:09.086Z",
+      "main_value": 63
+    },
+    {
+      "id": "69ddbe024e15eeb299efc3c0",
+      "price": 355,
+      "createdAt": "2026-04-14T04:09:38.392Z",
+      "main_value": 64
+    },
+    {
+      "id": "69dd986f056e34a956ef0b57",
+      "price": 305,
+      "createdAt": "2026-04-14T01:29:19.911Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dd3d924fb641a75850e9a4",
+      "price": null,
+      "createdAt": "2026-04-13T19:01:38.652Z",
+      "main_value": 66
+    },
+    {
+      "id": "69dd37d1586063830feae6da",
+      "price": null,
+      "createdAt": "2026-04-13T18:37:05.272Z",
+      "main_value": 66
+    },
+    {
+      "id": "69dd14eb6b6dbafc54a34c19",
+      "price": null,
+      "createdAt": "2026-04-13T16:08:11.026Z",
+      "main_value": 67
+    },
+    {
+      "id": "69dd0ccd0759b46332b8f4af",
+      "price": null,
+      "createdAt": "2026-04-13T15:33:33.314Z",
+      "main_value": 56
+    },
+    {
+      "id": "69dd0ccd0759b46332b8f4ae",
+      "price": null,
+      "createdAt": "2026-04-13T15:33:33.314Z",
+      "main_value": 67
+    },
+    {
+      "id": "69dcbd0034c0caa9227a9009",
+      "price": null,
+      "createdAt": "2026-04-13T09:53:04.132Z",
+      "main_value": 65
+    },
+    {
+      "id": "69dc8c455d6c1eb2cf6d8422",
+      "price": null,
+      "createdAt": "2026-04-13T06:25:09.538Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dc345ca71ea014091645da",
+      "price": null,
+      "createdAt": "2026-04-13T00:10:04.446Z",
+      "main_value": 61
+    },
+    {
+      "id": "69dc3372d8aaf46dd63e56a7",
+      "price": null,
+      "createdAt": "2026-04-13T00:06:10.417Z",
+      "main_value": 67
+    },
+    {
+      "id": "69dbd121b2a2e9eb5095c460",
+      "price": null,
+      "createdAt": "2026-04-12T17:06:41.499Z",
+      "main_value": 66
+    },
+    {
+      "id": "69dbace5cb6cc2884736bc86",
+      "price": null,
+      "createdAt": "2026-04-12T14:32:05.165Z",
+      "main_value": 66
+    },
+    {
+      "id": "69db70310fe95d96594aefc3",
+      "price": null,
+      "createdAt": "2026-04-12T10:13:05.183Z",
+      "main_value": 66
+    },
+    {
+      "id": "69db70310fe95d96594aefc2",
+      "price": null,
+      "createdAt": "2026-04-12T10:13:05.183Z",
+      "main_value": 67
+    },
+    {
+      "id": "69db504192e0a751da7884ec",
+      "price": 345,
+      "createdAt": "2026-04-12T07:56:49.558Z",
+      "main_value": 59
+    },
+    {
+      "id": "69db3a8b04d0d6cda317d302",
+      "price": 360,
+      "createdAt": "2026-04-12T06:24:11.505Z",
+      "main_value": 61
+    },
+    {
+      "id": "69dafefebee3259e722ff9d5",
+      "price": null,
+      "createdAt": "2026-04-12T02:10:06.887Z",
+      "main_value": 70
+    },
+    {
+      "id": "69dac824e783c6a08bdf1bad",
+      "price": null,
+      "createdAt": "2026-04-11T22:16:04.794Z",
+      "main_value": 61
+    },
+    {
+      "id": "69da76391fccae60a626b9a8",
+      "price": null,
+      "createdAt": "2026-04-11T16:26:33.146Z",
+      "main_value": 69
+    },
+    {
+      "id": "69da6db7f43cb65c92a814a4",
+      "price": 396.04,
+      "createdAt": "2026-04-11T15:50:15.740Z",
+      "main_value": 68
+    },
+    {
+      "id": "69da6cb98604f0b6584908bc",
+      "price": 376,
+      "createdAt": "2026-04-11T15:46:01.063Z",
+      "main_value": 60
+    },
+    {
+      "id": "69da61b937107e82892965da",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:05.686Z",
+      "main_value": 64
+    },
+    {
+      "id": "69da5ed6ab096e11d1fc850b",
+      "price": 396.04,
+      "createdAt": "2026-04-11T14:46:46.575Z",
+      "main_value": 69
+    },
+    {
+      "id": "69da4432667153225769bc72",
+      "price": 410,
+      "createdAt": "2026-04-11T12:53:06.397Z",
+      "main_value": 69
+    },
+    {
+      "id": "69da12fd724fc539794c4c27",
+      "price": null,
+      "createdAt": "2026-04-11T09:23:09.792Z",
+      "main_value": 69
+    },
+    {
+      "id": "69d9963eabd1bf8c1f3f422f",
+      "price": 359,
+      "createdAt": "2026-04-11T00:30:54.901Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea665",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea664",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 60
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea663",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 61
+    },
+    {
+      "id": "69d957fbdaa4d63ed92ea661",
+      "price": null,
+      "createdAt": "2026-04-10T20:05:15.053Z",
+      "main_value": 68
+    },
+    {
+      "id": "69d93b948bed77d0dee350cc",
+      "price": null,
+      "createdAt": "2026-04-10T18:04:04.538Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d908f4af3fe07871370aba",
+      "price": null,
+      "createdAt": "2026-04-10T14:28:04.770Z",
+      "main_value": 61
+    },
+    {
+      "id": "69d8ed3547a3e07afd19d912",
+      "price": null,
+      "createdAt": "2026-04-10T12:29:41.183Z",
+      "main_value": 61
+    },
+    {
+      "id": "69d8c72697a92507e189b9e1",
+      "price": 355,
+      "createdAt": "2026-04-10T09:47:18.358Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d8aeb892849c5db8d001c6",
+      "price": null,
+      "createdAt": "2026-04-10T08:03:04.486Z",
+      "main_value": 67
+    },
+    {
+      "id": "69d8857960efa274e77d9ea0",
+      "price": null,
+      "createdAt": "2026-04-10T05:07:05.081Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d857e16671532257d957f4",
+      "price": 366,
+      "createdAt": "2026-04-10T01:52:33.660Z",
+      "main_value": 61
+    },
+    {
+      "id": "69d84290429b60c9de1da369",
+      "price": 372,
+      "createdAt": "2026-04-10T00:21:36.070Z",
+      "main_value": 62
+    },
+    {
+      "id": "69d826160a0333e357800503",
+      "price": null,
+      "createdAt": "2026-04-09T22:20:06.307Z",
+      "main_value": 67
+    },
+    {
+      "id": "69d823f91ac18073cb15e58b",
+      "price": null,
+      "createdAt": "2026-04-09T22:11:05.667Z",
+      "main_value": 58
+    },
+    {
+      "id": "69d823f81ac18073cb15dc44",
+      "price": null,
+      "createdAt": "2026-04-09T22:11:04.700Z",
+      "main_value": 63
+    },
+    {
+      "id": "69d823f81ac18073cb15dc43",
+      "price": null,
+      "createdAt": "2026-04-09T22:11:04.700Z",
+      "main_value": 67
+    },
+    {
+      "id": "69d81413328deca637bb0d39",
+      "price": 345,
+      "createdAt": "2026-04-09T21:03:15.909Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d811f9cc676fbecc7bd0ee",
+      "price": 600.57,
+      "createdAt": "2026-04-09T20:54:17.154Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d81105a1e4c17ed79d6d99",
+      "price": 372,
+      "createdAt": "2026-04-09T20:50:13.429Z",
+      "main_value": 57
+    },
+    {
+      "id": "69d7cdb8b1648c210685ed04",
+      "price": null,
+      "createdAt": "2026-04-09T16:03:04.602Z",
+      "main_value": 61
+    }
+  ],
+  "boots5": [
+    {
+      "id": "69e5e9acc3482efd36224ca3",
+      "price": null,
+      "createdAt": "2026-04-20T08:54:04.285Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5dfc25c9d667490bcecf3",
+      "price": 136,
+      "createdAt": "2026-04-20T08:11:46.177Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e5d23c189596e6b4f25bff",
+      "price": null,
+      "createdAt": "2026-04-20T07:14:04.362Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5c9904afb7c68307e6a01",
+      "price": null,
+      "createdAt": "2026-04-20T06:37:04.086Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e5c52281ab6bc306fdefef",
+      "price": null,
+      "createdAt": "2026-04-20T06:18:10.294Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5becd3747bd33b28e8cae",
+      "price": null,
+      "createdAt": "2026-04-20T05:51:09.224Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5b1a66f3043204e124315",
+      "price": 148.54,
+      "createdAt": "2026-04-20T04:55:02.545Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e5adccf7b095e977e6e7a4",
+      "price": 210,
+      "createdAt": "2026-04-20T04:38:36.649Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5a74800e0981e816eb6e8",
+      "price": 177,
+      "createdAt": "2026-04-20T04:10:48.658Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e598cf6f3043204e0330b3",
+      "price": 175,
+      "createdAt": "2026-04-20T03:09:03.522Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e1",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3e0",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3df",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3de",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3dd",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3dc",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebac",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e59155fa9d8c393b4eebab",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.010Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e57ec1af8d292c0496cc1f",
+      "price": 173,
+      "createdAt": "2026-04-20T01:17:53.086Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5779ffd0752b7dd719117",
+      "price": 184.157,
+      "createdAt": "2026-04-20T00:47:27.989Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e572413fe129d7cd9f97fa",
+      "price": 138.8,
+      "createdAt": "2026-04-20T00:24:33.275Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e56e4215776912e2d8f517",
+      "price": 198.02,
+      "createdAt": "2026-04-20T00:07:30.332Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e56926fe61f8ad03242c6c",
+      "price": 148.54,
+      "createdAt": "2026-04-19T23:45:42.068Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e567ecaf8d292c0483b8c1",
+      "price": 142,
+      "createdAt": "2026-04-19T23:40:28.500Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e56532f9474bb158077cdf",
+      "price": 138,
+      "createdAt": "2026-04-19T23:28:50.020Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e562e88f75eba90c5b58e1",
+      "price": null,
+      "createdAt": "2026-04-19T23:19:04.300Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e561bb9b2be41127bae9bd",
+      "price": null,
+      "createdAt": "2026-04-19T23:14:03.980Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e560ed3dbda1615a455949",
+      "price": 139.99,
+      "createdAt": "2026-04-19T23:10:37.421Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e559af10ea2fde23c998c3",
+      "price": 142,
+      "createdAt": "2026-04-19T22:39:43.114Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e5529d0a4ca07a2e5b5ec0",
+      "price": 180.198,
+      "createdAt": "2026-04-19T22:09:33.970Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e550878515e0b071370fa6",
+      "price": 189,
+      "createdAt": "2026-04-19T22:00:39.124Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e54fb09012dc9afdd804d8",
+      "price": null,
+      "createdAt": "2026-04-19T21:57:04.598Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e54dd175d82ea9ba9da155",
+      "price": 173,
+      "createdAt": "2026-04-19T21:49:05.430Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965ba",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e5486998c90004d571fea6",
+      "price": 198,
+      "createdAt": "2026-04-19T21:26:01.004Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e54796ac2af149c30a3ec6",
+      "price": 193.07,
+      "createdAt": "2026-04-19T21:22:30.501Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5466605801c7f99cc4f6a",
+      "price": 138.5,
+      "createdAt": "2026-04-19T21:17:26.354Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e544eea5c2850e9257ff18",
+      "price": 137.5,
+      "createdAt": "2026-04-19T21:11:10.804Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e53ffcb680587ba0f50333",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e53ffcb680587ba0f50332",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e53ea4ffe1ed67b9b6f68b",
+      "price": 190,
+      "createdAt": "2026-04-19T20:44:20.776Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6ce",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6cd",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6cc",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6cb",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6ca",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.291Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e537b3d063e0832e530594",
+      "price": 185,
+      "createdAt": "2026-04-19T20:14:43.355Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e5377111f00bcfa9d08291",
+      "price": 198,
+      "createdAt": "2026-04-19T20:13:37.982Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e5367878af10c962cdc557",
+      "price": 148,
+      "createdAt": "2026-04-19T20:09:28.869Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e536433dbda1615a080e88",
+      "price": 189,
+      "createdAt": "2026-04-19T20:08:35.376Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e53447f9474bb158b8a48b",
+      "price": 166.666,
+      "createdAt": "2026-04-19T20:00:07.401Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e532626f3043204e8c7d0f",
+      "price": 133,
+      "createdAt": "2026-04-19T19:52:02.086Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e5325d7acf98d445aaff02",
+      "price": 129.702,
+      "createdAt": "2026-04-19T19:51:57.346Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e52e1675d82ea9ba5916fc",
+      "price": 190,
+      "createdAt": "2026-04-19T19:33:42.919Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e52dc391c75a72f63dfc45",
+      "price": 161,
+      "createdAt": "2026-04-19T19:32:19.829Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e520e617fc79f1edfe83e9",
+      "price": 160,
+      "createdAt": "2026-04-19T18:37:26.093Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e51b3e6f3043204e54837c",
+      "price": 174.5,
+      "createdAt": "2026-04-19T18:13:18.912Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e5196a6f3043204e4d8663",
+      "price": 170,
+      "createdAt": "2026-04-19T18:05:30.456Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e51480ea073349a4c9ec06",
+      "price": 140.989,
+      "createdAt": "2026-04-19T17:44:32.964Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e513340968c69062eb4b32",
+      "price": 165,
+      "createdAt": "2026-04-19T17:39:00.845Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e505e2172879795f558cde",
+      "price": 134,
+      "createdAt": "2026-04-19T16:42:10.649Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e5053ae64f9fd729b214eb",
+      "price": 178,
+      "createdAt": "2026-04-19T16:39:22.789Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5052290bba79f8d35e9de",
+      "price": 167,
+      "createdAt": "2026-04-19T16:38:58.608Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e504973dbda1615aa05e86",
+      "price": 164,
+      "createdAt": "2026-04-19T16:36:39.679Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e502a03dbda1615a9bd139",
+      "price": 195,
+      "createdAt": "2026-04-19T16:28:16.725Z",
+      "main_value": 40
+    },
+    {
+      "id": "69e5019dc830caae56eaecca",
+      "price": 134,
+      "createdAt": "2026-04-19T16:23:57.117Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e5014a9e86ddd195a689f9",
+      "price": 134,
+      "createdAt": "2026-04-19T16:22:34.224Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e501282c3707f729b5f8eb",
+      "price": 134,
+      "createdAt": "2026-04-19T16:22:00.634Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4fda7cc7986c95a1cf4ab",
+      "price": 144.553,
+      "createdAt": "2026-04-19T16:07:03.713Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e4fda53fe129d7cdf4889d",
+      "price": 150,
+      "createdAt": "2026-04-19T16:07:01.660Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4f9d9581404c7c1ce273f",
+      "price": 149.999,
+      "createdAt": "2026-04-19T15:50:49.383Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51831",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51830",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac5182f",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac5182e",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4efa42c3707f729a4e0cf",
+      "price": 137,
+      "createdAt": "2026-04-19T15:07:16.670Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e4ef7c7811d7fa85628223",
+      "price": 134.652,
+      "createdAt": "2026-04-19T15:06:36.470Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e4ed283d07a81810ec7116",
+      "price": 179.206,
+      "createdAt": "2026-04-19T14:56:40.095Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4e8360a4ca07a2eceb82a",
+      "price": 178,
+      "createdAt": "2026-04-19T14:35:34.719Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4e37aa5c2850e92c84d7e",
+      "price": 144,
+      "createdAt": "2026-04-19T14:15:22.637Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4e25df7b095e977dafc1e",
+      "price": 190,
+      "createdAt": "2026-04-19T14:10:37.588Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4e2507889ee682c7c3ea5",
+      "price": 166,
+      "createdAt": "2026-04-19T14:10:24.724Z",
+      "main_value": 36
+    },
+    {
+      "id": "69e4df0678af10c9623c4f4e",
+      "price": 144,
+      "createdAt": "2026-04-19T13:56:22.896Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4df05652519adc9690074",
+      "price": 163.99,
+      "createdAt": "2026-04-19T13:56:21.033Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e4cfbf976e825684b320ee",
+      "price": 189.108,
+      "createdAt": "2026-04-19T12:51:11.318Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4c2b7ea073349a4566991",
+      "price": 171.7,
+      "createdAt": "2026-04-19T11:55:35.667Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4bbc2120ca003b263d5ab",
+      "price": 138,
+      "createdAt": "2026-04-19T11:25:54.091Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4b42d9e86ddd1954d9f0f",
+      "price": 185,
+      "createdAt": "2026-04-19T10:53:33.616Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4b04aea073349a444ad60",
+      "price": 177.8,
+      "createdAt": "2026-04-19T10:36:58.390Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c8503",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 32
+    },
+    {
+      "id": "69e4af2a6d73a5d0db2c8502",
+      "price": null,
+      "createdAt": "2026-04-19T10:32:10.261Z",
+      "main_value": 39
+    },
+    {
+      "id": "69e4ada8d80cf7528a7d1f96",
+      "price": 149,
+      "createdAt": "2026-04-19T10:25:44.297Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4ada50968c6906267064e",
+      "price": 148.515,
+      "createdAt": "2026-04-19T10:25:41.841Z",
+      "main_value": 34
+    },
+    {
+      "id": "69e4ab470a4ca07a2e99f49e",
+      "price": 179,
+      "createdAt": "2026-04-19T10:15:35.022Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e49a8c0968c690624d114f",
+      "price": 147.999,
+      "createdAt": "2026-04-19T09:04:12.136Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e49a8a28dfd3aacdb91840",
+      "price": null,
+      "createdAt": "2026-04-19T09:04:10.233Z",
+      "main_value": 35
+    },
+    {
+      "id": "69e49a8298c90004d55eb1da",
+      "price": 147.98,
+      "createdAt": "2026-04-19T09:04:02.253Z",
+      "main_value": 33
+    },
+    {
+      "id": "69e495c6ac2af149c3db8bb8",
+      "price": 179.203,
+      "createdAt": "2026-04-19T08:43:50.823Z",
+      "main_value": 38
+    },
+    {
+      "id": "69e48e9469563f8b0c95efe7",
+      "price": null,
+      "createdAt": "2026-04-19T08:13:08.914Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e48c0d90bba79f8d96aa18",
+      "price": 139.603,
+      "createdAt": "2026-04-19T08:02:21.809Z",
+      "main_value": 31
+    },
+    {
+      "id": "69e5ff0e51ec4b9a06ffae68",
+      "price": 169.306,
+      "createdAt": "2026-04-20T10:25:18.648Z",
+      "main_value": 37
+    },
+    {
+      "id": "69e5fe2598c90004d50c961a",
+      "price": 129.702,
+      "createdAt": "2026-04-20T10:21:25.204Z",
+      "main_value": 32
+    }
+  ],
+  "boots6": [
+    {
+      "id": "69e5f113d826d1905c92fc50",
+      "price": null,
+      "createdAt": "2026-04-20T09:25:39.090Z",
+      "main_value": 53
+    },
+    {
+      "id": "69e5eaa7afa9145f81c31065",
+      "price": 411.99,
+      "createdAt": "2026-04-20T08:58:15.517Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d4",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e59156fa9d8c393b4ef3d3",
+      "price": null,
+      "createdAt": "2026-04-20T02:37:10.990Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e54ce18b1de4dcc85965b7",
+      "price": null,
+      "createdAt": "2026-04-19T21:45:05.614Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e5488305801c7f99ce05cd",
+      "price": 369.8,
+      "createdAt": "2026-04-19T21:26:27.080Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e53ffcb680587ba0f5032e",
+      "price": null,
+      "createdAt": "2026-04-19T20:50:04.714Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6ba",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e53a7bbe7bd66dd7a4d6b9",
+      "price": null,
+      "createdAt": "2026-04-19T20:26:35.290Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e52d893dbda1615aec6404",
+      "price": 444,
+      "createdAt": "2026-04-19T19:31:21.386Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e51b1678af10c9628d0921",
+      "price": 350,
+      "createdAt": "2026-04-19T18:12:38.571Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e5038453caaf15832bcf27",
+      "price": null,
+      "createdAt": "2026-04-19T16:32:04.666Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e4f6dceb57e6cd5ac51826",
+      "price": null,
+      "createdAt": "2026-04-19T15:38:04.651Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e4e71317fc79f1eda9f409",
+      "price": 395,
+      "createdAt": "2026-04-19T14:30:43.128Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e4e48191c75a72f6e1b71d",
+      "price": 420,
+      "createdAt": "2026-04-19T14:19:45.167Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e4e2f80968c69062a44184",
+      "price": 366,
+      "createdAt": "2026-04-19T14:13:12.269Z",
+      "main_value": 53
+    },
+    {
+      "id": "69e4b25078af10c96212c9e4",
+      "price": 370,
+      "createdAt": "2026-04-19T10:45:36.332Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e4a9faffe1ed67b9bce6f1",
+      "price": 366.337,
+      "createdAt": "2026-04-19T10:10:02.415Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e4a383e64f9fd7293ee38c",
+      "price": 350,
+      "createdAt": "2026-04-19T09:42:27.254Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e49474f9474bb158ccb156",
+      "price": 349.999,
+      "createdAt": "2026-04-19T08:38:12.235Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e44dd7e64f9fd729f769c1",
+      "price": 540,
+      "createdAt": "2026-04-19T03:36:55.632Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e446d885300617545bfa24",
+      "price": null,
+      "createdAt": "2026-04-19T03:07:04.197Z",
+      "main_value": 53
+    },
+    {
+      "id": "69e3dc3c0968c69062b57282",
+      "price": 359.5,
+      "createdAt": "2026-04-18T19:32:12.935Z",
+      "main_value": 54
+    },
+    {
+      "id": "69e3d69ce4d84ac0496058c4",
+      "price": null,
+      "createdAt": "2026-04-18T19:08:12.070Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e38b6043d8ef446e1b909e",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:12.096Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b8979",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e38b5e43d8ef446e1b8978",
+      "price": null,
+      "createdAt": "2026-04-18T13:47:10.700Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e37910f7ce94ea6188dbe4",
+      "price": null,
+      "createdAt": "2026-04-18T12:29:04.504Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e3212b2cdab899ea65d46b",
+      "price": null,
+      "createdAt": "2026-04-18T06:14:03.977Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e309c13833125cb01f7c19",
+      "price": null,
+      "createdAt": "2026-04-18T04:34:09.477Z",
+      "main_value": 59
+    },
+    {
+      "id": "69e2bf1d78af10c962b1a62c",
+      "price": 393.96,
+      "createdAt": "2026-04-17T23:15:41.895Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e278a815776912e2d5bac3",
+      "price": 349,
+      "createdAt": "2026-04-17T18:15:04.310Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e275604b6d31e3b7e63f39",
+      "price": null,
+      "createdAt": "2026-04-17T18:01:04.898Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e246bc9c3dbe5df6bdbe46",
+      "price": null,
+      "createdAt": "2026-04-17T14:42:04.122Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e23fb15f9c121f5a5ae32d",
+      "price": 465,
+      "createdAt": "2026-04-17T14:12:01.205Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e23facafa9145f812b566f",
+      "price": 450,
+      "createdAt": "2026-04-17T14:11:56.361Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e23a213dbda1615aeb43a0",
+      "price": 345,
+      "createdAt": "2026-04-17T13:48:17.766Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e1ee24bf1e0ba7c0901c0f",
+      "price": null,
+      "createdAt": "2026-04-17T08:24:04.494Z",
+      "main_value": 60
+    },
+    {
+      "id": "69e1b4099beb0217caf696d0",
+      "price": null,
+      "createdAt": "2026-04-17T04:16:09.507Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e1438a1e3e8775a203f883",
+      "price": null,
+      "createdAt": "2026-04-16T20:16:10.011Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e141680b161fd46788e85d",
+      "price": null,
+      "createdAt": "2026-04-16T20:07:04.112Z",
+      "main_value": 58
+    },
+    {
+      "id": "69e13fc77da05b96242dd9c3",
+      "price": null,
+      "createdAt": "2026-04-16T20:00:07.715Z",
+      "main_value": 56
+    },
+    {
+      "id": "69e11c788d7998de0651b27b",
+      "price": 410,
+      "createdAt": "2026-04-16T17:29:28.371Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e11828c20ac2f48e109e5e",
+      "price": null,
+      "createdAt": "2026-04-16T17:11:04.368Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e10cba2862fd757ac10f81",
+      "price": 343.5,
+      "createdAt": "2026-04-16T16:22:18.868Z",
+      "main_value": 52
+    },
+    {
+      "id": "69e108ed67c6c6810d612200",
+      "price": null,
+      "createdAt": "2026-04-16T16:06:05.100Z",
+      "main_value": 55
+    },
+    {
+      "id": "69e0e858cf831d2ef605ad72",
+      "price": null,
+      "createdAt": "2026-04-16T13:47:04.671Z",
+      "main_value": 57
+    },
+    {
+      "id": "69e09d18bd0b3c0772c3ccab",
+      "price": 340,
+      "createdAt": "2026-04-16T08:26:00.222Z",
+      "main_value": 51
+    },
+    {
+      "id": "69e0635bb59898d9e11167ec",
+      "price": 335,
+      "createdAt": "2026-04-16T04:19:39.315Z",
+      "main_value": 53
+    },
+    {
+      "id": "69e02739983d32d7d4fe51bd",
+      "price": null,
+      "createdAt": "2026-04-16T00:03:05.187Z",
+      "main_value": 54
+    },
+    {
+      "id": "69dfe64cfd63da587018bc02",
+      "price": null,
+      "createdAt": "2026-04-15T19:26:04.805Z",
+      "main_value": 52
+    },
+    {
+      "id": "69dfd825964098bcb07c4011",
+      "price": 514.999,
+      "createdAt": "2026-04-15T18:25:41.982Z",
+      "main_value": 59
+    },
+    {
+      "id": "69dfa95da33708949c446d7e",
+      "price": null,
+      "createdAt": "2026-04-15T15:06:05.937Z",
+      "main_value": 52
+    },
+    {
+      "id": "69df41184263dac0b83d64f1",
+      "price": 600,
+      "createdAt": "2026-04-15T07:41:12.426Z",
+      "main_value": 60
+    },
+    {
+      "id": "69def1dc11deffc94d8b9d05",
+      "price": null,
+      "createdAt": "2026-04-15T02:03:08.892Z",
+      "main_value": 51
+    },
+    {
+      "id": "69dedfa18348a58fd7bb8a26",
+      "price": 384.158,
+      "createdAt": "2026-04-15T00:45:21.615Z",
+      "main_value": 55
+    },
+    {
+      "id": "69deab9cbb7d4974d5dfcc2c",
+      "price": 360,
+      "createdAt": "2026-04-14T21:03:24.320Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dea0a668ec869a92ef6d7d",
+      "price": null,
+      "createdAt": "2026-04-14T20:16:38.035Z",
+      "main_value": 54
+    },
+    {
+      "id": "69de9677e0c8fdaaf349dcce",
+      "price": null,
+      "createdAt": "2026-04-14T19:33:11.194Z",
+      "main_value": 57
+    },
+    {
+      "id": "69de9676e0c8fdaaf349d8f0",
+      "price": null,
+      "createdAt": "2026-04-14T19:33:10.747Z",
+      "main_value": 60
+    },
+    {
+      "id": "69de7f7d7be8637340828d5b",
+      "price": null,
+      "createdAt": "2026-04-14T17:55:09.466Z",
+      "main_value": 53
+    },
+    {
+      "id": "69de622fa42e300f9638b195",
+      "price": 365,
+      "createdAt": "2026-04-14T15:50:07.544Z",
+      "main_value": 55
+    },
+    {
+      "id": "69de017d368b0c88e580e296",
+      "price": 350,
+      "createdAt": "2026-04-14T08:57:33.180Z",
+      "main_value": 53
+    },
+    {
+      "id": "69ddf5d1ed8587fbd67fcc15",
+      "price": 347,
+      "createdAt": "2026-04-14T08:07:45.371Z",
+      "main_value": 51
+    },
+    {
+      "id": "69ddca9ba03070cad56d8cff",
+      "price": 375,
+      "createdAt": "2026-04-14T05:03:23.816Z",
+      "main_value": 55
+    },
+    {
+      "id": "69ddc34f056e34a95602dfd9",
+      "price": 326.733,
+      "createdAt": "2026-04-14T04:32:15.386Z",
+      "main_value": 52
+    },
+    {
+      "id": "69ddbb88dace4717aba7c652",
+      "price": null,
+      "createdAt": "2026-04-14T03:59:04.351Z",
+      "main_value": 52
+    },
+    {
+      "id": "69dd899cb407e6788cbaefd3",
+      "price": null,
+      "createdAt": "2026-04-14T00:26:04.663Z",
+      "main_value": 51
+    },
+    {
+      "id": "69dd7ec56416cd8448c04501",
+      "price": 350,
+      "createdAt": "2026-04-13T23:39:49.721Z",
+      "main_value": 54
+    },
+    {
+      "id": "69dd6818f4b63b01250fde48",
+      "price": null,
+      "createdAt": "2026-04-13T22:03:04.599Z",
+      "main_value": 53
+    },
+    {
+      "id": "69dd6818f4b63b01250fde47",
+      "price": null,
+      "createdAt": "2026-04-13T22:03:04.599Z",
+      "main_value": 55
+    },
+    {
+      "id": "69dd4c345715b90054d9a50a",
+      "price": null,
+      "createdAt": "2026-04-13T20:04:04.892Z",
+      "main_value": 53
+    },
+    {
+      "id": "69dcfdf65e0cac8483333c84",
+      "price": 324.443,
+      "createdAt": "2026-04-13T14:30:14.319Z",
+      "main_value": 51
+    },
+    {
+      "id": "69dc47732ab5020cad59a434",
+      "price": 335,
+      "createdAt": "2026-04-13T01:31:31.929Z",
+      "main_value": 52
+    },
+    {
+      "id": "69dc0c8479ff5f5cebcad994",
+      "price": null,
+      "createdAt": "2026-04-12T21:20:04.942Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dbace5cb6cc2884736bc85",
+      "price": null,
+      "createdAt": "2026-04-12T14:32:05.165Z",
+      "main_value": 60
+    },
+    {
+      "id": "69db7bad4a8d507d8d65b00c",
+      "price": null,
+      "createdAt": "2026-04-12T11:02:05.064Z",
+      "main_value": 51
+    },
+    {
+      "id": "69db68c05ef68e7191ccbf62",
+      "price": 361.9,
+      "createdAt": "2026-04-12T09:41:20.047Z",
+      "main_value": 52
+    },
+    {
+      "id": "69db4fc36671532257fe1486",
+      "price": 364,
+      "createdAt": "2026-04-12T07:54:43.473Z",
+      "main_value": 54
+    },
+    {
+      "id": "69db4fa806ee5d0bbb489a0a",
+      "price": 363.999,
+      "createdAt": "2026-04-12T07:54:16.640Z",
+      "main_value": 54
+    },
+    {
+      "id": "69db4fa504b938af9041419a",
+      "price": 360,
+      "createdAt": "2026-04-12T07:54:13.667Z",
+      "main_value": 54
+    },
+    {
+      "id": "69db0e78a992d966afed3ac2",
+      "price": null,
+      "createdAt": "2026-04-12T03:16:08.826Z",
+      "main_value": 57
+    },
+    {
+      "id": "69dafefebee3259e722ff9d3",
+      "price": null,
+      "createdAt": "2026-04-12T02:10:06.887Z",
+      "main_value": 56
+    },
+    {
+      "id": "69dac8652644a63c62762fc8",
+      "price": null,
+      "createdAt": "2026-04-11T22:17:09.288Z",
+      "main_value": 53
+    },
+    {
+      "id": "69dac825e783c6a08bdf208d",
+      "price": null,
+      "createdAt": "2026-04-11T22:16:05.265Z",
+      "main_value": 58
+    },
+    {
+      "id": "69dac824e783c6a08bdf1bab",
+      "price": null,
+      "createdAt": "2026-04-11T22:16:04.794Z",
+      "main_value": 55
+    },
+    {
+      "id": "69dabc30d5f7f3a26969d482",
+      "price": null,
+      "createdAt": "2026-04-11T21:25:04.112Z",
+      "main_value": 59
+    },
+    {
+      "id": "69da9c71843f2d6fdab6cb32",
+      "price": 460,
+      "createdAt": "2026-04-11T19:09:37.157Z",
+      "main_value": 56
+    },
+    {
+      "id": "69da88fbabd1bf8c1f57a7b8",
+      "price": 379.208,
+      "createdAt": "2026-04-11T17:46:35.398Z",
+      "main_value": 53
+    },
+    {
+      "id": "69da70a9f43cb65c92ad4944",
+      "price": 412.5,
+      "createdAt": "2026-04-11T16:02:49.486Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da70a7843e28661a49e2d6",
+      "price": 412.5,
+      "createdAt": "2026-04-11T16:02:47.896Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da6c1c575c553d09cbc9d2",
+      "price": 519,
+      "createdAt": "2026-04-11T15:43:24.927Z",
+      "main_value": 58
+    },
+    {
+      "id": "69da61c137107e82892993ee",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 53
+    },
+    {
+      "id": "69da61c137107e82892993ed",
+      "price": null,
+      "createdAt": "2026-04-11T14:59:13.964Z",
+      "main_value": 56
+    },
+    {
+      "id": "69da5aec43b9e70caa7ffd09",
+      "price": null,
+      "createdAt": "2026-04-11T14:30:04.390Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da3a99ab826a6d7c61a817",
+      "price": null,
+      "createdAt": "2026-04-11T12:12:09.019Z",
+      "main_value": 54
+    },
+    {
+      "id": "69da169ce86a67f8f619ccbc",
+      "price": 426.733,
+      "createdAt": "2026-04-11T09:38:36.042Z",
+      "main_value": 55
+    },
+    {
+      "id": "69da0e201ca1408e1d10fd5f",
+      "price": 455.446,
+      "createdAt": "2026-04-11T09:02:24.809Z",
+      "main_value": 56
+    },
+    {
+      "id": "69d9964392e0a751dabb6986",
+      "price": 389,
+      "createdAt": "2026-04-11T00:30:59.526Z",
+      "main_value": 53
+    },
+    {
+      "id": "69d985a40b9dee5e5ff659b8",
+      "price": null,
+      "createdAt": "2026-04-10T23:20:04.384Z",
+      "main_value": 54
+    }
+  ]
+}
