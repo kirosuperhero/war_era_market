@@ -380,9 +380,9 @@ def calc_deal_score(margin_pct, freshness, velocity_score, scarcity_score):
     """
     Deal Score (0–100) مُعاير على بيانات السوق الفعلية.
     الأوزان: هامش 30% | حداثة 30% | سرعة بيع 25% | ندرة 15%
-    الهامش مُعاير على 13% (p90 فعلي لهذا السوق).
+    الهامش مُعاير على 10% (متوسط p90 عبر الأصناف؛ تانكس p90=6.3%, جيتس 12.8%).
     """
-    margin_score = min(1.0, margin_pct / 13.0)
+    margin_score = min(1.0, margin_pct / 10.0)
     raw = (
         margin_score   * 0.30 +
         freshness      * 0.30 +
@@ -755,9 +755,13 @@ def _min_abs_profit(price):
 df_filtered['min_abs_profit']    = df_filtered['price'].apply(_min_abs_profit)
 df_filtered['passes_hard_gates'] = (
     df_filtered['bucket_margin_pct'].notna() &
-    (df_filtered['bucket_margin_pct']  >= 5.0) &
+    (df_filtered['bucket_margin_pct']  >= 3.0) &
     (df_filtered['bucket_profit']      >= df_filtered['min_abs_profit']) &
-    (df_filtered['bucket_sale_count']  >= 5)
+    (df_filtered['bucket_sale_count']  >= 3)
+)
+# مستوى الثقة: ≥5 موثّق، 3-4 محدود
+df_filtered['confidence_tier'] = df_filtered['bucket_sale_count'].apply(
+    lambda n: 'verified' if (n is not None and n >= 5) else ('tentative' if (n is not None and n >= 3) else 'low')
 )
 
 # الترتيب
@@ -858,9 +862,9 @@ with tab1:
 with tab2:
     st.subheader("🔥 أفضل الصفقات — Deal Score")
     st.caption(
-        "مُعاير على 712 عملية بيع فعلية · "
+        "مُعاير على بيانات السوق الفعلية · "
         "الأوزان: هامش 30% · حداثة 30% · سرعة بيع 25% · ندرة 15% · "
-        "البوابات: هامش ≥5% · ربح مطلق ≥$5 (أو $10 للعناصر +$250) · 5+ مبيعات مسجّلة"
+        "البوابات: هامش ≥3% · ربح مطلق ≥$5 (أو $10 للعناصر +$250) · 3+ مبيعات مسجّلة"
     )
 
     # العناصر التي تجتاز البوابات الصارمة
@@ -878,10 +882,19 @@ with tab2:
             sale_count  = row['bucket_sale_count']
 
             # مكونات النقاط (للعرض)
-            m_contrib = min(1.0, margin_pct / 13.0) * 0.30 * 100
+            m_contrib = min(1.0, margin_pct / 10.0) * 0.30 * 100
             f_contrib = row['freshness_score']   * 0.30 * 100
             v_contrib = row['velocity_score']    * 0.25 * 100
             s_contrib = row['scarcity_score']    * 0.15 * 100
+
+            # شارة الثقة
+            conf = row['confidence_tier']
+            if conf == 'verified':
+                conf_badge = "✓ موثّق"
+                conf_color = "#00cc66"
+            else:
+                conf_badge = "📊 ثقة محدودة"
+                conf_color = "#ffaa00"
 
             with st.container(border=True):
                 top_left, top_right = st.columns([4, 1])
@@ -889,7 +902,8 @@ with tab2:
                     st.markdown(
                         f"**{rank}. {badge_text}** — "
                         f"<span style='color:{badge_color};font-size:1.3em;font-weight:bold'>"
-                        f"Deal Score: {row['deal_score']:.0f}/100</span>",
+                        f"Deal Score: {row['deal_score']:.0f}/100</span> "
+                        f"<span style='color:{conf_color};font-size:0.85em;margin-right:10px'>{conf_badge}</span>",
                         unsafe_allow_html=True
                     )
                     if row['secondary_name']:
@@ -937,15 +951,15 @@ with tab2:
         # لا توجد عناصر تجتاز البوابات — اشرح السبب وأظهر أفضل ما هو متاح
         st.warning("⚠️ لا توجد عناصر تجتاز البوابات الصارمة حالياً.")
 
-        # تشخيص: كم عنصر يملك بيانات مبيعات، كم يملك هامش ≥5%
+        # تشخيص: كم عنصر يملك بيانات مبيعات، كم يملك هامش ≥3%
         has_bucket = df_filtered['bucket_avg_price'].notna().sum()
-        has_margin = (df_filtered['bucket_margin_pct'].fillna(0) >= 5).sum()
-        has_count  = (df_filtered['bucket_sale_count'] >= 5).sum()
+        has_margin = (df_filtered['bucket_margin_pct'].fillna(0) >= 3).sum()
+        has_count  = (df_filtered['bucket_sale_count'] >= 3).sum()
 
         d1, d2, d3 = st.columns(3)
         with d1: st.metric("لديها بيانات مبيعات", f"{has_bucket}/{len(df_filtered)}")
-        with d2: st.metric("هامش ≥5%", f"{has_margin}/{len(df_filtered)}")
-        with d3: st.metric("5+ مبيعات مرجعية", f"{has_count}/{len(df_filtered)}")
+        with d2: st.metric("هامش ≥3%", f"{has_margin}/{len(df_filtered)}")
+        with d3: st.metric("3+ مبيعات مرجعية", f"{has_count}/{len(df_filtered)}")
 
         st.caption(
             "أسباب محتملة: بيانات المبيعات قليلة للمجموعة المحددة — "
