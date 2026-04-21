@@ -1,6 +1,12 @@
 {
   "helmet6": [
     {
+      "price": 370,
+      "time": "2026-04-21T09:03:25.401Z",
+      "main_value": 145,
+      "secondary_value": 0
+    },
+    {
       "price": null,
       "time": "2026-04-21T07:49:04.213Z",
       "main_value": 138,
@@ -544,6 +550,12 @@
     }
   ],
   "jet": [
+    {
+      "price": 390,
+      "time": "2026-04-21T09:04:31.783Z",
+      "main_value": 229,
+      "secondary_value": 48
+    },
     {
       "price": 389,
       "time": "2026-04-21T08:34:55.285Z",
@@ -1164,6 +1176,18 @@
     }
   ],
   "tank": [
+    {
+      "price": 144,
+      "time": "2026-04-21T09:42:46.987Z",
+      "main_value": 154,
+      "secondary_value": 26
+    },
+    {
+      "price": 158,
+      "time": "2026-04-21T09:32:25.152Z",
+      "main_value": 164,
+      "secondary_value": 28
+    },
     {
       "price": 150,
       "time": "2026-04-21T08:07:37.415Z",
@@ -2271,6 +2295,12 @@
   ],
   "helmet5": [
     {
+      "price": 138,
+      "time": "2026-04-21T09:23:45.000Z",
+      "main_value": 108,
+      "secondary_value": 0
+    },
+    {
       "price": 105,
       "time": "2026-04-21T08:33:29.544Z",
       "main_value": 94,
@@ -3004,6 +3034,30 @@
     }
   ],
   "chest5": [
+    {
+      "price": 128,
+      "time": "2026-04-21T09:26:45.751Z",
+      "main_value": 50,
+      "secondary_value": 0
+    },
+    {
+      "price": 127.95,
+      "time": "2026-04-21T09:26:42.670Z",
+      "main_value": 50,
+      "secondary_value": 0
+    },
+    {
+      "price": 121.95,
+      "time": "2026-04-21T09:24:02.700Z",
+      "main_value": 49,
+      "secondary_value": 0
+    },
+    {
+      "price": 101.5,
+      "time": "2026-04-21T09:18:01.490Z",
+      "main_value": 38,
+      "secondary_value": 0
+    },
     {
       "price": 98,
       "time": "2026-04-21T08:35:57.967Z",
@@ -4401,6 +4455,12 @@
   ],
   "gloves5": [
     {
+      "price": 114,
+      "time": "2026-04-21T09:34:02.326Z",
+      "main_value": 33,
+      "secondary_value": 0
+    },
+    {
       "price": 114.899,
       "time": "2026-04-21T07:51:09.299Z",
       "main_value": 33,
@@ -5731,6 +5791,18 @@
   ],
   "pants5": [
     {
+      "price": 145,
+      "time": "2026-04-21T09:26:57.724Z",
+      "main_value": 50,
+      "secondary_value": 0
+    },
+    {
+      "price": 125,
+      "time": "2026-04-21T09:24:12.750Z",
+      "main_value": 49,
+      "secondary_value": 0
+    },
+    {
       "price": null,
       "time": "2026-04-21T07:49:04.213Z",
       "main_value": 45,
@@ -6922,6 +6994,42 @@
     }
   ],
   "boots5": [
+    {
+      "price": 166,
+      "time": "2026-04-21T09:46:13.255Z",
+      "main_value": 36,
+      "secondary_value": 0
+    },
+    {
+      "price": 159,
+      "time": "2026-04-21T09:32:39.107Z",
+      "main_value": 35,
+      "secondary_value": 0
+    },
+    {
+      "price": 154.454,
+      "time": "2026-04-21T09:31:09.210Z",
+      "main_value": 35,
+      "secondary_value": 0
+    },
+    {
+      "price": 174,
+      "time": "2026-04-21T09:24:32.320Z",
+      "main_value": 38,
+      "secondary_value": 0
+    },
+    {
+      "price": 158,
+      "time": "2026-04-21T08:55:32.020Z",
+      "main_value": 36,
+      "secondary_value": 0
+    },
+    {
+      "price": 154,
+      "time": "2026-04-21T08:55:27.236Z",
+      "main_value": 35,
+      "secondary_value": 0
+    },
     {
       "price": null,
       "time": "2026-04-21T07:49:04.213Z",

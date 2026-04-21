@@ -1,0 +1,132 @@
+Now that Part 1 (Best Deals fix) is working, let's implement the remaining features.
+
+---
+
+**PART 2: REWRITE PROFIT HUNTER (Tab 5) - Remove old logic, add Snipe Detection**
+
+The current Profit Hunter logic (calculating expected profit margins) is not working well for this market. Replace it completely with Snipe Detection.
+
+**New Logic:**
+
+Track the CURRENT MINIMUM price for each spec group in the market. When a NEW item appears with price < current minimum → SNIPE opportunity.
+
+**Implementation details:**
+
+1. For each scan, calculate the current minimum price for each spec group (same grouping logic: Attack/5 + Critical/2 for Jets/Tanks, main value/5 for Equipment)
+
+2. Compare each item against its spec group's current minimum
+
+3. Flag items that are priced below the minimum
+
+**Alert Levels:**
+
+| Level | Condition |
+|-------|-----------|
+| 🔥 SNIPE | Price < current minimum AND quality ≥ current max quality in that group |
+| 💎 RARE | Price < current minimum |
+| ⭐ VALUE | Price < market avg AND quality > market avg (for that group) |
+
+**Auto-Scan Feature:**
+
+Add a checkbox in Tab 5: "🔄 Auto-scan every 30 seconds"
+
+- When enabled: automatically re-scans all 12 categories every 30 seconds
+- When disabled: only scans when user clicks "Scan Now" button
+- Default: disabled
+- Show a small timer or status indicator when auto-scan is active
+
+**Display in Tab 5:**
+
+- "Snipe Opportunities" section (highest priority - shows SNIPE and RARE)
+- "Value Opportunities" section (shows VALUE)
+- "Scan Log" section (shows last 5 scans: timestamp and what was found)
+
+**Remove completely from Tab 5:**
+- Old profit margin calculation
+- groupby quality_group logic
+- expected_profit sorting
+- Any reference to old profit hunter logic
+
+**Keep:**
+- Ability to scan all 12 item categories
+- Freshness indicator (hours ago)
+- Copy user ID button
+- Telegram alerts (use existing send_telegram_alert function)
+
+**Telegram Alerts:**
+Send alert for SNIPE and RARE opportunities only (not VALUE). Use distinctive formatting for SNIPE vs RARE.
+
+---
+
+**PART 3: NEW FEATURE - "SELL PRICE CALCULATOR" (New Tab 6)**
+
+Add a new tab called "💰 Sell Calculator"
+
+**Purpose:** User bought an item and wants to know the best price to resell it.
+
+**Inputs:**
+
+1. Select item type: dropdown from ITEM_CATEGORIES
+2. Enter specs:
+   - For Jets/Tanks: Attack value, Critical value
+   - For Equipment: Main value (Armor/Dodge/Precision/CriticalDamages)
+3. Enter purchase price (what user paid)
+
+**Outputs (display clearly):**
+
+- Current market average for SIMILAR items (same spec group)
+- Current minimum price in market
+- Current maximum price in market
+- Number of similar items listed
+- **Recommended sell price:** (market average × 0.95 for quick sale, OR market minimum + 2%)
+- **Expected profit after tax:** (recommended price × 0.99 - purchase price)
+- **ROI percentage:** (profit / purchase price) × 100
+- **Sell velocity estimate:** "Similar items sell in ~X hours" (from transaction history)
+
+**Warnings:**
+
+- ⚠️ "Too many sellers" if >10 similar items (harder to sell)
+- ✅ "Good time to sell" if <5 similar items (less competition)
+- ❌ "Price too high" if recommended price < purchase price (would lose money)
+
+**Save to History:**
+
+Add a "Save this flip" button that logs to `data/flip_history.json`:
+- Date/time
+- Item type
+- Specs
+- Purchase price
+- Recommended sell price
+- (Later: actual sell price when user updates)
+
+Display recent flip history in an expander section.
+
+---
+
+**PART 4: KEEP ALL EXISTING FUNCTIONALITY**
+
+Do NOT break or remove:
+- Telegram alerts (existing)
+- Price history tracking (Tab 3)
+- Transaction tracking (sales_cache.json)
+- Tax calculation (1%)
+- Best Deals tab (Tab 2 - just fixed)
+- Table tab (Tab 1)
+- Market Analysis tab (Tab 4)
+- Auto-refresh in sidebar
+- All filters and settings
+
+---
+
+**IMPLEMENTATION ORDER:**
+
+1. First, rewrite Tab 5 with new Snipe Detection + Auto-scan
+2. Then, add Tab 6 (Sell Price Calculator)
+3. Test that existing features still work
+
+**Show me:**
+- The complete rewritten Tab 5 code
+- The complete new Tab 6 code
+- Any new helper functions needed
+
+Thank you!

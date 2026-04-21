@@ -301,6 +301,57 @@ def get_price_percentile(price, all_prices):
 #   متوسط الهامش: 5.8% | p50: 4.2% | p90 (أفضل 10%): 12.7%
 #   الانحراف المطلق: p50=$7.5 | p90=$30.5
 
+def get_bucket_full_stats(item_code, main_value, secondary_value, category_config, days_back=14):
+    """
+    إحصائيات شاملة للمجموعة من sales_cache.
+    يرجع: dict فيه count, min, max, avg, p25, p50, p75 + قائمة الأسعار الخام.
+    None إذا لم توجد بيانات.
+    """
+    cache = load_sales_cache()
+    if item_code not in cache:
+        return None
+    is_combat = category_config['type'] in ['jet', 'tank']
+    if is_combat:
+        target_a = round(main_value      / 5) * 5
+        target_c = round(secondary_value / 2) * 2
+    else:
+        target_v = round(main_value / 5) * 5
+
+    now = datetime.now().astimezone()
+    prices = []
+    for sale in cache[item_code]:
+        try:
+            if not sale.get('price') or sale['price'] <= 0:
+                continue
+            t = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
+            if (now - t).total_seconds() / 3600 > days_back * 24:
+                continue
+            s_main = sale.get('main_value', 0)
+            if is_combat:
+                if round(s_main/5)*5 == target_a and round(sale.get('secondary_value',0)/2)*2 == target_c:
+                    prices.append(sale['price'])
+            else:
+                if round(s_main/5)*5 == target_v:
+                    prices.append(sale['price'])
+        except:
+            continue
+
+    if not prices:
+        return None
+    prices_sorted = sorted(prices)
+    n = len(prices_sorted)
+    return {
+        'count':  n,
+        'min':    prices_sorted[0],
+        'max':    prices_sorted[-1],
+        'avg':    sum(prices_sorted) / n,
+        'p25':    prices_sorted[max(0, int(n * 0.25) - 1)],
+        'p50':    prices_sorted[n // 2],
+        'p75':    prices_sorted[min(n - 1, int(n * 0.75))],
+        'prices': prices_sorted,
+    }
+
+
 def get_bucket_stats(item_code, main_value, secondary_value, category_config, days_back=7):
     """
     يحسب متوسط سعر البيع وعدد الصفقات للمجموعة المحددة (نفس منطق categorize_item).
@@ -800,11 +851,13 @@ if len(df_filtered) > 0:
     st.divider()
 
 # ========== التبويبات ==========
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "📋 الجدول",
     "🔥 أفضل الصفقات",
     "🔍 تحليل العنصر",
-    "💰 صائد الأرباح"
+    "💰 صائد الأرباح",
+    "🎯 صيد القناصة",
+    "🧮 حاسبة البيع"
 ])
 
 # ------------------------------------------------------------------
@@ -1341,3 +1394,259 @@ with tab4:
             👤 البائع: <code>{row['user']}</code> &nbsp;|&nbsp; 🕐 {row['time_ago']}
         </div>
         """, unsafe_allow_html=True)
+
+# ------------------------------------------------------------------
+# TAB 5: 🎯 صيد القناصة — Snipe Detection
+# ------------------------------------------------------------------
+with tab5:
+    st.subheader("🎯 صيد القناصة — أسعار تحت أدنى سعر تاريخي مسجّل")
+    st.caption(
+        "يفحص جميع الأصناف ويكشف العروض المسعّرة **أرخص من أرخص بيع تاريخي مسجّل** "
+        "في نفس مجموعة المواصفات (≥3 مبيعات مرجعية للموثوقية). "
+        "هذه فرص ربح نادرة — البائع يبيع بسعر لم يره السوق من قبل."
+    )
+
+    snipe_c1, snipe_c2, snipe_c3 = st.columns([2, 1, 1])
+    with snipe_c1:
+        snipe_min_discount = st.slider(
+            "الحد الأدنى للخصم تحت أدنى سعر تاريخي (%)",
+            0, 30, 0,
+            help="0% = أي سعر أرخص من أدنى تاريخي. 5% = أرخص بـ 5% على الأقل."
+        )
+    with snipe_c2:
+        snipe_min_sales = st.number_input("أقل عدد مبيعات مرجعية", 2, 20, 3)
+    with snipe_c3:
+        st.write("")
+        st.write("")
+        scan_snipes = st.button("🎯 ابدأ المسح", type="primary", use_container_width=True, key="scan_snipes_btn")
+
+    if not scan_snipes:
+        st.info("اضغط **🎯 ابدأ المسح** لفحص جميع الأصناف الـ 12.")
+    else:
+        snipes = []
+        with st.spinner(f"جاري فحص {len(ITEM_CATEGORIES)} صنف..."):
+            pbar = st.progress(0)
+            for idx, (cat_name, cat_config) in enumerate(ITEM_CATEGORIES.items()):
+                code = cat_config['code']
+                items = fetch_all_items(code, max_pages=5)
+                for it in items:
+                    main_v = get_main_value(it['skills'], cat_config)
+                    sec_v  = get_secondary_value(it['skills'], cat_config)
+                    bstats = get_bucket_full_stats(code, main_v, sec_v, cat_config, days_back=14)
+                    if not bstats or bstats['count'] < snipe_min_sales:
+                        continue
+                    threshold = bstats['min'] * (1 - snipe_min_discount / 100.0)
+                    if it['price'] >= threshold:
+                        continue
+                    discount_pct = (bstats['min'] - it['price']) / bstats['min'] * 100
+                    profit_vs_med = bstats['p50'] - it['price']
+                    snipes.append({
+                        'category':       cat_name,
+                        'cat_config':     cat_config,
+                        'price':          it['price'],
+                        'main_value':     main_v,
+                        'secondary_value': sec_v,
+                        'main_name':      get_main_name(cat_config),
+                        'secondary_name': get_secondary_name(cat_config),
+                        'quality':        calculate_quality_score(it['skills'], cat_config),
+                        'user':           it['user'],
+                        'time_ago':       it['time_ago'],
+                        'createdAt':      it['createdAt'],
+                        'bucket_min':     bstats['min'],
+                        'bucket_p50':     bstats['p50'],
+                        'bucket_avg':     bstats['avg'],
+                        'bucket_count':   bstats['count'],
+                        'discount_pct':   discount_pct,
+                        'profit_vs_med':  profit_vs_med,
+                    })
+                pbar.progress((idx + 1) / len(ITEM_CATEGORIES))
+            pbar.empty()
+
+        if not snipes:
+            st.success("✅ لا توجد قناصات حالياً — السوق متوازن.")
+            st.caption("حاول تخفيض شرط 'أقل عدد مبيعات' أو زيادة عدد الصفحات في الشريط الجانبي.")
+        else:
+            snipes.sort(key=lambda x: -x['discount_pct'])
+            st.success(f"🎯 وُجدت **{len(snipes)}** قناصة عبر السوق")
+
+            # تنبيهات تيليجرام للقناصات الجديدة
+            sent_alerts = load_sent_alerts()
+            new_count   = 0
+            for s in snipes[:5]:
+                aid = f"snipe_{s['category']}_{s['main_value']}_{s['secondary_value']}_{s['price']}"
+                if aid in sent_alerts:
+                    continue
+                sent_alerts.append(aid)
+                new_count += 1
+                send_telegram_alert(
+                    title=f"🎯 قناصة! خصم {s['discount_pct']:.1f}% تحت أدنى سعر",
+                    message=f"{s['category']}\n{s['main_name']}: {s['main_value']}"
+                            + (f" | {s['secondary_name']}: {s['secondary_value']}%" if s['secondary_name'] else ""),
+                    price=add_tax(s['price']),
+                    profit=s['profit_vs_med']
+                )
+            if new_count > 0:
+                save_sent_alerts(sent_alerts)
+                st.toast(f"📤 أُرسل {new_count} تنبيه قناصة جديد لتيليجرام", icon="🎯")
+
+            # عرض القناصات
+            for rank, s in enumerate(snipes[:20], start=1):
+                tier_emoji = "🔥🔥🔥" if s['discount_pct'] >= 15 else "🔥🔥" if s['discount_pct'] >= 8 else "🔥"
+                with st.container(border=True):
+                    top1, top2 = st.columns([4, 1])
+                    with top1:
+                        st.markdown(
+                            f"**{rank}. {tier_emoji} {s['category']}** — "
+                            f"<span style='color:#ff2244;font-size:1.25em;font-weight:bold'>"
+                            f"خصم {s['discount_pct']:.1f}% تحت أدنى سعر</span>",
+                            unsafe_allow_html=True
+                        )
+                        if s['secondary_name']:
+                            st.write(f"🔍 {s['main_name']}: **{s['main_value']}** | {s['secondary_name']}: **{s['secondary_value']}%** | جودة: {s['quality']:.0f}%")
+                        else:
+                            st.write(f"🔍 {s['main_name']}: **{s['main_value']}** | جودة: {s['quality']:.0f}%")
+                    with top2:
+                        st.caption(f"منذ {s['time_ago']}")
+                        st.caption(f"👤 {s['user']}")
+
+                    m1, m2, m3, m4 = st.columns(4)
+                    with m1:
+                        st.metric("💰 السعر بعد الضريبة", f"${add_tax(s['price']):.2f}")
+                    with m2:
+                        st.metric("📉 أدنى تاريخي", f"${s['bucket_min']:.2f}",
+                                  delta=f"-${s['bucket_min'] - s['price']:.2f}", delta_color="inverse")
+                    with m3:
+                        st.metric("📊 وسيط البيع", f"${s['bucket_p50']:.2f}")
+                    with m4:
+                        st.metric("💎 ربح vs الوسيط", f"+${s['profit_vs_med']:.2f}",
+                                  help=f"الربح إذا بعت بسعر وسيط البيع التاريخي")
+                    st.caption(f"📚 {s['bucket_count']} صفقة مرجعية في آخر 14 يوم")
+
+# ------------------------------------------------------------------
+# TAB 6: 🧮 حاسبة البيع — Sell Calculator
+# ------------------------------------------------------------------
+with tab6:
+    st.subheader("🧮 حاسبة البيع — احسب سعر البيع المتوقع والربح")
+    st.caption(
+        "أدخل مواصفات العنصر وسعر شرائك — الحاسبة بترجع السعر المقترح للبيع، "
+        "والربح المتوقع، وسرعة بيع هذه المواصفات."
+    )
+
+    with st.form("sell_calc_form", border=True):
+        f1, f2 = st.columns(2)
+        with f1:
+            calc_category = st.selectbox("📦 نوع العنصر:", list(ITEM_CATEGORIES.keys()), key="calc_cat")
+            calc_cfg      = ITEM_CATEGORIES[calc_category]
+            is_combat     = calc_cfg['type'] in ['jet', 'tank']
+            if is_combat:
+                main_label = "الهجوم (Attack)"
+                main_min, main_max = calc_cfg['min_attack'], calc_cfg['max_attack']
+            else:
+                main_label = get_main_name(calc_cfg)
+                main_min, main_max = calc_cfg['min_value'], calc_cfg['max_value']
+            calc_main = st.number_input(f"⚔️ {main_label}", min_value=0, max_value=500,
+                                        value=main_min, step=1, key="calc_main")
+            if is_combat:
+                calc_sec = st.number_input(
+                    f"🎯 الكريتيكال (Critical %)",
+                    min_value=0, max_value=100,
+                    value=calc_cfg['min_critical'], step=1, key="calc_sec"
+                )
+            else:
+                calc_sec = 0
+        with f2:
+            calc_price = st.number_input("💰 سعر الشراء (قبل الضريبة)", min_value=0.0, value=100.0, step=1.0, key="calc_price")
+            st.caption(f"المدى المسموح: {get_range_text(calc_cfg)}")
+            st.caption("💡 سعر الشراء هو السعر المعروض في السوق — الضريبة 1% تُضاف عند الشراء.")
+
+        submit_calc = st.form_submit_button("🧮 احسب", type="primary", use_container_width=True)
+
+    if submit_calc:
+        bstats = get_bucket_full_stats(calc_cfg['code'], calc_main, calc_sec, calc_cfg, days_back=14)
+
+        if not bstats:
+            st.warning("⚠️ لا توجد بيانات مبيعات مسجّلة لهذه المواصفات بعد.")
+            st.caption("جرّب الانتظار حتى المزامنة التلقائية القادمة، أو اضغط 'مزامنة يدوية' من الشريط الجانبي.")
+        else:
+            cost_after_tax = add_tax(calc_price)
+            n              = bstats['count']
+            confidence     = "✓ ثقة عالية" if n >= 8 else "📊 ثقة متوسطة" if n >= 5 else "⚠️ ثقة محدودة"
+
+            # شريط الثقة
+            conf_color = "#00cc66" if n >= 8 else "#ffaa00" if n >= 5 else "#ff6600"
+            st.markdown(
+                f"<div style='padding:10px;background:#1e1e2e;border-right:4px solid {conf_color};border-radius:6px'>"
+                f"<b>{confidence}</b> — مبني على <b>{n}</b> صفقة مسجّلة في آخر 14 يوم</div>",
+                unsafe_allow_html=True
+            )
+
+            st.markdown("### 💰 توصيات البيع")
+            r1, r2, r3 = st.columns(3)
+            fast_price   = bstats['p25']
+            balanced     = bstats['p50']
+            patient      = bstats['p75']
+
+            with r1:
+                profit_fast = fast_price - cost_after_tax
+                st.metric("⚡ بيع سريع (p25)", f"${fast_price:.2f}",
+                          delta=f"+${profit_fast:.2f}" if profit_fast >= 0 else f"-${abs(profit_fast):.2f}")
+                st.caption("اعرضه بهذا السعر لبيع سريع — أرخص من 75% من المبيعات")
+            with r2:
+                profit_bal = balanced - cost_after_tax
+                st.metric("⚖️ متوازن (وسيط)", f"${balanced:.2f}",
+                          delta=f"+${profit_bal:.2f}" if profit_bal >= 0 else f"-${abs(profit_bal):.2f}")
+                st.caption("سعر معقول — يبيع بسرعة متوسطة")
+            with r3:
+                profit_patient = patient - cost_after_tax
+                st.metric("🐢 صبور (p75)", f"${patient:.2f}",
+                          delta=f"+${profit_patient:.2f}" if profit_patient >= 0 else f"-${abs(profit_patient):.2f}")
+                st.caption("أعلى ربح — يحتاج وقت أطول للبيع")
+
+            # تحذير إذا الشراء غير مربح
+            if balanced < cost_after_tax:
+                st.error(
+                    f"❌ سعر الشراء **${cost_after_tax:.2f}** أعلى من وسيط البيع **${balanced:.2f}** — "
+                    f"خسارة محتملة ${cost_after_tax - balanced:.2f} على السعر المتوازن."
+                )
+            elif balanced - cost_after_tax < 5:
+                st.warning(f"⚠️ هامش ربح ضيق ({(balanced - cost_after_tax) / cost_after_tax * 100:.1f}%) — تأكد من سرعة البيع.")
+            else:
+                margin_pct = (balanced - cost_after_tax) / cost_after_tax * 100
+                st.success(f"✅ صفقة مربحة — هامش متوقع **{margin_pct:.1f}%** على السعر المتوازن.")
+
+            # سرعة البيع
+            vel_hr, vel_count = get_item_sell_velocity(calc_cfg['code'], calc_main, calc_sec, calc_cfg)
+            vel_text          = format_velocity(vel_hr)
+
+            st.markdown("### ⚡ سرعة البيع")
+            v1, v2 = st.columns(2)
+            with v1:
+                if vel_text:
+                    st.metric("متوسط الوقت بين المبيعات", vel_text)
+                else:
+                    st.metric("متوسط الوقت بين المبيعات", "غير متاح", help="يحتاج 2+ مبيعات للحساب")
+            with v2:
+                st.metric("عدد المبيعات المسجّلة", vel_count)
+
+            # توزيع الأسعار التاريخي
+            st.markdown("### 📊 توزيع أسعار البيع التاريخي")
+            hist_df = pd.DataFrame({'price': bstats['prices']})
+            fig = px.histogram(hist_df, x='price', nbins=min(20, n),
+                               title=f"توزيع {n} مبيعة لنفس المواصفات (آخر 14 يوم)",
+                               labels={'price': 'سعر البيع ($)', 'count': 'عدد'})
+            fig.add_vline(x=cost_after_tax, line_dash="dash", line_color="red",
+                          annotation_text="سعر شرائك")
+            fig.add_vline(x=balanced, line_dash="dash", line_color="green",
+                          annotation_text="وسيط البيع")
+            fig.update_layout(template='plotly_dark', margin=dict(t=40, b=0))
+            st.plotly_chart(fig, use_container_width=True)
+
+            # تفاصيل إحصائية
+            with st.expander("📈 إحصائيات تفصيلية"):
+                d1, d2, d3, d4, d5 = st.columns(5)
+                with d1: st.metric("أدنى", f"${bstats['min']:.2f}")
+                with d2: st.metric("p25", f"${bstats['p25']:.2f}")
+                with d3: st.metric("وسيط", f"${bstats['p50']:.2f}")
+                with d4: st.metric("p75", f"${bstats['p75']:.2f}")
+                with d5: st.metric("أعلى", f"${bstats['max']:.2f}")
+                st.caption(f"متوسط حسابي: ${bstats['avg']:.2f}")
