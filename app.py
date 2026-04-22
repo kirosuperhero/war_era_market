@@ -301,11 +301,12 @@ def get_price_percentile(price, all_prices):
 #   متوسط الهامش: 5.8% | p50: 4.2% | p90 (أفضل 10%): 12.7%
 #   الانحراف المطلق: p50=$7.5 | p90=$30.5
 
-def get_bucket_full_stats(item_code, main_value, secondary_value, category_config, days_back=14):
+def get_bucket_full_stats(item_code, main_value, secondary_value, category_config, days_back=14, hours_back=None):
     """
     إحصائيات شاملة للمجموعة من sales_cache.
-    يرجع: dict فيه count, min, max, avg, p25, p50, p75 + قائمة الأسعار الخام.
+    يرجع: dict فيه count, min, max, avg, p25, p50, p75 + قائمة الأسعار الخام + window_hours + newest_age_hours.
     None إذا لم توجد بيانات.
+    إذا حُدِّد hours_back فهو يلغي days_back.
     """
     cache = load_sales_cache()
     if item_code not in cache:
@@ -317,22 +318,29 @@ def get_bucket_full_stats(item_code, main_value, secondary_value, category_confi
     else:
         target_v = round(main_value / 5) * 5
 
+    cutoff_hours = hours_back if hours_back is not None else days_back * 24
     now = datetime.now().astimezone()
     prices = []
+    times  = []
     for sale in cache[item_code]:
         try:
             if not sale.get('price') or sale['price'] <= 0:
                 continue
             t = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
-            if (now - t).total_seconds() / 3600 > days_back * 24:
+            age_hr = (now - t).total_seconds() / 3600
+            if age_hr > cutoff_hours:
                 continue
             s_main = sale.get('main_value', 0)
+            matched = False
             if is_combat:
                 if round(s_main/5)*5 == target_a and round(sale.get('secondary_value',0)/2)*2 == target_c:
-                    prices.append(sale['price'])
+                    matched = True
             else:
                 if round(s_main/5)*5 == target_v:
-                    prices.append(sale['price'])
+                    matched = True
+            if matched:
+                prices.append(sale['price'])
+                times.append(age_hr)
         except:
             continue
 
@@ -349,6 +357,47 @@ def get_bucket_full_stats(item_code, main_value, secondary_value, category_confi
         'p50':    prices_sorted[n // 2],
         'p75':    prices_sorted[min(n - 1, int(n * 0.75))],
         'prices': prices_sorted,
+        'window_hours':    cutoff_hours,
+        'newest_age_hours': min(times),
+        'oldest_age_hours': max(times),
+    }
+
+
+def get_category_window_stats(item_code, start_hours_ago, end_hours_ago=0):
+    """
+    إحصائيات على مستوى الصنف كاملاً (كل المواصفات) داخل نافذة زمنية.
+    start_hours_ago > end_hours_ago. مثال: (24, 0) = آخر 24 ساعة.
+    يرجع: dict فيه count, avg, min, max, prices, times أو None.
+    """
+    cache = load_sales_cache()
+    if item_code not in cache:
+        return None
+    now = datetime.now().astimezone()
+    prices, ages = [], []
+    for sale in cache[item_code]:
+        try:
+            if not sale.get('price') or sale['price'] <= 0:
+                continue
+            t = datetime.fromisoformat(sale['time'].replace('Z', '+00:00'))
+            age_hr = (now - t).total_seconds() / 3600
+            if age_hr <= end_hours_ago or age_hr > start_hours_ago:
+                continue
+            prices.append(sale['price'])
+            ages.append(age_hr)
+        except:
+            continue
+    if not prices:
+        return None
+    n = len(prices)
+    avg_gap = (start_hours_ago - end_hours_ago) / n if n > 0 else None
+    return {
+        'count':   n,
+        'avg':     sum(prices) / n,
+        'min':     min(prices),
+        'max':     max(prices),
+        'prices':  prices,
+        'ages':    ages,
+        'avg_gap_hours': avg_gap,
     }
 
 
@@ -851,13 +900,14 @@ if len(df_filtered) > 0:
     st.divider()
 
 # ========== التبويبات ==========
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "📋 الجدول",
     "🔥 أفضل الصفقات",
     "🔍 تحليل العنصر",
     "💰 صائد الأرباح",
     "🎯 صيد القناصة",
-    "🧮 حاسبة البيع"
+    "🧮 حاسبة البيع",
+    "📈 اتجاهات السوق"
 ])
 
 # ------------------------------------------------------------------
@@ -1429,7 +1479,7 @@ with tab5:
                 for it in items:
                     main_v = get_main_value(it['skills'], cat_config)
                     sec_v  = get_secondary_value(it['skills'], cat_config)
-                    bstats = get_bucket_full_stats(code, main_v, sec_v, cat_config, days_back=14)
+                    bstats = get_bucket_full_stats(code, main_v, sec_v, cat_config, hours_back=48)
                     if not bstats or bstats['count'] < snipe_min_sales:
                         continue
                     threshold = bstats['min'] * (1 - snipe_min_discount / 100.0)
@@ -1552,30 +1602,44 @@ with tab6:
             else:
                 calc_sec = 0
         with f2:
-            calc_price = st.number_input("💰 سعر الشراء (قبل الضريبة)", min_value=0.0, value=100.0, step=1.0, key="calc_price")
+            calc_price = st.number_input("💰 سعر الشراء الفعلي (الذي دفعته)", min_value=0.0, value=100.0, step=1.0, key="calc_price",
+                                         help="أدخل المبلغ الفعلي الذي خرج من محفظتك — شامل أي ضريبة دفعتها.")
             st.caption(f"المدى المسموح: {get_range_text(calc_cfg)}")
-            st.caption("💡 سعر الشراء هو السعر المعروض في السوق — الضريبة 1% تُضاف عند الشراء.")
+            st.caption("✅ السعر يُستخدم كما هو لحساب الربح — لا تُضاف ضريبة.")
 
         submit_calc = st.form_submit_button("🧮 احسب", type="primary", use_container_width=True)
 
     if submit_calc:
-        bstats = get_bucket_full_stats(calc_cfg['code'], calc_main, calc_sec, calc_cfg, days_back=14)
+        # نفضّل آخر 48 ساعة لأن الأسعار تتغير بسرعة. نعود للـ 14 يوم فقط لو البيانات قليلة جداً.
+        bstats = get_bucket_full_stats(calc_cfg['code'], calc_main, calc_sec, calc_cfg, hours_back=48)
+        used_fallback = False
+        if not bstats or bstats['count'] < 3:
+            bstats = get_bucket_full_stats(calc_cfg['code'], calc_main, calc_sec, calc_cfg, days_back=14)
+            used_fallback = True
 
         if not bstats:
             st.warning("⚠️ لا توجد بيانات مبيعات مسجّلة لهذه المواصفات بعد.")
             st.caption("جرّب الانتظار حتى المزامنة التلقائية القادمة، أو اضغط 'مزامنة يدوية' من الشريط الجانبي.")
         else:
-            cost_after_tax = add_tax(calc_price)
+            cost_after_tax = calc_price
             n              = bstats['count']
             confidence     = "✓ ثقة عالية" if n >= 8 else "📊 ثقة متوسطة" if n >= 5 else "⚠️ ثقة محدودة"
+            window_label   = "آخر 48 ساعة" if not used_fallback else "آخر 14 يوم (لا توجد بيانات حديثة كافية)"
 
-            # شريط الثقة
+            # شريط الثقة + نافذة البيانات
             conf_color = "#00cc66" if n >= 8 else "#ffaa00" if n >= 5 else "#ff6600"
             st.markdown(
                 f"<div style='padding:10px;background:#1e1e2e;border-right:4px solid {conf_color};border-radius:6px'>"
-                f"<b>{confidence}</b> — مبني على <b>{n}</b> صفقة مسجّلة في آخر 14 يوم</div>",
+                f"<b>{confidence}</b> — مبني على <b>{n}</b> صفقة في <b>{window_label}</b></div>",
                 unsafe_allow_html=True
             )
+
+            # تحذير لو البيانات قديمة (أحدث صفقة أكبر من 48 ساعة)
+            if bstats.get('newest_age_hours', 0) > 48:
+                st.warning(
+                    f"⚠️ أحدث صفقة مسجّلة عمرها **{bstats['newest_age_hours']:.0f} ساعة** — "
+                    f"الأسعار قد تكون تغيّرت. تعامل مع التوصيات بحذر."
+                )
 
             st.markdown("### 💰 توصيات البيع")
             r1, r2, r3 = st.columns(3)
@@ -1647,3 +1711,146 @@ with tab6:
                 with d4: st.metric("p75", f"${bstats['p75']:.2f}")
                 with d5: st.metric("أعلى", f"${bstats['max']:.2f}")
                 st.caption(f"متوسط حسابي: ${bstats['avg']:.2f}")
+
+# ------------------------------------------------------------------
+# TAB 7: 📈 اتجاهات السوق — Market Trends Dashboard
+# ------------------------------------------------------------------
+with tab7:
+    st.subheader("📈 اتجاهات السوق — الصورة الكبيرة")
+    st.caption(
+        "نظرة شاملة على السوق بأكمله بناءً على آخر 48 ساعة فقط — "
+        "تساعدك تحدد على أي صنف تركّز جهدك في الـ flipping."
+    )
+
+    trend_c1, trend_c2 = st.columns([3, 1])
+    with trend_c2:
+        st.write("")
+        refresh_trends = st.button("🔄 تحديث الاتجاهات", type="primary", use_container_width=True, key="refresh_trends_btn")
+    with trend_c1:
+        st.caption("اضغط الزر لإعادة الحساب من الكاش الحالي. يفضّل عمل مزامنة أولاً من الشريط الجانبي.")
+
+    if not refresh_trends:
+        st.info("اضغط **🔄 تحديث الاتجاهات** لعرض اتجاهات السوق.")
+    else:
+        # ====== جمع البيانات لكل الأصناف ======
+        trends_data = []
+        with st.spinner("جاري تحليل اتجاهات السوق..."):
+            tpbar = st.progress(0)
+            for tidx, (cat_name, cat_cfg) in enumerate(ITEM_CATEGORIES.items()):
+                code = cat_cfg['code']
+                last_24h = get_category_window_stats(code, 24, 0)
+                prev_24h = get_category_window_stats(code, 48, 24)
+                last_48h = get_category_window_stats(code, 48, 0)
+
+                # السوق الحالي (المعروضات النشطة)
+                current_items = fetch_all_items(code, max_pages=5)
+                current_count = len(current_items) if current_items else 0
+                current_min   = min((i['price'] for i in current_items), default=None) if current_items else None
+                current_avg   = (sum(i['price'] for i in current_items) / current_count) if current_count > 0 else None
+
+                # حساب اتجاه السعر
+                trend_emoji, trend_label, trend_pct = "🟡", "مستقر", 0.0
+                if last_24h and prev_24h and last_24h['count'] >= 2 and prev_24h['count'] >= 2:
+                    trend_pct = (last_24h['avg'] - prev_24h['avg']) / prev_24h['avg'] * 100
+                    if trend_pct > 3:
+                        trend_emoji, trend_label = "🟢", "صاعد"
+                    elif trend_pct < -3:
+                        trend_emoji, trend_label = "🔴", "هابط"
+
+                # سرعة البيع (متوسط الفجوة بين المبيعات في 48h)
+                avg_gap = last_48h['avg_gap_hours'] if last_48h else None
+
+                trends_data.append({
+                    'category':       cat_name,
+                    'sales_24h':      last_24h['count'] if last_24h else 0,
+                    'sales_48h':      last_48h['count'] if last_48h else 0,
+                    'avg_24h':        last_24h['avg']   if last_24h else None,
+                    'avg_prev_24h':   prev_24h['avg']   if prev_24h else None,
+                    'avg_gap_hours':  avg_gap,
+                    'trend_emoji':    trend_emoji,
+                    'trend_label':    trend_label,
+                    'trend_pct':      trend_pct,
+                    'current_count':  current_count,
+                    'current_min':    current_min,
+                    'current_avg':    current_avg,
+                })
+                tpbar.progress((tidx + 1) / len(ITEM_CATEGORIES))
+            tpbar.empty()
+
+        # ====== Section 1: العناصر الأسرع بيعاً ======
+        st.markdown("### 🔥 العناصر عالية الطلب (الأسرع بيعاً)")
+        st.caption("متوسط الوقت بين كل عملية بيع — أصغر = طلب أعلى. آخر 48 ساعة فقط.")
+        hot_items = [t for t in trends_data if t['avg_gap_hours'] is not None and t['sales_48h'] >= 2]
+        hot_items.sort(key=lambda x: x['avg_gap_hours'])
+        if not hot_items:
+            st.info("لا توجد بيانات مبيعات كافية في آخر 48 ساعة.")
+        else:
+            hot_df = pd.DataFrame([{
+                'الصنف':            t['category'],
+                'متوسط الوقت بين المبيعات (ساعة)': round(t['avg_gap_hours'], 2),
+                'مبيعات آخر 24س':   t['sales_24h'],
+                'مبيعات آخر 48س':   t['sales_48h'],
+            } for t in hot_items[:12]])
+            st.dataframe(hot_df, use_container_width=True, hide_index=True)
+
+        # ====== Section 2: اتجاه السعر صاعد/هابط ======
+        st.markdown("### 📊 اتجاه الأسعار — صاعد أم هابط؟")
+        st.caption("مقارنة متوسط سعر آخر 24 ساعة بمتوسط الـ 24 ساعة السابقة (تغيّر أكبر من ±3% فقط).")
+        price_trend = [t for t in trends_data if t['sales_48h'] >= 5 and t['avg_24h'] and t['avg_prev_24h']]
+        price_trend.sort(key=lambda x: -abs(x['trend_pct']))
+        if not price_trend:
+            st.info("لا توجد أصناف مع 5+ مبيعات في آخر 48 ساعة لحساب الاتجاه.")
+        else:
+            for t in price_trend[:12]:
+                tc1, tc2, tc3, tc4 = st.columns([3, 1, 1, 1])
+                with tc1:
+                    st.markdown(f"{t['trend_emoji']} **{t['category']}** — {t['trend_label']}")
+                with tc2:
+                    st.metric("متوسط 24س", f"${t['avg_24h']:.2f}")
+                with tc3:
+                    st.metric("الـ 24س السابقة", f"${t['avg_prev_24h']:.2f}")
+                with tc4:
+                    delta_color = "normal" if t['trend_pct'] > 0 else "inverse"
+                    st.metric("التغيّر", f"{t['trend_pct']:+.1f}%", delta_color=delta_color)
+
+        # ====== Section 3: أفضل الفرص الآن ======
+        st.markdown("### 💎 أفضل الفرص الآن")
+        st.caption("أصناف فيها متوسط السوق الحالي **أرخص** من متوسط البيع في آخر 24 ساعة — احتمال ربح فوري.")
+        opps = []
+        for t in trends_data:
+            if t['avg_24h'] and t['current_avg'] and t['sales_24h'] >= 3:
+                if t['current_avg'] < t['avg_24h']:
+                    profit_pct = (t['avg_24h'] - t['current_avg']) / t['current_avg'] * 100
+                    opps.append({**t, 'profit_pct': profit_pct})
+        opps.sort(key=lambda x: -x['profit_pct'])
+        if not opps:
+            st.info("لا توجد فرص واضحة الآن — السوق متوازن أو البيانات غير كافية.")
+        else:
+            opp_df = pd.DataFrame([{
+                'الصنف':           o['category'],
+                'متوسط السوق الآن': f"${o['current_avg']:.2f}",
+                'متوسط البيع 24س':  f"${o['avg_24h']:.2f}",
+                'فجوة الربح':       f"+{o['profit_pct']:.1f}%",
+                'أرخص معروض':       f"${o['current_min']:.2f}" if o['current_min'] else "-",
+                'مبيعات 24س':       o['sales_24h'],
+            } for o in opps[:10]])
+            st.dataframe(opp_df, use_container_width=True, hide_index=True)
+
+        # ====== Section 4: عناصر يجب تجنبها ======
+        st.markdown("### ⚠️ عناصر يجب تجنّبها")
+        st.caption("أسعار هابطة (سوق ينزل) أو معروضات كثيرة (إفراط في العرض > 15 عنصر).")
+        avoid = []
+        for t in trends_data:
+            reasons = []
+            if t['trend_label'] == "هابط":
+                reasons.append(f"📉 سعر هابط {t['trend_pct']:.1f}%")
+            if t['current_count'] > 15:
+                reasons.append(f"📦 إفراط في العرض ({t['current_count']} معروض)")
+            if reasons:
+                avoid.append({'category': t['category'], 'reasons': " | ".join(reasons),
+                              'current_count': t['current_count'], 'trend_pct': t['trend_pct']})
+        if not avoid:
+            st.success("✅ لا توجد إشارات تحذير حالياً — السوق في حالة جيدة.")
+        else:
+            for a in avoid:
+                st.warning(f"**{a['category']}** — {a['reasons']}")

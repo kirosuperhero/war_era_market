@@ -1,0 +1,81 @@
+I need to IMPROVE two features you already partially implemented, not start from scratch.
+
+**What you already did:**
+- Tab 5 (Profit Hunter) now has Snipe Detection logic
+- Tab 6 (Sell Calculator) exists but has issues
+
+**The problems:**
+
+1. **Sell Calculator is calculating purchase price before tax** — Wrong. Users enter the ACTUAL price they paid (after tax). The calculator should use that as-is.
+
+2. **The recommended sell price is based on outdated data** — Items stay listed for 7+ days, but prices change hourly. For flipping to work, we need LAST 24-48 HOURS data only, not 7 days.
+
+3. **No way to see market trends** — I need a dashboard showing: which items have high demand, sell quickly, and whether prices are going up or down.
+
+**What I need you to fix/add:**
+
+---
+
+**FIX 1: Sell Price Calculator (Tab 6)**
+
+- Remove "before tax" assumption. User enters ACTUAL purchase price.
+- Calculate recommended sell price based on:
+  - Last 24-48 hours of sales data ONLY (not 7 days)
+  - Current market minimum for similar specs
+- Show: "Based on last 24h sales" clearly in the output
+- Add warning if data is older than 48 hours
+
+---
+
+**FIX 2: Snipe Detection (Tab 5)**
+
+- Already working, but ensure it uses FRESH data (last 24-48h for price floor calculation)
+- Auto-scan interval: 30 seconds (keep as is)
+
+---
+
+**NEW FEATURE: Market Trends Dashboard (New Tab 7)**
+
+Add a new tab called "📈 Market Trends"
+
+This tab shows me the BIG PICTURE of the entire market so I know WHERE to focus my flipping efforts.
+
+**Section 1: "Hot Items - High Demand"**
+- Items that sell FAST (lowest average time to sell)
+- Show: Item type, avg time to sell (hours), number sold last 24h
+- Sort by: fastest selling first
+
+**Section 2: "Price Trend - Up or Down?"**
+- For each item category, show if average selling price is going UP or DOWN
+- Calculate: compare last 24h average vs previous 24h average
+- Visual: 🟢 UP (green arrow up), 🔴 DOWN (red arrow down), 🟡 STABLE (yellow dash)
+- Only show items with at least 5 sales in last 48h
+
+**Section 3: "Best Opportunities Right Now"**
+- Items where current market price is BELOW the 24h average selling price
+- Show: Item type, current avg price vs 24h selling avg, potential profit %
+- Sort by: highest potential profit
+
+**Section 4: "Items to AVOID"**
+- Items with price trend DOWN (falling market)
+- Items with more than 15 similar listings (oversupply)
+
+**Data source:** Use sales_cache.json but FILTER to last 48 hours only for all calculations
+
+**Refresh:** Add a "Refresh Trends" button (auto-refresh optional, maybe every 5 minutes)
+
+---
+
+**Keep all existing functionality:**
+- Telegram alerts
+- Best Deals tab
+- Table tab
+- Price history tab
+- All filters
+
+**Show me:**
+1. The fixed Sell Calculator code (Tab 6)
+2. The new Market Trends Dashboard code (Tab 7)
+3. Any helper functions needed for 48h filtering
+
+Be concise with code, but complete.
