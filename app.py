@@ -1,4 +1,14 @@
 import streamlit as st
+import sys
+import traceback
+
+try:
+    # باقي الكود الحالي (بما في ذلك set_page_config وكل شيء)
+    # ...
+except Exception as e:
+    with open("error.log", "w") as f:
+        f.write(traceback.format_exc())
+    raise
 import pandas as pd
 import plotly.express as px
 import requests
@@ -8,24 +18,7 @@ import os
 import math
 from datetime import datetime
 import numpy as np
-import sys
-import logging
 
-# إعداد تسجيل الأخطاء الأساسي
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logging.info("Starting the application...")
-logging.info(f"Current working directory: {os.getcwd()}")
-logging.info(f"Files in directory: {os.listdir('.')}")
-
-# محاولة استيراد Streamlit
-try:
-    import streamlit as st
-    logging.info("Streamlit imported successfully.")
-except Exception as e:
-    logging.error(f"Failed to import streamlit: {e}")
-    sys.exit(1)
-
-# باقي كود التطبيق...
 
 st.set_page_config(
     page_title="War Era - Market Analyzer",
